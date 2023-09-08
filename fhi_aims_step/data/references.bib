@@ -1,0 +1,40 @@
+This is an initial library of BibTex references for the fhi_aims_step plug-in for SEAMM,
+generated automatically by the cookiecutter. You may wish to edit the first entry to correct some
+of the information.
+
+Add other references to the end of the file and add code in the plug-in to cite the references as
+appropriate. This is done with code like this:
+
+        self.references.cite(
+            raw=self._bibliography['doi:10.1002/jcc.21224'],
+            alias='packmol',
+            module='packmol_step',
+            level=1,
+            note='The principle PACKMOL citation.'
+        )
+
+which is typically in the run() method of the plug-in.
+
+The base node class in SEAMM automatically reads this list of references into a dictionary in
+self._bibliography with the key being the key of the BibTex entry -- usually the name on the
+first line of the entry after the 'article' or 'misc' (for software) keyword.
+
+See the documentation for the Reference Handler for the other arguments to cite().
+
+# End of initial comments #
+
+# This is the citation for this plug-in, generated and used automatically.
+# You might need to edit the author, address, etc. The month, year and version fields
+# are automatically filled in with information about current version of the plug-in.
+# This is handled in seamm/nody.py, the run() method.
+
+@Misc{fhi_aims_step,
+	author = {Paul Saxe},
+	title = {Fhi Aims plug-in for SEAMM},
+	month = {$month},
+	year = {$year},
+	organization = {molssi-seamm},
+	url = {https://github.com/molssi-seamm/fhi_aims_step },
+	address = {USA},
+	version = {$version}
+}

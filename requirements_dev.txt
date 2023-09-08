@@ -1,0 +1,10 @@
+-r requirements_install.txt
+
+black
+coverage
+flake8
+pytest
+pytest-runner
+sphinx
+tox
+twine

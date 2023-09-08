@@ -1,0 +1,13 @@
+name: BranchCI
+
+on:
+  push:
+    branches-ignore:
+      - "main"
+
+jobs:
+  branch-ci:
+    name: Branch CI
+    uses: molssi-seamm/devops/.github/workflows/BranchCI.yaml@main
+    with:
+      src : fhi_aims_step

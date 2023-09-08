@@ -1,0 +1,15 @@
+name: Release
+
+on:
+  release:
+    types: [published]
+    branches:
+      - "main"
+
+jobs:
+  ci:
+    name: CI
+    uses: molssi-seamm/devops/.github/workflows/Release.yaml@main
+    with:
+      src : fhi_aims_step
+    secrets: inherit

@@ -1,0 +1,16 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - "main"
+  pull_request:
+    branches:
+      - "main"
+
+jobs:
+  ci:
+    name: CI
+    uses: molssi-seamm/devops/.github/workflows/CI.yaml@main
+    with:
+      src : fhi_aims_step

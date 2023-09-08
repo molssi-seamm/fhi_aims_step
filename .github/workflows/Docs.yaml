@@ -1,0 +1,7 @@
+name: Documentation
+
+on: push
+
+jobs:
+  docs:
+    uses: molssi-seamm/devops/.github/workflows/Docs.yaml@main

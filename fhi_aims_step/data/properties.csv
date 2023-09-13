@@ -1,1 +1,2 @@
 Property,Type,Units,Description,URL
+total energy#FHIaims#{model},float,eV,"The {model} total energy (electronic + nuclear).",

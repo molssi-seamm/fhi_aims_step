@@ -1,0 +1,64 @@
+[fhi-aims-step]
+# How many cores to use for FHI-aims.  Set to 1 to always run serial.
+# FHI-aims will try to choose a reasonable number of
+# cores based on the size of the system and other parameters. The
+# option 'atoms-per-core' can be used to tune this estimate.
+#
+# The default is 'available', meaning use all the cores available to
+# the calculation if that makes sense based on the type of
+# calculation. Otherwise you can give a number here. Note that the
+# [DEFAULT] section may override the default.
+
+# ncores = available
+
+# The optimal number of atoms per core. You may wish to change this if
+# you consistently use expensive functionals, or have e.g. GPUs. The
+# default is 5.
+
+# atoms-per-core = 5
+
+# Whether to write local HTML files for the graphs, etc. generated so
+# they can be viewed without the SEAMM Dashboard.
+
+# html = False
+
+# Information about where/how the executables are installed
+# installation may be 'path', 'conda' or 'modules'. If a module is
+# specified it will be loaded and those executables used.  In this
+# case, any path specified using path will be ignored.
+
+installation = not installed
+conda-environment =
+modules = 
+
+# The path to the basis sets for aims
+
+# basis-path = 
+
+# The path to the executables. Can be empty or not present, in which
+# case the default PATH is used.  If a path is given the aims executable
+# at this location will be used. If mpiexec is also present
+# it will be used; otherwise mpiexec from the normal PATH will be
+# used.
+#
+# Ignored if a module is used. The default is to use the PATH
+# environment variable.
+
+# path =
+
+# The name of the executable
+
+# aims = aims.x
+
+# If you are running from a queueing system such as SLURM, if MPI was compiled
+# to know about the batch system, you should be able to use something like
+# 'srun' or 'mpirun' with no further arguments to run parallel tasks. If
+# you are not lucky, and need the parameters, you can add them to the command
+# line like this:
+#
+# mpiexec = mpirun -n {NTASKS} -H {NODELIST} -npernode {NTASKS_PER_NODE}
+#
+# SEAMM picks up the environment variables such as SLURM_NTASKS, strips the
+# prefix from them and replaces any instances in the command line that are
+# enclosed in braces. Hopefully this lets you construct the correct command
+# line.

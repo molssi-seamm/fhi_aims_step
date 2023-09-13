@@ -12,7 +12,7 @@ import sys
 import fhi_aims_step
 import molsystem
 import seamm
-from seamm_util import ureg, Q_  # noqa: F401
+from seamm_util import ureg, Q_, getParser  # noqa: F401
 import seamm_util.printing as printing
 from seamm_util.printing import FormattedText as __
 
@@ -66,7 +66,7 @@ class FHIaims(seamm.Node):
         title="FHI-aims",
         namespace="org.molssi.seamm.fhi_aims",
         extension=None,
-        logger=logger
+        logger=logger,
     ):
         """A step for FHI-aims in a SEAMM flowchart.
 
@@ -93,10 +93,8 @@ class FHIaims(seamm.Node):
         """
         logger.debug(f"Creating FHI-aims {self}")
         self.subflowchart = seamm.Flowchart(
-            parent=self,
-            name="FHI-aims",
-            namespace=namespace
-        )  # yapf: disable
+            parent=self, name="FHI-aims", namespace=namespace
+        )
 
         super().__init__(
             flowchart=flowchart,
@@ -104,7 +102,8 @@ class FHIaims(seamm.Node):
             extension=extension,
             module=__name__,
             logger=logger,
-        )  # yapf: disable
+        )
+        self.parameters = fhi_aims_step.FHIaimsParameters()
 
         self._metadata = fhi_aims_step.metadata
 
@@ -117,14 +116,99 @@ class FHIaims(seamm.Node):
     def git_revision(self):
         """The git version of this module."""
         return fhi_aims_step.__git_revision__
-    def set_id(self, node_id):
-        """Set the id for node to a given tuple"""
-        self._id = node_id
 
-        # and set our subnodes
-        self.subflowchart.set_ids(self._id)
+    def analyze(self, indent="", **kwargs):
+        """Do any analysis of the output from this step.
 
-        return self.next()
+        Also print important results to the local step.out file using
+        "printer".
+
+        Parameters
+        ----------
+        indent: str
+            An extra indentation for the output
+        """
+        # Get the first real node
+        node = self.subflowchart.get_node("1").next()
+
+        # Loop over the subnodes, asking them to do their analysis
+        while node is not None:
+            for value in node.description:
+                printer.important(value)
+                printer.important(" ")
+
+            node.analyze()
+
+            node = node.next()
+
+    def create_parser(self):
+        """Setup the command-line / config file parser"""
+        parser_name = self.step_type
+        parser = getParser()
+
+        # Remember if the parser exists ... this type of step may have been
+        # found before
+        parser_exists = parser.exists(parser_name)
+
+        # Create the standard options, e.g. log-level
+        result = super().create_parser(name=parser_name)
+
+        if parser_exists:
+            return result
+
+        # FHI-aims specific options
+        parser.add_argument(
+            parser_name,
+            "--ncores",
+            default="available",
+            help=(
+                "The maximum number of cores to use for FHI-aims. "
+                "Default: all available cores."
+            ),
+        )
+        parser.add_argument(
+            parser_name,
+            "--atoms-per-core",
+            type=int,
+            default="5",
+            help="the optimal number of atoms per core for FHI-aims",
+        )
+        parser.add_argument(
+            parser_name,
+            "--html",
+            action="store_true",
+            help="whether to write out html files for graphs, etc.",
+        )
+        parser.add_argument(
+            parser_name,
+            "--modules",
+            nargs="*",
+            default=None,
+            help="the environment modules to load for FHI-aims",
+        )
+        parser.add_argument(
+            parser_name,
+            "--path",
+            default=None,
+            help="the path to the FHI-aims executables",
+        )
+        parser.add_argument(
+            parser_name,
+            "--basis-path",
+            default=None,
+            help="the path to the basis sets",
+        )
+        parser.add_argument(
+            parser_name,
+            "--aims",
+            default="aims.x",
+            help="the executable for FHI-aims",
+        )
+        parser.add_argument(
+            parser_name, "--mpiexec", default="mpiexec", help="the mpi executable"
+        )
+
+        return result
 
     def description_text(self, P=None):
         """Create the text description of what this step will do.
@@ -151,21 +235,17 @@ class FHIaims(seamm.Node):
             try:
                 text += __(node.description_text(), indent=3 * " ").__str__()
             except Exception as e:
-                print(
-                    f"Error describing fhi_aims flowchart: {e} in {node}"
-                )
-                logger.critical(
-                    f"Error describing fhi_aims flowchart: {e} in {node}"
-                )
+                print(f"Error describing fhi_aims flowchart: {e} in {node}")
+                logger.critical(f"Error describing fhi_aims flowchart: {e} in {node}")
                 raise
             except:  # noqa: E722
                 print(
-                    "Unexpected error describing fhi_aims flowchart: {} in {}"
-                    .format(sys.exc_info()[0], str(node))
+                    "Unexpected error describing fhi_aims flowchart: "
+                    f"{sys.exc_info()[0]} in {str(node)}"
                 )
                 logger.critical(
-                    "Unexpected error describing fhi_aims flowchart: {} in {}"
-                    .format(sys.exc_info()[0], str(node))
+                    "Unexpected error describing fhi_aims flowchart: "
+                    f"{sys.exc_info()[0]} in {str(node)}"
                 )
                 raise
             text += "\n"
@@ -186,63 +266,40 @@ class FHIaims(seamm.Node):
             The next node object in the flowchart.
         """
         next_node = super().run(printer)
+
+        # Print our header to the main output
+        printer.important(self.header)
+        printer.important("")
+
+        # Add the main citation for FHI-aims
+        self.references.cite(
+            raw=self._bibliography["BLUM20092175"],
+            alias="FHI-aims",
+            module="FHI-aims step",
+            level=1,
+            note="The principle citation for FHI-aims.",
+        )
+
         # Get the first real node
         node = self.subflowchart.get_node("1").next()
 
-        input_data = []
+        # And loop
         while node is not None:
-            keywords = node.get_input()
-            input_data.append(" ".join(keywords))
+            if node.is_runable:
+                node.run()
             node = node.next()
 
-        files = {"molssi.dat": "\n".join(input_data)}
-        logger.info("molssi.dat:\n" + files["molssi.dat"])
-
-        local = seamm.ExecLocal()
-        result = local.run(
-            cmd=["FHI-aims", "-in", "molssi.dat"],
-            files=files,
-            return_files=[]
-        )  # yapf: disable
-
-        if result is None:
-            logger.error("There was an error running FHI-aims")
-            return None
-
-        logger.debug("\n" + pprint.pformat(result))
-
-        logger.info("stdout:\n" + result["stdout"])
-        if result["stderr"] != "":
-            logger.warning("stderr:\n" + result["stderr"])
-
-        # Analyze the results
-        self.analyze()
         # Add other citations here or in the appropriate place in the code.
         # Add the bibtex to data/references.bib, and add a self.reference.cite
         # similar to the above to actually add the citation to the references.
 
         return next_node
 
-    def analyze(self, indent="", **kwargs):
-        """Do any analysis of the output from this step.
+    def set_id(self, node_id):
+        """Set the id for node to a given tuple"""
+        self._id = node_id
 
-        Also print important results to the local step.out file using
-        "printer".
+        # and set our subnodes
+        self.subflowchart.set_ids(self._id)
 
-        Parameters
-        ----------
-        indent: str
-            An extra indentation for the output
-        """
-        # Get the first real node
-        node = self.subflowchart.get_node("1").next()
-
-        # Loop over the subnodes, asking them to do their analysis
-        while node is not None:
-            for value in node.description:
-                printer.important(value)
-                printer.important(" ")
-
-            node.analyze()
-
-            node = node.next()
+        return self.next()

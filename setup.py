@@ -83,5 +83,13 @@ setup(
         'org.molssi.seamm.tk': [
             'FHI-aims = fhi_aims_step:FHIaimsStep',
         ],
-    }
+        'org.molssi.seamm.fhi_aims': [
+            'Optimization = fhi_aims_step:OptimizationStep',
+            'Energy = fhi_aims_step:EnergyStep',
+        ],
+        'org.molssi.seamm.fhi_aims.tk': [
+            'Optimization = fhi_aims_step:OptimizationStep',
+            'Energy = fhi_aims_step:EnergyStep',
+        ],
+    },
 )

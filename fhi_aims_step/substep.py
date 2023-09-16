@@ -11,6 +11,7 @@ import re
 
 import psutil
 
+from molsystem.elements import to_symbols
 import seamm
 from seamm_util import Q_
 import seamm_util.printing as printing
@@ -42,10 +43,22 @@ class Substep(seamm.Node):
         self.mapping_from_primitive = None
         self.mapping_to_primitive = None
         self.results = None  # Results of the calculation from the tag file.
+        self._is_spin_polarized = False
+        self._mapping_from_primitive = None
+        self._mapping_to_primitive = None
 
         super().__init__(
             flowchart=flowchart, title=title, extension=extension, logger=logger
         )
+
+    @property
+    def is_spin_polarized(self):
+        """If the calculation is set up a spin polarized."""
+        return self._is_spin_polarized
+
+    @is_spin_polarized.setter
+    def is_spin_polarized(self, value):
+        self._is_spin_polarized = value
 
     @property
     def is_runable(self):
@@ -179,15 +192,63 @@ class Substep(seamm.Node):
         str
             The contents of the geometry.in for FHI-aims
         """
-        xyzs = configuration.coordinates
-        symbols = configuration.atoms.symbols
+
+        key = "atom" if configuration.periodicity == 0 else "atom_frac"
 
         lines = []
         lines.append(f"# Geometry for {configuration.system.name}/{configuration.name}")
         lines.append("#")
-        for xyz, symbol in zip(xyzs, symbols):
-            x, y, z = xyz
-            lines.append(f"atom  {x:15.8f}  {y:15.8f}  {z:15.8f} {symbol}")
+        if configuration.periodicity == 0:
+            xyzs = configuration.coordinates
+            symbols = configuration.atoms.symbols
+        else:
+            if "primitive cell" in self.parameters:
+                use_primitive_cell = self.parameters["primitive cell"].get(
+                    context=seamm.flowchart_variables._data
+                )
+            else:
+                use_primitive_cell = True
+
+            if use_primitive_cell:
+                # Write the structure using the primitive cell
+                (
+                    lattice,
+                    xyzs,
+                    atomic_numbers,
+                    self._mapping_from_primitive,
+                    self._mapping_to_primitive,
+                ) = configuration.primitive_cell()
+                lines.append("# Using primitive cell. Conventional cell is")
+            else:
+                # Use the full cell
+                lattice = configuration.cell.vectors()
+                xyzs = configuration.atoms.get_coordinates(fractionals=True)
+                atomic_numbers = configuration.atoms.atomic_numbers
+
+                n_atoms = len(atomic_numbers)
+                self._mapping_from_primitive = [i for i in range(n_atoms)]
+                self._mapping_to_primitive = [i for i in range(n_atoms)]
+            symbols = to_symbols(atomic_numbers)
+
+            a, b, c, alpha, beta, gamma = configuration.cell.parameters
+            lines.append(
+                f"# cell = {a:4f} {b:.4f} {c:.4f} {alpha:.2f} {beta:.2f} {gamma:.2f}"
+            )
+            for abc in lattice:
+                x, y, z = abc
+                lines.append(f"lattice_vector  {x:15.9f} {y:15.9f} {z:15.9f}")
+            lines.append("#")
+
+        if self.is_spin_polarized:
+            spins = configuration.atoms["spin"]
+            for xyz, symbol, spin in zip(xyzs, symbols, spins):
+                x, y, z = xyz
+                lines.append(f"{key}  {x:15.8f}  {y:15.8f}  {z:15.8f} {symbol}")
+                lines.append(f"initial_moment  {spin:8.4f}")
+        else:
+            for xyz, symbol in zip(xyzs, symbols):
+                x, y, z = xyz
+                lines.append(f"{key}  {x:15.8f}  {y:15.8f}  {z:15.8f} {symbol}")
         return "\n".join(lines)
 
     def parse_data(self):
@@ -228,7 +289,10 @@ class Substep(seamm.Node):
                         )
                         value = value / aimsEh2eV * Q_(1, "E_h").m_as("eV")
                     if "type" in mdata:
-                        value = mdata["type"](value)
+                        if isinstance(value, list):
+                            value = [mdata["type"](v) for v in value]
+                        else:
+                            value = mdata["type"](value)
                     if mdata["dimensionality"] == "scalar":
                         data[key] = value
                     else:
@@ -280,11 +344,11 @@ class Substep(seamm.Node):
                 continue
 
             self.logger.debug(mdata["re"])
-            match = re.search(mdata["re"], output)
-            self.logger.debug(match)
-            if match is not None:
-                txt = match.group(1)
-                if txt is None:
+            matches = re.findall(mdata["re"], output)
+            self.logger.debug(matches)
+            if len(matches) > 0:
+                txt = matches[-1]
+                if txt == "":
                     self.logger.warning(
                         f"Parsing output, re ({mdata['re']}) gave error"
                     )

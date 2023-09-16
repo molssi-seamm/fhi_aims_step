@@ -281,7 +281,120 @@ class EnergyParameters(seamm.Parameters):  # noqa: E999
             "format_string": "",
             "description": "Long-range vdW term:",
             "help_text": (
-                "Whether and how to calculate the many-bodydispersions effects."
+                "Whether and how to calculate the many-body dispersions effects."
+            ),
+        },
+        "primitive cell": {
+            "default": "yes",
+            "kind": "boolean",
+            "default_units": "",
+            "enumeration": ("yes", "no"),
+            "format_string": "",
+            "description": "If possible, use primitive cell:",
+            "help_text": "Whether to use the primitive cell for the calculation.",
+        },
+    }
+
+    kspace_parameters = {
+        "k-grid method": {
+            "default": "grid spacing",
+            "kind": "string",
+            "default_units": "",
+            "enumeration": ("grid spacing", "explicit grid dimensions"),
+            "format_string": "",
+            "description": "Specify k-space grid using:",
+            "help_text": "How to specify the k-space integration grid.",
+        },
+        "k-spacing": {
+            "default": 0.2,
+            "kind": "float",
+            "default_units": "1/Å",
+            "enumeration": None,
+            "format_string": "",
+            "description": "K-spacing:",
+            "help_text": "The spacing of the grid in reciprocal space.",
+        },
+        "odd grid": {
+            "default": "yes",
+            "kind": "boolean",
+            "default_units": "",
+            "enumeration": ("yes", "no"),
+            "format_string": "",
+            "description": "Force to odd numbers:",
+            "help_text": "Whether to force the grid sizes to odd numbers.",
+        },
+        "centering": {
+            "default": "𝚪-centered",
+            "kind": "enumeration",
+            "default_units": "",
+            "enumeration": (
+                "𝚪-centered",
+                "off-center",
+                "Monkhorst-Pack",
+            ),
+            "format_string": "",
+            "description": "Centering of grid:",
+            "help_text": "How to center the grid in reciprocal space.",
+        },
+        "occupation type": {
+            "default": "Gaussian",
+            "kind": "enumeration",
+            "default_units": "",
+            "enumeration": (
+                "Gaussian",
+                "Methfessel-Paxton",
+                "Fermi",
+                "integer",
+                "cubic",
+                "cold",
+            ),
+            "format_string": "",
+            "description": "Smearing:",
+            "help_text": (
+                "How occupy the orbitals, typically smearing the electrons as they "
+                "would be at finite temperature."
+            ),
+        },
+        "smearing width": {
+            "default": 0.01,
+            "kind": "float",
+            "default_units": "eV",
+            "enumeration": None,
+            "format_string": ".3f",
+            "description": "Width:",
+            "help_text": "The smearing or broadening width.",
+        },
+        "na": {
+            "default": 4,
+            "kind": "integer",
+            "default_units": "",
+            "enumeration": None,
+            "format_string": "",
+            "description": "NPoints in a:",
+            "help_text": (
+                "Number of points in the first direction of the Brillouin zone."
+            ),
+        },
+        "nb": {
+            "default": 4,
+            "kind": "integer",
+            "default_units": "",
+            "enumeration": None,
+            "format_string": "",
+            "description": "b:",
+            "help_text": (
+                "Number of points in the second direction of the Brillouin zone."
+            ),
+        },
+        "nc": {
+            "default": 4,
+            "kind": "integer",
+            "default_units": "",
+            "enumeration": None,
+            "format_string": "",
+            "description": "c:",
+            "help_text": (
+                "Number of points in the third direction of the Brillouin zone."
             ),
         },
     }
@@ -403,6 +516,7 @@ class EnergyParameters(seamm.Parameters):  # noqa: E999
             defaults={
                 **EnergyParameters.parameters,
                 **EnergyParameters.energy_parameters,
+                **EnergyParameters.kspace_parameters,
                 **EnergyParameters.output_parameters,
                 **defaults,
             },

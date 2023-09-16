@@ -121,9 +121,17 @@ class TkEnergy(seamm.TkNode):
 
         frame = super().create_dialog(title="Energy")
 
+        # Make scrollable in case too large
+        self["scrolled frame"] = sw.ScrolledFrame(frame)
+        self["scrolled frame"].grid(row=0, column=0, sticky=tk.NSEW)
+        frame.rowconfigure(0, weight=1)
+        frame.columnconfigure(0, weight=1)
+
+        main_frame = self["main frame"] = self["scrolled frame"].interior()
+
         # Then create the widgets
         for key in ("gui", "calculate_gradients"):
-            self[key] = P[key].widget(frame)
+            self[key] = P[key].widget(main_frame)
 
         # Patch width of GUI widget ... it is too wide by default
         self["gui"].configure(width=75)
@@ -131,7 +139,7 @@ class TkEnergy(seamm.TkNode):
 
         # Frame to isolate widgets
         e_frame = self["energy frame"] = ttk.LabelFrame(
-            self["frame"],
+            main_frame,
             borderwidth=4,
             relief="sunken",
             text="Electronic Structure Definition",
@@ -142,11 +150,35 @@ class TkEnergy(seamm.TkNode):
         # Then create the widgets
         for key in fhi_aims_step.EnergyParameters.energy_parameters:
             self[key] = P[key].widget(e_frame)
+            try:
+                self[key].configure(width=45)
+            except Exception:
+                pass
 
         for key in ("gui", "basis_version", "model", "submodel"):
             self[key].bind("<<ComboboxSelected>>", self.reset_energy_frame)
             self[key].bind("<Return>", self.reset_energy_frame)
             self[key].bind("<FocusOut>", self.reset_energy_frame)
+
+        # The k-space integration
+        k_frame = self["k-space frame"] = ttk.LabelFrame(
+            main_frame,
+            borderwidth=4,
+            relief="sunken",
+            text="k-space integration (for periodic systems)",
+            labelanchor="n",
+            padding=10,
+        )
+        for key in fhi_aims_step.EnergyParameters.kspace_parameters:
+            self[key] = P[key].widget(k_frame)
+
+        for key in ("na", "nb", "nc"):
+            self[key].entry.configure(width=4)
+
+        for key in ("k-grid method", "occupation type"):
+            self[key].bind("<<ComboboxSelected>>", self.reset_kspace_frame)
+            self[key].bind("<Return>", self.reset_kspace_frame)
+            self[key].bind("<FocusOut>", self.reset_kspace_frame)
 
         # A tab for output of orbitals, etc.
         notebook = self["notebook"]
@@ -193,8 +225,8 @@ class TkEnergy(seamm.TkNode):
             # And resize the dialog, making it large
             screen_w = self.dialog.winfo_screenwidth()
             screen_h = self.dialog.winfo_screenheight()
-            w = int(0.9 * screen_w)
-            h = int(0.8 * screen_h)
+            w = int(0.95 * screen_w)
+            h = int(0.9 * screen_h)
             x = int(0.05 * screen_w / 2)
             y = int(0.1 * screen_h / 2)
 
@@ -232,7 +264,7 @@ class TkEnergy(seamm.TkNode):
         """
 
         # Remove any widgets previously packed
-        frame = self["frame"]
+        frame = self["main frame"]
         for slave in frame.grid_slaves():
             slave.grid_forget()
 
@@ -244,24 +276,24 @@ class TkEnergy(seamm.TkNode):
         row = 0
 
         # The level of the GUI
-        self["gui"].grid(row=row, column=0, sticky=tk.W)
+        self["gui"].grid(row=row, column=0, columnspan=4, pady=5)
         row += 1
 
         # The model for the calculation
-        keys = ["energy frame"]
-        for key in keys:
-            self[key].grid(row=row, column=0, sticky=tk.EW, pady=50)
-            row += 1
+        self["energy frame"].grid(row=row, column=0, columnspan=2, pady=5, sticky=tk.N)
+        self["k-space frame"].grid(row=row, column=2, columnspan=2, pady=5, sticky=tk.N)
+        row += 1
 
         # Other parameters for a single-point calculation
-        if type(self) == fhi_aims_step.TkEnergy:
+        if type(self) is fhi_aims_step.TkEnergy:
             keys = ["calculate_gradients"]
             for key in keys:
-                self[key].grid(row=row, column=0, sticky=tk.W)
+                self[key].grid(row=row, column=0, columnspan=4, pady=10)
                 row += 1
 
         # Layout the energy widgets
         self.reset_energy_frame()
+        self.reset_kspace_frame()
 
         # Setup the results if there are any
         have_results = (
@@ -420,6 +452,68 @@ class TkEnergy(seamm.TkNode):
         )
         if have_results and "results" in P:
             self.setup_results()
+
+    def reset_kspace_frame(self, widget=None):
+        """Layout the widgets in the dialog.
+
+        The widgets are chosen by default from the information in
+        Energy_parameter.
+
+        This function simply lays them out row by row with
+        aligned labels. You may wish a more complicated layout that
+        is controlled by values of some of the control parameters.
+        If so, edit or override this method
+
+        Parameters
+        ----------
+        widget : Tk Widget = None
+
+        Returns
+        -------
+        None
+
+        See Also
+        --------
+        TkEnergy.create_dialog
+        """
+
+        # Remove any widgets previously packed
+        frame = self["k-space frame"]
+        for slave in frame.grid_slaves():
+            slave.grid_forget()
+
+        # keep track of the row in a variable, so that the layout is flexible
+        # if e.g. rows are skipped to control such as "method" here
+        row = 0
+
+        # The model for the calculation
+        key = "k-grid method"
+        method = self[key].get()
+        self[key].grid(row=row, column=0, columnspan=4, sticky=tk.W)
+        row += 1
+
+        if "explicit" in method:
+            for col, key in enumerate(("na", "nb", "nc"), start=1):
+                self[key].grid(row=row, column=col, sticky=tk.EW)
+            row += 1
+        else:
+            widgets = []
+            for key in ("k-spacing", "odd grid", "centering"):
+                self[key].grid(row=row, column=1, columnspan=3, sticky=tk.EW)
+                widgets.append(self[key])
+                row += 1
+            sw.align_labels(widgets, sticky=tk.E)
+        frame.columnconfigure(0, minsize=30)
+
+        key = "occupation type"
+        smearing = self[key].get()
+        self[key].grid(row=row, column=0, columnspan=4, sticky=tk.W)
+        row += 1
+
+        if smearing not in ("integer",):
+            key = "smearing width"
+            self[key].grid(row=row, column=1, columnspan=3, sticky=tk.W)
+            row += 1
 
     def right_click(self, event):
         """

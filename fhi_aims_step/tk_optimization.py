@@ -122,7 +122,7 @@ class TkOptimization(fhi_aims_step.TkEnergy):
 
         # Frame to isolate widgets
         opt_frame = self["optimization frame"] = ttk.LabelFrame(
-            self["frame"],
+            self["main frame"],
             borderwidth=4,
             relief="sunken",
             text="Optimization Parameters",
@@ -135,7 +135,7 @@ class TkOptimization(fhi_aims_step.TkEnergy):
 
         # Create the structure-handling widgets
         sframe = self["structure frame"] = ttk.LabelFrame(
-            self["frame"], text="Configuration Handling", labelanchor=tk.N
+            self["main frame"], text="Configuration Handling", labelanchor=tk.N
         )
         row = 0
         widgets = []
@@ -175,9 +175,10 @@ class TkOptimization(fhi_aims_step.TkEnergy):
 
         row = super().reset_dialog()
 
-        self["optimization frame"].grid(row=row, column=0, sticky=tk.EW)
-        row += 1
-        self["structure frame"].grid(row=row, column=0, sticky=tk.EW)
+        self["optimization frame"].grid(row=row, column=0, sticky=tk.N, pady=5)
+        self["structure frame"].grid(
+            row=row, column=1, columnspan=2, sticky=tk.N, pady=5
+        )
         row += 1
 
         self.reset_optimization_frame()
@@ -193,10 +194,11 @@ class TkOptimization(fhi_aims_step.TkEnergy):
         widgets = []
         row = 0
 
-        w = self["force_convergence"]
-        w.grid(row=row, column=0, columnspan=3, sticky=tk.W)
-        widgets.append(w)
-        row += 1
+        for key in ("force_convergence", "optimize_cell", "pressure"):
+            w = self[key]
+            w.grid(row=row, column=0, columnspan=3, sticky=tk.W)
+            widgets.append(w)
+            row += 1
 
         sw.align_labels(widgets, sticky=tk.E)
 

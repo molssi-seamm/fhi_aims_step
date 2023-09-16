@@ -1,4 +1,9 @@
 [fhi-aims-step]
+# Do not print atom data to the output if there are more than this
+# many atoms. Defaults to 25
+
+# max-atoms-to-print = 25
+
 # How many cores to use for FHI-aims.  Set to 1 to always run serial.
 # FHI-aims will try to choose a reasonable number of
 # cores based on the size of the system and other parameters. The

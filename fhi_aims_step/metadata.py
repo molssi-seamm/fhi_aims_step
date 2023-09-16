@@ -513,6 +513,24 @@ metadata["results"] = {
         "units": "eV/Å",
         "re": r"\|\| Forces on atoms   \|\| = *([-+E.0-9]+) +eV/A",
     },
+    "n_basis": {
+        "description": "Number of basis fnctns",
+        "dimensionality": "scalar",
+        "type": int,
+        "json_section": "final_output",
+    },
+    "n_electrons": {
+        "description": "Number of electrons",
+        "dimensionality": "scalar",
+        "type": float,
+        "json_section": "final_output",
+    },
+    "n_spin": {
+        "description": "Number of spins",
+        "dimensionality": "scalar",
+        "type": int,
+        "json_section": "final_output",
+    },
     "time_total": {
         "description": "Total cpu time",
         "dimensionality": "scalar",
@@ -542,6 +560,12 @@ metadata["results"] = {
         "type": float,
         "json_section": "scf_iteration",
     },
+    "change_spin_density": {
+        "description": "SCF final delta spin density",
+        "dimensionality": "[n_iterations]",
+        "type": float,
+        "json_section": "scf_iteration",
+    },
     "change_sum_eigenvalues": {
         "description": "SCF final delta eigenvalue sum",
         "dimensionality": "[n_iterations]",
@@ -553,5 +577,23 @@ metadata["results"] = {
         "dimensionality": "[n_iterations]",
         "type": float,
         "json_section": "scf_iteration",
+    },
+    "atoms_proj_charge": {
+        "description": "Mulliken charges on atoms",
+        "dimensionality": "[n_atoms]",
+        "type": float,
+        "json_section": "mulliken",
+    },
+    "atoms_proj_spin": {
+        "description": "Mulliken spins on atoms",
+        "dimensionality": "[n_atoms]",
+        "type": float,
+        "json_section": "mulliken",
+    },
+    "total_spin": {
+        "description": "Total spin",
+        "dimensionality": "scalar",
+        "type": float,
+        "json_section": "mulliken",
     },
 }

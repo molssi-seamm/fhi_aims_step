@@ -84,6 +84,24 @@ class OptimizationParameters(fhi_aims_step.EnergyParameters):
             "description": "Force convergence:",
             "help_text": "The convergence criterion for the force in the optimization",
         },
+        "optimize_cell": {
+            "default": "yes",
+            "kind": "enumeration",
+            "default_units": "",
+            "enumeration": ("yes", "fixing the angles", "no"),
+            "format_string": "",
+            "description": "Optimize the cell (if periodic):",
+            "help_text": "Allow the lattice vectors to change during optimization. ",
+        },
+        "pressure": {
+            "default": 0.0,
+            "kind": "float",
+            "default_units": "GPa",
+            "enumeration": tuple(),
+            "format_string": ".1f",
+            "description": "Pressure:",
+            "help_text": "The applied pressure.",
+        },
     }
 
     def __init__(self, defaults={}, data=None):

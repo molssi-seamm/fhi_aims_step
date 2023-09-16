@@ -157,6 +157,14 @@ class FHIaims(seamm.Node):
             return result
 
         # FHI-aims specific options
+
+        parser.add_argument(
+            parser_name,
+            "--max-atoms-to-print",
+            default=25,
+            help="Maximum number of atoms to print charges, etc.",
+        )
+
         parser.add_argument(
             parser_name,
             "--ncores",

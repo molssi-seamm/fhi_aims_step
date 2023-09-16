@@ -3,12 +3,14 @@
 """Non-graphical part of the Energy step in a FHI-aims flowchart
 """
 
+import csv
 import logging
 from pathlib import Path
 import pkg_resources
 import pprint  # noqa: F401
 import textwrap
 
+import numpy as np
 from tabulate import tabulate
 
 import fhi_aims_step
@@ -133,11 +135,14 @@ class Energy(Substep):
         indent: str
             An extra indentation for the output
         """
+        options = self.parent.options
+        directory = Path(self.directory)
+
         if len(data) == 0:
             data = self.parse_data()
 
         text = ""
-        if type(self) == fhi_aims_step.Energy:
+        if type(self) is fhi_aims_step.Energy:
             # Check that the job ended successfully
             if "is_a_nice_day" in data and data["is_a_nice_day"]:
                 text += "The calculation finished successfully."
@@ -148,6 +153,17 @@ class Energy(Substep):
             else:
                 text += "The calculation did not complete properly! Be cautious.\n\n"
 
+        if len(text) > 0:
+            printer.normal(
+                __(
+                    text,
+                    indent=self.indent + 4 * " ",
+                    wrap=True,
+                    dedent=False,
+                )
+            )
+        text = ""
+
         # Put any requested results into variables or tables
         self.store_results(configuration=configuration, data=data)
 
@@ -157,6 +173,18 @@ class Energy(Substep):
             "Value": [],
             "Units": [],
         }
+        if "total_energy" in data:
+            table["Item"].append("Total energy")
+            table["Value"].append(f"{data['total_energy']:.5f}")
+            table["Units"].append("eV")
+        if "dispersion_energy" in data:
+            table["Item"].append("vdW correction")
+            table["Value"].append(f"{data['dispersion_energy']:.5f}")
+            table["Units"].append("eV")
+        if "total_spin" in data:
+            table["Item"].append("Total Spin")
+            table["Value"].append(f"{data['total_spin']:.5f}")
+            table["Units"].append(" ")
         if "relaxation_step_number" in data:
             table["Item"].append("Optimization steps")
             table["Value"].append(data["relaxation_step_number"])
@@ -177,6 +205,10 @@ class Energy(Substep):
             table["Item"].append("Δ charge density")
             table["Value"].append(f"{data['change_charge_density'][-1]:.2e}")
             table["Units"].append(" ")
+        if "change_spin_density" in data:
+            table["Item"].append("Δ spin density")
+            table["Value"].append(f"{data['change_spin_density'][-1]:.2e}")
+            table["Units"].append(" ")
         if "change_sum_eigenvalues" in data:
             table["Item"].append("Δ Σ(eigenvalues)")
             table["Value"].append(f"{data['change_sum_eigenvalues'][-1]:.2e}")
@@ -185,14 +217,6 @@ class Energy(Substep):
             table["Item"].append("Δ forces")
             table["Value"].append(f"{data['change_forces'][-1]:.2e}")
             table["Units"].append(" ")
-        if "total_energy" in data:
-            table["Item"].append("Total energy")
-            table["Value"].append(f"{data['total_energy']:.5f}")
-            table["Units"].append("eV")
-        if "dispersion_energy" in data:
-            table["Item"].append("vdW correction")
-            table["Value"].append(f"{data['dispersion_energy']:.5f}")
-            table["Units"].append("eV")
 
         tmp = tabulate(
             table,
@@ -205,6 +229,106 @@ class Energy(Substep):
         text_lines = []
         text_lines.append("SCF Results".center(length))
         text_lines.append(tmp)
+        tmp = "\n\n"
+        tmp += textwrap.indent("\n".join(text_lines), self.indent + 7 * " ")
+        printer.normal(tmp)
+
+        system, configuration = self.get_system_configuration(None)
+        symbols = configuration.atoms.asymmetric_symbols
+        atoms = configuration.atoms
+        symmetry = configuration.symmetry
+        # Charge and spin, if available
+        if "atoms_proj_charge" in data:
+            # Add to atoms (in coordinate table)
+            if "charge" not in atoms:
+                atoms.add_attribute(
+                    "charge", coltype="float", configuration_dependent=True
+                )
+            if symmetry.n_symops == 1:
+                chgs = data["atoms_proj_charge"][0]
+            else:
+                chgs, delta = symmetry.symmetrize_atomic_scalar(
+                    data["atoms_proj_charge"][0]
+                )
+                delta = np.array(delta)
+                max_delta = np.max(abs(delta))
+                text += (
+                    "The maximum difference of the charges of symmetry related atoms "
+                    f"was {max_delta:.4f}\n"
+                )
+            atoms["charge"][0:] = chgs
+
+            # Print the charges and dump to a csv file
+            chg_tbl = {
+                "Atom": [*range(1, len(symbols) + 1)],
+                "Element": symbols,
+                "Charge": [],
+            }
+            with open(directory / "atom_properties.csv", "w", newline="") as fd:
+                writer = csv.writer(fd)
+                if "atoms_proj_spin" in data:
+                    # Add to atoms (in coordinate table)
+                    if "spin" not in atoms:
+                        atoms.add_attribute(
+                            "spin", coltype="float", configuration_dependent=True
+                        )
+                        if symmetry.n_symops == 1:
+                            spins = data["atoms_proj_spin"][0]
+                        else:
+                            spins, delta = symmetry.symmetrize_atomic_scalar(
+                                data["atoms_proj_spin"][0]
+                            )
+                            atoms["spins"][0:] = spins
+                            delta = np.array(delta)
+                            max_delta = np.max(abs(delta))
+                            text += (
+                                " The maximum difference of the spins of symmetry "
+                                f"related atoms was {max_delta:.4f}.\n"
+                            )
+                        atoms["spin"][0:] = spins
+
+                    header = "        Atomic charges and spins"
+                    chg_tbl["Spin"] = []
+                    writer.writerow(["Atom", "Element", "Charge", "Spin"])
+                    for atom, symbol, q, s in zip(
+                        range(1, len(symbols) + 1),
+                        symbols,
+                        data["atoms_proj_charge"][0],
+                        data["atoms_proj_spin"][0],
+                    ):
+                        q = f"{q:.3f}"
+                        s = f"{s:.3f}"
+
+                        writer.writerow([atom, symbol, q, s])
+
+                        chg_tbl["Charge"].append(q)
+                        chg_tbl["Spin"].append(s)
+                else:
+                    header = "        Atomic charges"
+                    writer.writerow(["Atom", "Element", "Charge"])
+                    for atom, symbol, q in zip(
+                        range(1, len(symbols) + 1),
+                        symbols,
+                        data["atoms_proj_charge"][0],
+                    ):
+                        q = f"{q:.2f}"
+                        writer.writerow([atom, symbol, q])
+
+                        chg_tbl["Charge"].append(q)
+            if len(symbols) <= int(options["max_atoms_to_print"]):
+                tmp = tabulate(
+                    chg_tbl,
+                    headers="keys",
+                    tablefmt="psql",
+                    colalign=("center", "center"),
+                )
+                length = len(tmp.splitlines()[0])
+                text_lines = []
+                text_lines.append(header.center(length))
+                text_lines.append(tmp)
+                tmp = "\n\n"
+                tmp += textwrap.indent("\n".join(text_lines), self.indent + 7 * " ")
+                printer.normal(tmp)
 
         if len(text) > 0:
             printer.normal(
@@ -215,9 +339,8 @@ class Energy(Substep):
                     dedent=False,
                 )
             )
-        text = "\n\n"
-        text += textwrap.indent("\n".join(text_lines), self.indent + 7 * " ")
-        printer.normal(text)
+        text = []
+
         printer.normal("")
 
     def description_text(self, P=None):
@@ -240,7 +363,7 @@ class Energy(Substep):
 
         model = P["model"]
         submodel = P["submodel"]
-        if type(self) == fhi_aims_step.Energy:
+        if type(self) is fhi_aims_step.Energy:
             text = "A single point"
         else:
             text = "Using an"
@@ -299,6 +422,33 @@ class Energy(Substep):
                 f" Long-range van der Waals terms will be included using {dispersion}."
             )
 
+        # k-space integration
+        kmethod = P["k-grid method"]
+        if kmethod == "grid spacing":
+            if isinstance(P["odd grid"], bool) or P["odd grid"] == "yes":
+                text += (
+                    f" For periodic systems a {P['centering']} grid with a spacing of "
+                    f"{P['k-spacing']} and odd numbers of points will be used."
+                )
+            else:
+                text += (
+                    f" For periodic systems a {P['centering']} grid with a spacing of "
+                    f"{P['k-spacing']} will be used."
+                )
+        elif kmethod == "explicit grid dimensions":
+            text += (
+                f" For periodic systems a {P['na']} x{P['nb']} x{P['nc']} "
+                "grid will be used."
+            )
+        broadening = P["occupation type"]
+        if broadening in ("integer",):
+            text += " The occupation will be constrained to be integers."
+        else:
+            text += (
+                " The effect of temperature on the electron distribution "
+                f"will be modeled using {P['occupation type']} broadening with a "
+                f"width of {P['smearing width']}."
+            )
         forces = P["calculate_gradients"]
         if not isinstance(forces, bool) and self.is_expr(forces):
             text += (
@@ -308,7 +458,7 @@ class Energy(Substep):
         if forces == "yes" or (isinstance(forces, bool) and forces):
             text += " The forces will be calculated for this single-point calculation."
 
-        return self.header + "\n" + __(text, **P, indent=4 * " ").__str__()
+        return self.header + "\n" + __(text, indent=4 * " ").__str__()
 
     def plot_control(self, P, configuration):
         """Create the density and orbital plots if requested
@@ -324,11 +474,11 @@ class Energy(Substep):
         # output cube eigenstate 5
 
         if P["total density"]:
-            lines.append("    output cube total_density")
-        # if P["total spin density"]:
-        #     lines.append("    output cube spin_density")
+            lines.append("output cube               total_density")
+        if self.is_spin_polarized and P["total spin density"]:
+            lines.append("output cube               spin_density")
         if P["difference density"]:
-            lines.append("    output cube delta_density")
+            lines.append("output cube               delta_density")
 
         # # and work out the orbitals
         # txt = P["selected orbitals"]
@@ -455,14 +605,15 @@ class Energy(Substep):
         model = P["submodel"]
         if " : " in model:
             model = model.split(" : ")[0].strip()
-        lines.append("    output             json_log")
-        lines.append(f"    xc                 {model}")
-        lines.append(f"    charge             {configuration.charge}")
+        lines.append("output                   json_log")
+        lines.append(f"xc                       {model}")
+        lines.append(f"charge                   {configuration.charge}")
 
         # Handle spin
         multiplicity = configuration.spin_multiplicity
+        self.is_spin_polarized = False
         if P["spin_polarization"] == "none":
-            lines.append("    spin               none")
+            lines.append("spin                      none")
         else:
             atoms = configuration.atoms
             have_spins = "spin" in atoms
@@ -472,24 +623,68 @@ class Energy(Substep):
                         have_spins = False
                         break
             if have_spins:
-                lines.append("    spin               collinear")
+                self.is_spin_polarized = True
+                lines.append("spin                     collinear")
                 if P["fixed_spin_moment"] == "yes":
-                    lines.append(f"    fixed_spin_moment   {multiplicity-1}")
-                elif isinstance(P["fixed_spin_moment"]):
-                    lines.append(f"    fixed_spin_moment   {P['fixed_spin_moment']-1}")
+                    lines.append(f"fixed_spin_moment        {multiplicity-1}")
+                elif isinstance(P["fixed_spin_moment"], int):
+                    lines.append(f"fixed_spin_moment        {P['fixed_spin_moment']-1}")
             else:
-                lines.append("    spin               none")
+                lines.append("spin                     none")
+        lines.append("output                   Mulliken")
 
         if P["relativity"] == "atomic ZORA approximation":
-            lines.append("    relativistic       atomic_zora scalar")
+            lines.append("relativistic             atomic_zora scalar")
         else:
-            lines.append("    relativistic       none")
+            lines.append("relativistic             none")
         if P["calculate_gradients"]:
-            lines.append("    compute_forces     .true.")
+            lines.append("compute_forces           .true.")
         if "MBD-NL" in P["dispersion"]:
-            lines.append("    many_body_dispersion_nl")
+            lines.append("many_body_dispersion_nl")
         elif "MBD@rsSCS" in P["dispersion"]:
-            lines.append("    many_body_dispersion")
+            lines.append("many_body_dispersion")
+
+        if configuration.periodicity != 0:
+            if "explicit" in P["k-grid method"]:
+                lines.append(f"k_grid                   {P['na']} {P['nb']} {P['nc']}")
+            else:
+                lengths = configuration.cell.reciprocal_lengths()
+                spacing = P["k-spacing"].to("1/Å").magnitude
+                na = round(lengths[0] / spacing)
+                nb = round(lengths[0] / spacing)
+                nc = round(lengths[0] / spacing)
+                na = na if na > 0 else 1
+                nb = nb if nb > 0 else 1
+                nc = nc if nc > 0 else 1
+                if P["odd grid"]:
+                    na = na + 1 if na % 2 == 0 else na
+                    nb = nb + 1 if nb % 2 == 0 else nb
+                    nc = nc + 1 if nc % 2 == 0 else nc
+
+                lines.append(f"k_grid                   {P['na']} {P['nb']} {P['nc']}")
+
+                if P["centering"] == "𝚪-centered":
+                    oa = 0.0 if na % 2 == 1 else 1 / (2 * na)
+                    ob = 0.0 if nb % 2 == 1 else 1 / (2 * nb)
+                    oc = 0.0 if nc % 2 == 1 else 1 / (2 * nc)
+                elif P["centering"] == "off center":
+                    oa = 0.0 if na % 2 == 0 else 1 / (2 * na)
+                    ob = 0.0 if nb % 2 == 0 else 1 / (2 * nb)
+                    oc = 0.0 if nc % 2 == 0 else 1 / (2 * nc)
+                elif P["centering"] == "Monkhorst-Pack":
+                    oa = 0.0 if na % 2 == 1 else 0.5 - 1 / (2 * na)
+                    ob = 0.0 if nb % 2 == 1 else 0.5 - 1 / (2 * nb)
+                    oc = 0.0 if nc % 2 == 1 else 0.5 - 1 / (2 * nc)
+                else:
+                    raise RuntimeError(
+                        f"Don't recognize k-space grid centering {P['centering']}"
+                    )
+                lines.append(f"k_offset                 {oa:8.6f} {ob:8.6f} {oc:8.6f}")
+
+                lines.append(
+                    f"occupation_type          {P['occupation type'].lower()} "
+                    f"{P['smearing width'].m_as('eV'):.4f}"
+                )
 
         # Any plotting we need to do (orbitals, density, ...)
         lines.extend(self.plot_control(P, configuration))

@@ -144,6 +144,15 @@ class Optimization(fhi_aims_step.Energy):
             "The optimization using BFGS will stop at force convergence of "
             f"{P['force_convergence']}."
         )
+        if P["optimize_cell"] == "yes":
+            text += " For periodic systems, the unit cell will also be optimized."
+        elif "angle" in P["optimize_cell"]:
+            text += (
+                " For periodic systems, the unit cell will also be optimized, but "
+                "cell angles will be fixed."
+            )
+        if P["pressure"] != 0.0:
+            text += f" An external pressure of {P['pressure']} will be applied."
 
         text += f" The optimized structure will {P['structure handling']} "
 
@@ -197,7 +206,21 @@ class Optimization(fhi_aims_step.Energy):
         _, configuration = self.get_system_configuration(None)
 
         convergence = P["force_convergence"].m_as("eV/Å")
-        lines.append(f"relax_geometry   bfgs {convergence:.4f}")
+        lines.append(f"relax_geometry           bfgs {convergence:.4f}")
+
+        if P["optimize_cell"] == "yes":
+            lines.append("relax_unit_cell          full")
+        elif "angle" in P["optimize_cell"]:
+            lines.append("relax_unit_cell          fixed_angles")
+
+        # Check the symmetry if optimizing cell. May not be set!?!
+        if P["optimize_cell"] != "no":
+            if configuration.symmetry.group == "":
+                configuration.symmetrize()
+                print(f"Symmetrized system: {configuration.symmetry.group}")
+
+        if P["pressure"].magnitude != 0.0:
+            lines.append(f"external_pressure        {P['pressure'].m_as('eV/Å^3')}")
 
         next_node = super().run(printer=printer, lines=lines)
 
@@ -272,8 +295,8 @@ class Optimization(fhi_aims_step.Energy):
                     lattice_in,
                     fractionals_in,
                     atomic_numbers,
-                    self.mapping_from_primitive,
-                    self.mapping_to_primitive,
+                    self._mapping_from_primitive,
+                    self._mapping_to_primitive,
                 ) = starting_configuration.primitive_cell()
 
                 tmp = configuration.update(
@@ -287,13 +310,14 @@ class Optimization(fhi_aims_step.Energy):
 
                 # Symmetry may have changed
                 if tmp != "":
+                    logger.warning(tmp)
                     text += f"\n\nWarning: {tmp}\n\n"
                     (
                         lattice,
                         fractionals,
                         atomic_numbers,
-                        self.mapping_from_primitive,
-                        self.mapping_to_primitive,
+                        self._mapping_from_primitive,
+                        self._mapping_to_primitive,
                     ) = configuration.primitive_cell()
             else:
                 configuration.atoms.set_coordinates(

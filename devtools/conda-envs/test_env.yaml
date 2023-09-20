@@ -9,7 +9,9 @@ dependencies:
   - pip
 
   # SEAMM
+  - numpy
   - seamm
+  - tabulate
 
   # Testing
   - black

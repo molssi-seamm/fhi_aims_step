@@ -213,12 +213,6 @@ class Optimization(fhi_aims_step.Energy):
         elif "angle" in P["optimize_cell"]:
             lines.append("relax_unit_cell          fixed_angles")
 
-        # Check the symmetry if optimizing cell. May not be set!?!
-        if P["optimize_cell"] != "no":
-            if configuration.symmetry.group == "":
-                configuration.symmetrize()
-                print(f"Symmetrized system: {configuration.symmetry.group}")
-
         if P["pressure"].magnitude != 0.0:
             lines.append(f"external_pressure        {P['pressure'].m_as('eV/Å^3')}")
 

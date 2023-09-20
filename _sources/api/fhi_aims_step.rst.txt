@@ -1,0 +1,125 @@
+fhi\_aims\_step package
+=======================
+
+Submodules
+----------
+
+fhi\_aims\_step.energy module
+-----------------------------
+
+.. automodule:: fhi_aims_step.energy
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+fhi\_aims\_step.energy\_parameters module
+-----------------------------------------
+
+.. automodule:: fhi_aims_step.energy_parameters
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+fhi\_aims\_step.energy\_step module
+-----------------------------------
+
+.. automodule:: fhi_aims_step.energy_step
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+fhi\_aims\_step.fhi\_aims module
+--------------------------------
+
+.. automodule:: fhi_aims_step.fhi_aims
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+fhi\_aims\_step.fhi\_aims\_parameters module
+--------------------------------------------
+
+.. automodule:: fhi_aims_step.fhi_aims_parameters
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+fhi\_aims\_step.fhi\_aims\_step module
+--------------------------------------
+
+.. automodule:: fhi_aims_step.fhi_aims_step
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+fhi\_aims\_step.metadata module
+-------------------------------
+
+.. automodule:: fhi_aims_step.metadata
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+fhi\_aims\_step.optimization module
+-----------------------------------
+
+.. automodule:: fhi_aims_step.optimization
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+fhi\_aims\_step.optimization\_parameters module
+-----------------------------------------------
+
+.. automodule:: fhi_aims_step.optimization_parameters
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+fhi\_aims\_step.optimization\_step module
+-----------------------------------------
+
+.. automodule:: fhi_aims_step.optimization_step
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+fhi\_aims\_step.substep module
+------------------------------
+
+.. automodule:: fhi_aims_step.substep
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+fhi\_aims\_step.tk\_energy module
+---------------------------------
+
+.. automodule:: fhi_aims_step.tk_energy
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+fhi\_aims\_step.tk\_fhi\_aims module
+------------------------------------
+
+.. automodule:: fhi_aims_step.tk_fhi_aims
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+fhi\_aims\_step.tk\_optimization module
+---------------------------------------
+
+.. automodule:: fhi_aims_step.tk_optimization
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: fhi_aims_step
+   :members:
+   :undoc-members:
+   :show-inheritance:

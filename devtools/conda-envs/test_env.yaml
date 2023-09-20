@@ -10,6 +10,7 @@ dependencies:
 
   # SEAMM
   - numpy
+  - psutil
   - seamm
   - tabulate
 

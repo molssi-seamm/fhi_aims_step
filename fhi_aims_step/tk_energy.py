@@ -437,6 +437,7 @@ class TkEnergy(seamm.TkNode):
         keys.append("spin_polarization")
         keys.append("relativity")
         keys.append("dispersion")
+        keys.append("primitive cell")
 
         for key in keys:
             self[key].grid(row=row, column=0, sticky=tk.EW)

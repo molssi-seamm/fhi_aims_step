@@ -124,7 +124,7 @@ class Energy(Substep):
         """The git version of this module."""
         return fhi_aims_step.__git_revision__
 
-    def analyze(self, indent="", configuration=None, data={}, **kwargs):
+    def analyze(self, P=None, indent="", configuration=None, data={}, **kwargs):
         """Do any analysis of the output from this step.
 
         Also print important results to the local step.out file using
@@ -137,6 +137,11 @@ class Energy(Substep):
         """
         options = self.parent.options
         directory = Path(self.directory)
+
+        if P is None:
+            P = self.parameters.current_values_to_dict(
+                context=seamm.flowchart_variables._data
+            )
 
         if len(data) == 0:
             data = self.parse_data()
@@ -235,6 +240,7 @@ class Energy(Substep):
 
         system, configuration = self.get_system_configuration(None)
         symbols = configuration.atoms.asymmetric_symbols
+        print(f"{symbols=}")
         atoms = configuration.atoms
         symmetry = configuration.symmetry
         # Charge and spin, if available
@@ -244,12 +250,17 @@ class Energy(Substep):
                 atoms.add_attribute(
                     "charge", coltype="float", configuration_dependent=True
                 )
-            if symmetry.n_symops == 1:
-                chgs = data["atoms_proj_charge"][0]
-            else:
-                chgs, delta = symmetry.symmetrize_atomic_scalar(
-                    data["atoms_proj_charge"][0]
-                )
+            chgs = data["atoms_proj_charge"][0]
+            print(f"{chgs=}")
+            if symmetry.n_symops > 1:
+                if P["primitive cell"]:
+                    chgs = [chgs[i] for i in self._mapping_to_primitive]
+                    print("Unravelling primitive cell")
+                    print(f"{chgs=}")
+                print(f"{configuration=}, {configuration.id=}")
+                print(f"{symmetry=}, {symmetry.id=}")
+                chgs, delta = symmetry.symmetrize_atomic_scalar(chgs)
+                print(f"{chgs=}")
                 delta = np.array(delta)
                 max_delta = np.max(abs(delta))
                 text += (
@@ -272,12 +283,11 @@ class Energy(Substep):
                         atoms.add_attribute(
                             "spin", coltype="float", configuration_dependent=True
                         )
-                        if symmetry.n_symops == 1:
-                            spins = data["atoms_proj_spin"][0]
-                        else:
-                            spins, delta = symmetry.symmetrize_atomic_scalar(
-                                data["atoms_proj_spin"][0]
-                            )
+                        spins = data["atoms_proj_spin"][0]
+                        if symmetry.n_symops > 1:
+                            if P["primitive cell"]:
+                                spins = [spins[i] for i in self._mapping_to_primitive]
+                            spins, delta = symmetry.symmetrize_atomic_scalar(spins)
                             atoms["spins"][0:] = spins
                             delta = np.array(delta)
                             max_delta = np.max(abs(delta))
@@ -293,8 +303,8 @@ class Energy(Substep):
                     for atom, symbol, q, s in zip(
                         range(1, len(symbols) + 1),
                         symbols,
-                        data["atoms_proj_charge"][0],
-                        data["atoms_proj_spin"][0],
+                        chgs,
+                        spins,
                     ):
                         q = f"{q:.3f}"
                         s = f"{s:.3f}"
@@ -309,7 +319,7 @@ class Energy(Substep):
                     for atom, symbol, q in zip(
                         range(1, len(symbols) + 1),
                         symbols,
-                        data["atoms_proj_charge"][0],
+                        chgs,
                     ):
                         q = f"{q:.2f}"
                         writer.writerow([atom, symbol, q])
@@ -702,4 +712,4 @@ class Energy(Substep):
         return_files = ["aims.out", "geometry.in.next_step", "*.cube", "*.json"]
         self.run_aims(files, return_files)
 
-        self.analyze(configuration=configuration)
+        self.analyze(P=P, configuration=configuration)

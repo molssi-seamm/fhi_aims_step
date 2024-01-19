@@ -224,7 +224,7 @@ class Optimization(fhi_aims_step.Energy):
 
         return next_node
 
-    def analyze(self, indent="", configuration=None, data={}, **kwargs):
+    def analyze(self, P=None, indent="", configuration=None, data={}, **kwargs):
         """Do any analysis of the output from this step.
 
         Also print important results to the local step.out file using
@@ -236,9 +236,10 @@ class Optimization(fhi_aims_step.Energy):
             An extra indentation for the output
         """
         # Get the parameters used
-        P = self.parameters.current_values_to_dict(
-            context=seamm.flowchart_variables._data
-        )
+        if P is None:
+            P = self.parameters.current_values_to_dict(
+                context=seamm.flowchart_variables._data
+            )
 
         if len(data) == 0:
             data = self.parse_data()
@@ -281,7 +282,7 @@ class Optimization(fhi_aims_step.Energy):
             # Follow instructions for where to put the coordinates,
             _, starting_configuration = self.get_system_configuration(None)
             system, configuration = self.get_system_configuration(
-                P=P, same_as=starting_configuration, model=self.model
+                P=P, same_as="current", model=self.model
             )
 
             if configuration.periodicity == 3:
@@ -293,6 +294,15 @@ class Optimization(fhi_aims_step.Energy):
                     self._mapping_to_primitive,
                 ) = starting_configuration.primitive_cell()
 
+                print("Updating structure after optimization")
+                print(f"{configuration=}, {configuration.id=}")
+                symmetry = configuration.symmetry
+                print(f"{symmetry=}, {symmetry.id=}")
+                print("XYZ")
+                pprint.pprint(xyz)
+                print("Lattice")
+                pprint.pprint(lattice_vectors)
+
                 tmp = configuration.update(
                     xyz,
                     fractionals=coordinate_type == "fractional",
@@ -301,6 +311,11 @@ class Optimization(fhi_aims_step.Energy):
                     space_group=starting_configuration.symmetry.group,
                     symprec=0.01,
                 )
+
+                print("Updated coordinates")
+                pprint.pprint(configuration.atoms.get_coordinates(asymmetric=True))
+                print("full coordinates")
+                pprint.pprint(configuration.atoms.get_coordinates(asymmetric=False))
 
                 # Symmetry may have changed
                 if tmp != "":
@@ -322,7 +337,7 @@ class Optimization(fhi_aims_step.Energy):
             # Just copy the previous structure to any new one created...
             _, starting_configuration = self.get_system_configuration(None)
             system, configuration = self.get_system_configuration(
-                P=P, same_as=starting_configuration, model=self.model
+                P=P, same_as="current", model=self.model
             )
 
         # Write the structure out for viewing.

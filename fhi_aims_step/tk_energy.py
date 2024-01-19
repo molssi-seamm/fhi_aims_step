@@ -119,7 +119,7 @@ class TkEnergy(seamm.TkNode):
         # Shortcut for parameters
         P = self.node.parameters
 
-        frame = super().create_dialog(title="Energy")
+        frame = super().create_dialog(title=title)
 
         # Make scrollable in case too large
         self["scrolled frame"] = sw.ScrolledFrame(frame)

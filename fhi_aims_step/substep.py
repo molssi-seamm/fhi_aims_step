@@ -42,7 +42,6 @@ class Substep(seamm.Node):
     ):
         self.mapping_from_primitive = None
         self.mapping_to_primitive = None
-        self.results = None  # Results of the calculation from the tag file.
         self._is_spin_polarized = False
         self._mapping_from_primitive = None
         self._mapping_to_primitive = None

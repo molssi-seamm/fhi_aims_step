@@ -353,7 +353,7 @@ class Energy(Substep):
 
         printer.normal("")
 
-    def description_text(self, P=None):
+    def description_text(self, P=None, configuration=None):
         """Create the text description of what this step will do.
         The dictionary of control values is passed in as P so that
         the code can test values, etc.
@@ -432,33 +432,34 @@ class Energy(Substep):
                 f" Long-range van der Waals terms will be included using {dispersion}."
             )
 
-        # k-space integration
-        kmethod = P["k-grid method"]
-        if kmethod == "grid spacing":
-            if isinstance(P["odd grid"], bool) or P["odd grid"] == "yes":
+        if configuration is not None and configuration.periodicity != 0:
+            # k-space integration
+            kmethod = P["k-grid method"]
+            if kmethod == "grid spacing":
+                if isinstance(P["odd grid"], bool) or P["odd grid"] == "yes":
+                    text += (
+                        f" For periodic systems a {P['centering']} grid with a spacing "
+                        f"of {P['k-spacing']} and odd numbers of points will be used."
+                    )
+                else:
+                    text += (
+                        f" For periodic systems a {P['centering']} grid with a spacing "
+                        f"of {P['k-spacing']} will be used."
+                    )
+            elif kmethod == "explicit grid dimensions":
                 text += (
-                    f" For periodic systems a {P['centering']} grid with a spacing of "
-                    f"{P['k-spacing']} and odd numbers of points will be used."
+                    f" For periodic systems a {P['na']} x{P['nb']} x{P['nc']} "
+                    "grid will be used."
                 )
+            broadening = P["occupation type"]
+            if broadening in ("integer",):
+                text += " The occupation will be constrained to be integers."
             else:
                 text += (
-                    f" For periodic systems a {P['centering']} grid with a spacing of "
-                    f"{P['k-spacing']} will be used."
+                    " The effect of temperature on the electron distribution "
+                    f"will be modeled using {P['occupation type']} broadening with a "
+                    f"width of {P['smearing width']}."
                 )
-        elif kmethod == "explicit grid dimensions":
-            text += (
-                f" For periodic systems a {P['na']} x{P['nb']} x{P['nc']} "
-                "grid will be used."
-            )
-        broadening = P["occupation type"]
-        if broadening in ("integer",):
-            text += " The occupation will be constrained to be integers."
-        else:
-            text += (
-                " The effect of temperature on the electron distribution "
-                f"will be modeled using {P['occupation type']} broadening with a "
-                f"width of {P['smearing width']}."
-            )
         forces = P["calculate_gradients"]
         if not isinstance(forces, bool) and self.is_expr(forces):
             text += (
@@ -467,6 +468,13 @@ class Energy(Substep):
             )
         if forces == "yes" or (isinstance(forces, bool) and forces):
             text += " The forces will be calculated for this single-point calculation."
+
+        if (
+            isinstance(P["input only"], bool)
+            and P["input only"]
+            or P["input only"] == "yes"
+        ):
+            text += "\n\nThe input file will be written. No calculation will be run."
 
         return self.header + "\n" + __(text, indent=4 * " ").__str__()
 
@@ -479,9 +487,6 @@ class Energy(Substep):
              Dictionary of results from the calculation (results.tag file)
         """
         lines = []
-        # periodicity = configuration.periodicity
-
-        # output cube eigenstate 5
 
         if P["total density"]:
             lines.append("output cube               total_density")
@@ -606,8 +611,16 @@ class Energy(Substep):
 
         _, configuration = self.get_system_configuration()
 
+        # Set the attribute for writing just the input
+        self.input_only = P["input only"]
+
         # Print what we are doing
-        printer.important(__(self.description_text(P), indent=self.indent))
+        printer.important(
+            __(
+                self.description_text(P, configuration=configuration),
+                indent=self.indent,
+            )
+        )
 
         directory = Path(self.directory)
         directory.mkdir(parents=True, exist_ok=True)
@@ -712,4 +725,9 @@ class Energy(Substep):
         return_files = ["aims.out", "geometry.in.next_step", "*.cube", "*.json"]
         self.run_aims(files, return_files)
 
-        self.analyze(P=P, configuration=configuration)
+        if not self.input_only:
+            self.analyze(P=P, configuration=configuration)
+
+            path = directory / "success.dat"
+            if not path.exists():
+                path.write_text("success")

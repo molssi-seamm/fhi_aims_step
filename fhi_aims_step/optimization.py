@@ -119,7 +119,7 @@ class Optimization(fhi_aims_step.Energy):
         """The git version of this module."""
         return fhi_aims_step.__git_revision__
 
-    def description_text(self, P=None):
+    def description_text(self, P=None, configuration=None):
         """Create the text description of what this step will do.
         The dictionary of control values is passed in as P so that
         the code can test values, etc.
@@ -144,32 +144,38 @@ class Optimization(fhi_aims_step.Energy):
             "The optimization using BFGS will stop at force convergence of "
             f"{P['force_convergence']}."
         )
-        if P["optimize_cell"] == "yes":
-            text += " For periodic systems, the unit cell will also be optimized."
-        elif "angle" in P["optimize_cell"]:
-            text += (
-                " For periodic systems, the unit cell will also be optimized, but "
-                "cell angles will be fixed."
-            )
-        if P["pressure"] != 0.0:
-            text += f" An external pressure of {P['pressure']} will be applied."
+        if configuration is not None and configuration.periodicity != 0:
+            if P["optimize_cell"] == "yes":
+                text += " For periodic systems, the unit cell will also be optimized."
+            elif "angle" in P["optimize_cell"]:
+                text += (
+                    " For periodic systems, the unit cell will also be optimized, but "
+                    "cell angles will be fixed."
+                )
+            if P["pressure"] != 0.0:
+                text += f" An external pressure of {P['pressure']} will be applied."
 
-        text += f" The optimized structure will {P['structure handling']} "
+        if not (
+            isinstance(P["input only"], bool)
+            and P["input only"]
+            or P["input only"] == "yes"
+        ):
+            text += f" The optimized structure will {P['structure handling']} "
 
-        confname = P["configuration name"]
-        if confname == "use SMILES string":
-            text += "using SMILES as its name."
-        elif confname == "use Canonical SMILES string":
-            text += "using canonical SMILES as its name."
-        elif confname == "keep current name":
-            text += "keeping the current name."
-        elif confname == "optimized with {model}":
-            text += "with 'optimized with <model>' as its name."
-        elif confname == "use configuration number":
-            text += "using the index of the configuration (1, 2, ...) as its name."
-        else:
-            confname = confname.replace("{model}", "<model>")
-            text += f"with '{confname}' as its name."
+            confname = P["configuration name"]
+            if confname == "use SMILES string":
+                text += "using SMILES as its name."
+            elif confname == "use Canonical SMILES string":
+                text += "using canonical SMILES as its name."
+            elif confname == "keep current name":
+                text += "keeping the current name."
+            elif confname == "optimized with {model}":
+                text += "with 'optimized with <model>' as its name."
+            elif confname == "use configuration number":
+                text += "using the index of the configuration (1, 2, ...) as its name."
+            else:
+                confname = confname.replace("{model}", "<model>")
+                text += f"with '{confname}' as its name."
 
         return (
             self.header
@@ -205,24 +211,26 @@ class Optimization(fhi_aims_step.Energy):
         # Get the current system and configuration (ignoring the system...)
         _, configuration = self.get_system_configuration(None)
 
+        # Set the attribute for writing just the input
+        self.input_only = P["input only"]
+
         convergence = P["force_convergence"].m_as("eV/Å")
         lines.append(f"relax_geometry           bfgs {convergence:.4f}")
 
-        if P["optimize_cell"] == "yes":
-            lines.append("relax_unit_cell          full")
-        elif "angle" in P["optimize_cell"]:
-            lines.append("relax_unit_cell          fixed_angles")
+        if configuration.periodicity != 0:
+            if P["optimize_cell"] == "yes":
+                lines.append("relax_unit_cell          full")
+            elif "angle" in P["optimize_cell"]:
+                lines.append("relax_unit_cell          fixed_angles")
 
-        if P["pressure"].magnitude != 0.0:
-            lines.append(f"external_pressure        {P['pressure'].m_as('eV/Å^3')}")
+            if P["pressure"].magnitude != 0.0:
+                lines.append(f"external_pressure        {P['pressure'].m_as('eV/Å^3')}")
 
-        next_node = super().run(printer=printer, lines=lines)
+        super().run(printer=printer, lines=lines)
 
         # Add other citations here or in the appropriate place in the code.
         # Add the bibtex to data/references.bib, and add a self.reference.cite
         # similar to the above to actually add the citation to the references.
-
-        return next_node
 
     def analyze(self, P=None, indent="", configuration=None, data={}, **kwargs):
         """Do any analysis of the output from this step.

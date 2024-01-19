@@ -10,7 +10,6 @@ dependencies:
 
   # SEAMM
   - numpy
-  - psutil
   - seamm
   - tabulate
 
@@ -27,6 +26,8 @@ dependencies:
 
   # Pip-only installs
   - pip:
+    - seamm-exec
+
     # Documentation
     - sphinx-copybutton
     - sphinxnotes-strike

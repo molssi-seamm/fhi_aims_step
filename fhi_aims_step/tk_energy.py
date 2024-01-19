@@ -130,7 +130,7 @@ class TkEnergy(seamm.TkNode):
         main_frame = self["main frame"] = self["scrolled frame"].interior()
 
         # Then create the widgets
-        for key in ("gui", "calculate_gradients"):
+        for key in ("input only", "gui", "calculate_gradients"):
             self[key] = P[key].widget(main_frame)
 
         # Patch width of GUI widget ... it is too wide by default
@@ -274,6 +274,10 @@ class TkEnergy(seamm.TkNode):
         # keep track of the row in a variable, so that the layout is flexible
         # if e.g. rows are skipped to control such as "method" here
         row = 0
+
+        # Whether to just write input
+        self["input only"].grid(row=row, column=0, sticky=tk.W)
+        row += 1
 
         # The level of the GUI
         self["gui"].grid(row=row, column=0, columnspan=4, pady=5)

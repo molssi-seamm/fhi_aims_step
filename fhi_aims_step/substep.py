@@ -3,16 +3,16 @@
 """Base class for substeps in the FHI-aims step
 """
 
+import configparser
 import json
 import logging
 from pathlib import Path
 import pprint
 import re
 
-import psutil
-
 from molsystem.elements import to_symbols
 import seamm
+import seamm_exec
 from seamm_util import Q_
 import seamm_util.printing as printing
 
@@ -45,10 +45,24 @@ class Substep(seamm.Node):
         self._is_spin_polarized = False
         self._mapping_from_primitive = None
         self._mapping_to_primitive = None
+        self._input_only = False
 
         super().__init__(
             flowchart=flowchart, title=title, extension=extension, logger=logger
         )
+
+    @property
+    def global_options(self):
+        return self.parent.global_options
+
+    @property
+    def input_only(self):
+        """Whether to write the input only, not run MOPAC."""
+        return self._input_only
+
+    @input_only.setter
+    def input_only(self, value):
+        self._input_only = value
 
     @property
     def is_spin_polarized(self):
@@ -81,26 +95,37 @@ class Substep(seamm.Node):
         Returns
         -------
         """
+        directory = Path(self.directory)
+        if self.input_only:
+            for filename in files:
+                path = directory / filename
+                path.write_text(files[filename])
+            return
+
         # Check for successful run, don't rerun
-        path = Path(self.directory) / "success.dat"
+        path = directory / "success.dat"
         if path.exists():
             result = {}
-            path = Path(self.directory) / "stdout.txt"
+            path = directory / "stdout.txt"
             if path.exists():
                 result["stdout"] = path.read_text()
             result["stderr"] = ""
             return result
 
-        path = Path(self.options["path"]).expanduser().resolve()
-        exe = path / self.options["aims"]
-        mpiexec = self.options["mpiexec"]
-        atoms_per_core = self.options["atoms_per_core"]
-        max_cores = self.options["ncores"]
+        # Access the options
+        options = self.options
+        seamm_options = self.global_options
+
+        # Get the computational environment and set limits
+        ce = seamm_exec.computational_environment()
+
+        atoms_per_core = options["atoms_per_core"]
+        max_cores = options["ncores"]
         if max_cores == "available":
             max_cores = self.global_options["ncores"]
 
         # How many processors does this node have?
-        n_cores = psutil.cpu_count(logical=False)
+        n_cores = ce["NTASKS"]
         self.logger.info("The number of cores is {}".format(n_cores))
         if max_cores == "available":
             max_cores = n_cores
@@ -116,29 +141,44 @@ class Substep(seamm.Node):
         elif np > max_cores:
             np = max_cores
 
+        ce["NTASKS"] = np
+
         printer.normal(self.indent + 4 * " " + f"FHI-aims running using {np} cores.")
 
-        cmd = f"ulimit -s hard && {mpiexec} -np {np} {exe} > aims.out"
+        cmd = ["{code}"]
 
-        local = seamm.ExecLocal()
-        result = local.run(
+        # Run FHI-aims
+        executor = self.parent.flowchart.executor
+
+        # Read configuration file for FHI-aims
+        ini_dir = Path(seamm_options["root"]).expanduser()
+        full_config = configparser.ConfigParser()
+        full_config.read(ini_dir / "fhi-aims.ini")
+        executor_type = executor.name
+        if executor_type not in full_config:
+            raise RuntimeError(
+                f"No section for '{executor_type}' in the FHI-aims ini file "
+                f"({ini_dir / 'fhi-aims.ini'})"
+            )
+        config = dict(full_config.items(executor_type))
+
+        result = executor.run(
             cmd=cmd,
+            ce=ce,
+            config=config,
+            directory=self.directory,
             files=files,
             return_files=return_files,
             in_situ=True,
-            directory=self.directory,
             shell=True,
+            env={"OMP_NUM_THREADS": "1"},
         )
 
-        if result is None:
-            logger.error("There was an error running FHI-aims")
+        if not result:
+            self.logger.error("There was an error running FHI-aims")
             return None
 
         logger.debug("\n" + pprint.pformat(result))
-
-        logger.info("stdout:\n" + result["stdout"])
-        if result["stderr"] != "":
-            logger.warning("stderr:\n" + result["stderr"])
 
         return result
 
@@ -159,9 +199,24 @@ class Substep(seamm.Node):
         str
             The basis set text for FHI-aims
         """
+        # Get the configuration for FHI-aims to find where the basis sets are.
+        executor = self.parent.flowchart.executor
+
+        # Read configuration file for FHI-aims
+        ini_dir = Path(self.global_options["root"]).expanduser()
+        full_config = configparser.ConfigParser()
+        full_config.read(ini_dir / "fhi-aims.ini")
+        executor_type = executor.name
+        if executor_type not in full_config:
+            raise RuntimeError(
+                f"No section for '{executor_type}' in the FHI-aims ini file "
+                f"({ini_dir / 'fhi-aims.ini'})"
+            )
+        config = dict(full_config.items(executor_type))
+
         basis = P["basis_version"]
         level = P[basis + "_level"]
-        basis_path = Path(self.options["basis_path"]) / basis / level
+        basis_path = Path(config["basis-path"]) / basis / level
 
         # The model chemistry
         model = P["submodel"]

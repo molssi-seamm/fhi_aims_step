@@ -2,12 +2,12 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>fhi_aims_step.energy &#8212; SEAMM FHI-aims Plug-in 2023.9.20 documentation</title>
+    <title>fhi_aims_step.energy &#8212; SEAMM FHI-aims Plug-in 2024.1.19 documentation</title>
   
   
   
@@ -17,15 +17,15 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
@@ -33,11 +33,11 @@
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=c224919a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
-  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../../_static/documentation_options.js?v=336ab159"></script>
+    <script src="../../_static/documentation_options.js?v=9b344aeb"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -55,10 +55,9 @@
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -99,7 +98,7 @@
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
 <div class="bd-header__inner bd-page-width">
   <label class="sidebar-toggle primary-toggle" for="__primary">
     <span class="fa-solid fa-bars"></span>
@@ -109,9 +108,11 @@
   <div class="col-lg-3 navbar-header-items__start">
     
       <div class="navbar-item">
+
   
 
 <a class="navbar-brand logo" href="../../index.html">
+  
   
   
   
@@ -121,8 +122,8 @@
       
     
     
-    <img src="../../_static/SEAMM logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../_static/SEAMM Inverted 288x181.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../../_static/SEAMM logo.png" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../../_static/SEAMM Inverted 288x181.png" class="logo__image only-dark" alt=""/>`);</script>
   
   
     <p class="title logo__title">FHI-aims</p>
@@ -135,13 +136,8 @@
     
     <div class="me-auto navbar-header-items__center">
       
-        <div class="navbar-item"><nav class="navbar-nav">
-  <p class="sidebar-header-items__title"
-     role="heading"
-     aria-level="1"
-     aria-label="Site Navigation">
-    Site Navigation
-  </p>
+        <div class="navbar-item">
+<nav class="navbar-nav">
   <ul class="bd-navbar-elements navbar-nav">
     
                     <li class="nav-item">
@@ -172,10 +168,10 @@
                     </li>
                 
             <li class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-header-nav-more-links">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
                     More
                 </button>
-                <ul id="pst-header-nav-more-links" class="dropdown-menu">
+                <ul id="pst-nav-more-links" class="dropdown-menu">
                     
                     <li class="nav-item">
                       <a class="nav-link dropdown-item nav-internal" href="../../authors.html">
@@ -224,6 +220,7 @@
       
         <div class="navbar-item navbar-persistent--container">
           
+
  <script>
  document.write(`
    <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -237,6 +234,7 @@
       
       
         <div class="navbar-item">
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -281,6 +279,7 @@ document.write(`
   
   
     <div class="navbar-persistent--mobile">
+
  <script>
  document.write(`
    <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -296,10 +295,15 @@ document.write(`
   
 </div>
 
-    </nav>
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
       
       <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
         
@@ -310,13 +314,8 @@ document.write(`
     
       <div class="sidebar-header-items__center">
         
-          <div class="navbar-item"><nav class="navbar-nav">
-  <p class="sidebar-header-items__title"
-     role="heading"
-     aria-level="1"
-     aria-label="Site Navigation">
-    Site Navigation
-  </p>
+          <div class="navbar-item">
+<nav class="navbar-nav">
   <ul class="bd-navbar-elements navbar-nav">
     
                     <li class="nav-item">
@@ -347,10 +346,10 @@ document.write(`
                     </li>
                 
             <li class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-header-nav-more-links">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links-2">
                     More
                 </button>
-                <ul id="pst-header-nav-more-links" class="dropdown-menu">
+                <ul id="pst-nav-more-links-2" class="dropdown-menu">
                     
                     <li class="nav-item">
                       <a class="nav-link dropdown-item nav-internal" href="../../authors.html">
@@ -399,6 +398,7 @@ document.write(`
       <div class="sidebar-header-items__end">
         
           <div class="navbar-item">
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -491,7 +491,7 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <h1>Source code for fhi_aims_step.energy</h1><div class="highlight"><pre>
 <span></span><span class="c1"># -*- coding: utf-8 -*-</span>
@@ -624,7 +624,7 @@ document.write(`
 
 <div class="viewcode-block" id="Energy.analyze">
 <a class="viewcode-back" href="../../api/fhi_aims_step.html#fhi_aims_step.energy.Energy.analyze">[docs]</a>
-    <span class="k">def</span> <span class="nf">analyze</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">configuration</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{},</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">analyze</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">P</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">configuration</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="p">{},</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Do any analysis of the output from this step.</span>
 
 <span class="sd">        Also print important results to the local step.out file using</span>
@@ -637,6 +637,11 @@ document.write(`
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">options</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">options</span>
         <span class="n">directory</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">directory</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">P</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">P</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parameters</span><span class="o">.</span><span class="n">current_values_to_dict</span><span class="p">(</span>
+                <span class="n">context</span><span class="o">=</span><span class="n">seamm</span><span class="o">.</span><span class="n">flowchart_variables</span><span class="o">.</span><span class="n">_data</span>
+            <span class="p">)</span>
 
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">parse_data</span><span class="p">()</span>
@@ -735,6 +740,7 @@ document.write(`
 
         <span class="n">system</span><span class="p">,</span> <span class="n">configuration</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_system_configuration</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
         <span class="n">symbols</span> <span class="o">=</span> <span class="n">configuration</span><span class="o">.</span><span class="n">atoms</span><span class="o">.</span><span class="n">asymmetric_symbols</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">symbols</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="n">atoms</span> <span class="o">=</span> <span class="n">configuration</span><span class="o">.</span><span class="n">atoms</span>
         <span class="n">symmetry</span> <span class="o">=</span> <span class="n">configuration</span><span class="o">.</span><span class="n">symmetry</span>
         <span class="c1"># Charge and spin, if available</span>
@@ -744,12 +750,17 @@ document.write(`
                 <span class="n">atoms</span><span class="o">.</span><span class="n">add_attribute</span><span class="p">(</span>
                     <span class="s2">&quot;charge&quot;</span><span class="p">,</span> <span class="n">coltype</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span> <span class="n">configuration_dependent</span><span class="o">=</span><span class="kc">True</span>
                 <span class="p">)</span>
-            <span class="k">if</span> <span class="n">symmetry</span><span class="o">.</span><span class="n">n_symops</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-                <span class="n">chgs</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;atoms_proj_charge&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">chgs</span><span class="p">,</span> <span class="n">delta</span> <span class="o">=</span> <span class="n">symmetry</span><span class="o">.</span><span class="n">symmetrize_atomic_scalar</span><span class="p">(</span>
-                    <span class="n">data</span><span class="p">[</span><span class="s2">&quot;atoms_proj_charge&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
-                <span class="p">)</span>
+            <span class="n">chgs</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;atoms_proj_charge&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">chgs</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">symmetry</span><span class="o">.</span><span class="n">n_symops</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">P</span><span class="p">[</span><span class="s2">&quot;primitive cell&quot;</span><span class="p">]:</span>
+                    <span class="n">chgs</span> <span class="o">=</span> <span class="p">[</span><span class="n">chgs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mapping_to_primitive</span><span class="p">]</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Unravelling primitive cell&quot;</span><span class="p">)</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">chgs</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">configuration</span><span class="si">=}</span><span class="s2">, </span><span class="si">{</span><span class="n">configuration</span><span class="o">.</span><span class="n">id</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">symmetry</span><span class="si">=}</span><span class="s2">, </span><span class="si">{</span><span class="n">symmetry</span><span class="o">.</span><span class="n">id</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="n">chgs</span><span class="p">,</span> <span class="n">delta</span> <span class="o">=</span> <span class="n">symmetry</span><span class="o">.</span><span class="n">symmetrize_atomic_scalar</span><span class="p">(</span><span class="n">chgs</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">chgs</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
                 <span class="n">delta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span>
                 <span class="n">max_delta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">delta</span><span class="p">))</span>
                 <span class="n">text</span> <span class="o">+=</span> <span class="p">(</span>
@@ -772,12 +783,11 @@ document.write(`
                         <span class="n">atoms</span><span class="o">.</span><span class="n">add_attribute</span><span class="p">(</span>
                             <span class="s2">&quot;spin&quot;</span><span class="p">,</span> <span class="n">coltype</span><span class="o">=</span><span class="s2">&quot;float&quot;</span><span class="p">,</span> <span class="n">configuration_dependent</span><span class="o">=</span><span class="kc">True</span>
                         <span class="p">)</span>
-                        <span class="k">if</span> <span class="n">symmetry</span><span class="o">.</span><span class="n">n_symops</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-                            <span class="n">spins</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;atoms_proj_spin&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
-                        <span class="k">else</span><span class="p">:</span>
-                            <span class="n">spins</span><span class="p">,</span> <span class="n">delta</span> <span class="o">=</span> <span class="n">symmetry</span><span class="o">.</span><span class="n">symmetrize_atomic_scalar</span><span class="p">(</span>
-                                <span class="n">data</span><span class="p">[</span><span class="s2">&quot;atoms_proj_spin&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
-                            <span class="p">)</span>
+                        <span class="n">spins</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;atoms_proj_spin&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+                        <span class="k">if</span> <span class="n">symmetry</span><span class="o">.</span><span class="n">n_symops</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                            <span class="k">if</span> <span class="n">P</span><span class="p">[</span><span class="s2">&quot;primitive cell&quot;</span><span class="p">]:</span>
+                                <span class="n">spins</span> <span class="o">=</span> <span class="p">[</span><span class="n">spins</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mapping_to_primitive</span><span class="p">]</span>
+                            <span class="n">spins</span><span class="p">,</span> <span class="n">delta</span> <span class="o">=</span> <span class="n">symmetry</span><span class="o">.</span><span class="n">symmetrize_atomic_scalar</span><span class="p">(</span><span class="n">spins</span><span class="p">)</span>
                             <span class="n">atoms</span><span class="p">[</span><span class="s2">&quot;spins&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">:]</span> <span class="o">=</span> <span class="n">spins</span>
                             <span class="n">delta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">delta</span><span class="p">)</span>
                             <span class="n">max_delta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">delta</span><span class="p">))</span>
@@ -793,8 +803,8 @@ document.write(`
                     <span class="k">for</span> <span class="n">atom</span><span class="p">,</span> <span class="n">symbol</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span>
                         <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">symbols</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span>
                         <span class="n">symbols</span><span class="p">,</span>
-                        <span class="n">data</span><span class="p">[</span><span class="s2">&quot;atoms_proj_charge&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
-                        <span class="n">data</span><span class="p">[</span><span class="s2">&quot;atoms_proj_spin&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
+                        <span class="n">chgs</span><span class="p">,</span>
+                        <span class="n">spins</span><span class="p">,</span>
                     <span class="p">):</span>
                         <span class="n">q</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">q</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span>
                         <span class="n">s</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">s</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span>
@@ -809,7 +819,7 @@ document.write(`
                     <span class="k">for</span> <span class="n">atom</span><span class="p">,</span> <span class="n">symbol</span><span class="p">,</span> <span class="n">q</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span>
                         <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">symbols</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span>
                         <span class="n">symbols</span><span class="p">,</span>
-                        <span class="n">data</span><span class="p">[</span><span class="s2">&quot;atoms_proj_charge&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
+                        <span class="n">chgs</span><span class="p">,</span>
                     <span class="p">):</span>
                         <span class="n">q</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">q</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span>
                         <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="n">atom</span><span class="p">,</span> <span class="n">symbol</span><span class="p">,</span> <span class="n">q</span><span class="p">])</span>
@@ -846,7 +856,7 @@ document.write(`
 
 <div class="viewcode-block" id="Energy.description_text">
 <a class="viewcode-back" href="../../api/fhi_aims_step.html#fhi_aims_step.energy.Energy.description_text">[docs]</a>
-    <span class="k">def</span> <span class="nf">description_text</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">P</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">description_text</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">P</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">configuration</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Create the text description of what this step will do.</span>
 <span class="sd">        The dictionary of control values is passed in as P so that</span>
 <span class="sd">        the code can test values, etc.</span>
@@ -925,33 +935,34 @@ document.write(`
                 <span class="sa">f</span><span class="s2">&quot; Long-range van der Waals terms will be included using </span><span class="si">{</span><span class="n">dispersion</span><span class="si">}</span><span class="s2">.&quot;</span>
             <span class="p">)</span>
 
-        <span class="c1"># k-space integration</span>
-        <span class="n">kmethod</span> <span class="o">=</span> <span class="n">P</span><span class="p">[</span><span class="s2">&quot;k-grid method&quot;</span><span class="p">]</span>
-        <span class="k">if</span> <span class="n">kmethod</span> <span class="o">==</span> <span class="s2">&quot;grid spacing&quot;</span><span class="p">:</span>
-            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">P</span><span class="p">[</span><span class="s2">&quot;odd grid&quot;</span><span class="p">],</span> <span class="nb">bool</span><span class="p">)</span> <span class="ow">or</span> <span class="n">P</span><span class="p">[</span><span class="s2">&quot;odd grid&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;yes&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">configuration</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">configuration</span><span class="o">.</span><span class="n">periodicity</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="c1"># k-space integration</span>
+            <span class="n">kmethod</span> <span class="o">=</span> <span class="n">P</span><span class="p">[</span><span class="s2">&quot;k-grid method&quot;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">kmethod</span> <span class="o">==</span> <span class="s2">&quot;grid spacing&quot;</span><span class="p">:</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">P</span><span class="p">[</span><span class="s2">&quot;odd grid&quot;</span><span class="p">],</span> <span class="nb">bool</span><span class="p">)</span> <span class="ow">or</span> <span class="n">P</span><span class="p">[</span><span class="s2">&quot;odd grid&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;yes&quot;</span><span class="p">:</span>
+                    <span class="n">text</span> <span class="o">+=</span> <span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">&quot; For periodic systems a </span><span class="si">{</span><span class="n">P</span><span class="p">[</span><span class="s1">&#39;centering&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> grid with a spacing &quot;</span>
+                        <span class="sa">f</span><span class="s2">&quot;of </span><span class="si">{</span><span class="n">P</span><span class="p">[</span><span class="s1">&#39;k-spacing&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> and odd numbers of points will be used.&quot;</span>
+                    <span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">text</span> <span class="o">+=</span> <span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">&quot; For periodic systems a </span><span class="si">{</span><span class="n">P</span><span class="p">[</span><span class="s1">&#39;centering&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> grid with a spacing &quot;</span>
+                        <span class="sa">f</span><span class="s2">&quot;of </span><span class="si">{</span><span class="n">P</span><span class="p">[</span><span class="s1">&#39;k-spacing&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> will be used.&quot;</span>
+                    <span class="p">)</span>
+            <span class="k">elif</span> <span class="n">kmethod</span> <span class="o">==</span> <span class="s2">&quot;explicit grid dimensions&quot;</span><span class="p">:</span>
                 <span class="n">text</span> <span class="o">+=</span> <span class="p">(</span>
-                    <span class="sa">f</span><span class="s2">&quot; For periodic systems a </span><span class="si">{</span><span class="n">P</span><span class="p">[</span><span class="s1">&#39;centering&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> grid with a spacing of &quot;</span>
-                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">P</span><span class="p">[</span><span class="s1">&#39;k-spacing&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> and odd numbers of points will be used.&quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot; For periodic systems a </span><span class="si">{</span><span class="n">P</span><span class="p">[</span><span class="s1">&#39;na&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> x</span><span class="si">{</span><span class="n">P</span><span class="p">[</span><span class="s1">&#39;nb&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> x</span><span class="si">{</span><span class="n">P</span><span class="p">[</span><span class="s1">&#39;nc&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> &quot;</span>
+                    <span class="s2">&quot;grid will be used.&quot;</span>
                 <span class="p">)</span>
+            <span class="n">broadening</span> <span class="o">=</span> <span class="n">P</span><span class="p">[</span><span class="s2">&quot;occupation type&quot;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">broadening</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;integer&quot;</span><span class="p">,):</span>
+                <span class="n">text</span> <span class="o">+=</span> <span class="s2">&quot; The occupation will be constrained to be integers.&quot;</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">text</span> <span class="o">+=</span> <span class="p">(</span>
-                    <span class="sa">f</span><span class="s2">&quot; For periodic systems a </span><span class="si">{</span><span class="n">P</span><span class="p">[</span><span class="s1">&#39;centering&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> grid with a spacing of &quot;</span>
-                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">P</span><span class="p">[</span><span class="s1">&#39;k-spacing&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> will be used.&quot;</span>
+                    <span class="s2">&quot; The effect of temperature on the electron distribution &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;will be modeled using </span><span class="si">{</span><span class="n">P</span><span class="p">[</span><span class="s1">&#39;occupation type&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> broadening with a &quot;</span>
+                    <span class="sa">f</span><span class="s2">&quot;width of </span><span class="si">{</span><span class="n">P</span><span class="p">[</span><span class="s1">&#39;smearing width&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">.&quot;</span>
                 <span class="p">)</span>
-        <span class="k">elif</span> <span class="n">kmethod</span> <span class="o">==</span> <span class="s2">&quot;explicit grid dimensions&quot;</span><span class="p">:</span>
-            <span class="n">text</span> <span class="o">+=</span> <span class="p">(</span>
-                <span class="sa">f</span><span class="s2">&quot; For periodic systems a </span><span class="si">{</span><span class="n">P</span><span class="p">[</span><span class="s1">&#39;na&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> x</span><span class="si">{</span><span class="n">P</span><span class="p">[</span><span class="s1">&#39;nb&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> x</span><span class="si">{</span><span class="n">P</span><span class="p">[</span><span class="s1">&#39;nc&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> &quot;</span>
-                <span class="s2">&quot;grid will be used.&quot;</span>
-            <span class="p">)</span>
-        <span class="n">broadening</span> <span class="o">=</span> <span class="n">P</span><span class="p">[</span><span class="s2">&quot;occupation type&quot;</span><span class="p">]</span>
-        <span class="k">if</span> <span class="n">broadening</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;integer&quot;</span><span class="p">,):</span>
-            <span class="n">text</span> <span class="o">+=</span> <span class="s2">&quot; The occupation will be constrained to be integers.&quot;</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">text</span> <span class="o">+=</span> <span class="p">(</span>
-                <span class="s2">&quot; The effect of temperature on the electron distribution &quot;</span>
-                <span class="sa">f</span><span class="s2">&quot;will be modeled using </span><span class="si">{</span><span class="n">P</span><span class="p">[</span><span class="s1">&#39;occupation type&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> broadening with a &quot;</span>
-                <span class="sa">f</span><span class="s2">&quot;width of </span><span class="si">{</span><span class="n">P</span><span class="p">[</span><span class="s1">&#39;smearing width&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">.&quot;</span>
-            <span class="p">)</span>
         <span class="n">forces</span> <span class="o">=</span> <span class="n">P</span><span class="p">[</span><span class="s2">&quot;calculate_gradients&quot;</span><span class="p">]</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">forces</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_expr</span><span class="p">(</span><span class="n">forces</span><span class="p">):</span>
             <span class="n">text</span> <span class="o">+=</span> <span class="p">(</span>
@@ -960,6 +971,13 @@ document.write(`
             <span class="p">)</span>
         <span class="k">if</span> <span class="n">forces</span> <span class="o">==</span> <span class="s2">&quot;yes&quot;</span> <span class="ow">or</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">forces</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span> <span class="ow">and</span> <span class="n">forces</span><span class="p">):</span>
             <span class="n">text</span> <span class="o">+=</span> <span class="s2">&quot; The forces will be calculated for this single-point calculation.&quot;</span>
+
+        <span class="k">if</span> <span class="p">(</span>
+            <span class="nb">isinstance</span><span class="p">(</span><span class="n">P</span><span class="p">[</span><span class="s2">&quot;input only&quot;</span><span class="p">],</span> <span class="nb">bool</span><span class="p">)</span>
+            <span class="ow">and</span> <span class="n">P</span><span class="p">[</span><span class="s2">&quot;input only&quot;</span><span class="p">]</span>
+            <span class="ow">or</span> <span class="n">P</span><span class="p">[</span><span class="s2">&quot;input only&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;yes&quot;</span>
+        <span class="p">):</span>
+            <span class="n">text</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">The input file will be written. No calculation will be run.&quot;</span>
 
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">header</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">__</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span> <span class="o">*</span> <span class="s2">&quot; &quot;</span><span class="p">)</span><span class="o">.</span><span class="fm">__str__</span><span class="p">()</span></div>
 
@@ -975,9 +993,6 @@ document.write(`
 <span class="sd">             Dictionary of results from the calculation (results.tag file)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="c1"># periodicity = configuration.periodicity</span>
-
-        <span class="c1"># output cube eigenstate 5</span>
 
         <span class="k">if</span> <span class="n">P</span><span class="p">[</span><span class="s2">&quot;total density&quot;</span><span class="p">]:</span>
             <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;output cube               total_density&quot;</span><span class="p">)</span>
@@ -1105,8 +1120,16 @@ document.write(`
 
         <span class="n">_</span><span class="p">,</span> <span class="n">configuration</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_system_configuration</span><span class="p">()</span>
 
+        <span class="c1"># Set the attribute for writing just the input</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">input_only</span> <span class="o">=</span> <span class="n">P</span><span class="p">[</span><span class="s2">&quot;input only&quot;</span><span class="p">]</span>
+
         <span class="c1"># Print what we are doing</span>
-        <span class="n">printer</span><span class="o">.</span><span class="n">important</span><span class="p">(</span><span class="n">__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">description_text</span><span class="p">(</span><span class="n">P</span><span class="p">),</span> <span class="n">indent</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">indent</span><span class="p">))</span>
+        <span class="n">printer</span><span class="o">.</span><span class="n">important</span><span class="p">(</span>
+            <span class="n">__</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">description_text</span><span class="p">(</span><span class="n">P</span><span class="p">,</span> <span class="n">configuration</span><span class="o">=</span><span class="n">configuration</span><span class="p">),</span>
+                <span class="n">indent</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">indent</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
 
         <span class="n">directory</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">directory</span><span class="p">)</span>
         <span class="n">directory</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -1211,7 +1234,12 @@ document.write(`
         <span class="n">return_files</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;aims.out&quot;</span><span class="p">,</span> <span class="s2">&quot;geometry.in.next_step&quot;</span><span class="p">,</span> <span class="s2">&quot;*.cube&quot;</span><span class="p">,</span> <span class="s2">&quot;*.json&quot;</span><span class="p">]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">run_aims</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="n">return_files</span><span class="p">)</span>
 
-        <span class="bp">self</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="n">configuration</span><span class="o">=</span><span class="n">configuration</span><span class="p">)</span></div>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_only</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="n">P</span><span class="o">=</span><span class="n">P</span><span class="p">,</span> <span class="n">configuration</span><span class="o">=</span><span class="n">configuration</span><span class="p">)</span>
+
+            <span class="n">path</span> <span class="o">=</span> <span class="n">directory</span> <span class="o">/</span> <span class="s2">&quot;success.dat&quot;</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+                <span class="n">path</span><span class="o">.</span><span class="n">write_text</span><span class="p">(</span><span class="s2">&quot;success&quot;</span><span class="p">)</span></div>
 </div>
 
 </pre></div>
@@ -1223,7 +1251,7 @@ document.write(`
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
 </div>
                 </footer>
@@ -1231,6 +1259,8 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"></div>
               
             
           </div>
@@ -1243,8 +1273,8 @@ document.write(`
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -1296,8 +1326,9 @@ document.write(`
   
     <div class="footer-items__end">
       
-        <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.1.
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.2.
 </p></div>
       
     </div>

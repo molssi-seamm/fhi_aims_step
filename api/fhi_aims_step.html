@@ -2,13 +2,13 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>fhi_aims_step package &#8212; SEAMM FHI-aims Plug-in 2023.9.20 documentation</title>
+    <title>fhi_aims_step package &#8212; SEAMM FHI-aims Plug-in 2024.1.19 documentation</title>
   
   
   
@@ -18,15 +18,15 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -34,11 +34,11 @@
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=c224919a" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script src="../_static/documentation_options.js?v=336ab159"></script>
+    <script src="../_static/documentation_options.js?v=9b344aeb"></script>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -58,10 +58,9 @@
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
@@ -102,7 +101,7 @@
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
 <div class="bd-header__inner bd-page-width">
   <label class="sidebar-toggle primary-toggle" for="__primary">
     <span class="fa-solid fa-bars"></span>
@@ -112,9 +111,11 @@
   <div class="col-lg-3 navbar-header-items__start">
     
       <div class="navbar-item">
+
   
 
 <a class="navbar-brand logo" href="../index.html">
+  
   
   
   
@@ -124,8 +125,8 @@
       
     
     
-    <img src="../_static/SEAMM logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/SEAMM Inverted 288x181.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/SEAMM logo.png" class="logo__image only-light" alt=""/>
+    <script>document.write(`<img src="../_static/SEAMM Inverted 288x181.png" class="logo__image only-dark" alt=""/>`);</script>
   
   
     <p class="title logo__title">FHI-aims</p>
@@ -138,13 +139,8 @@
     
     <div class="me-auto navbar-header-items__center">
       
-        <div class="navbar-item"><nav class="navbar-nav">
-  <p class="sidebar-header-items__title"
-     role="heading"
-     aria-level="1"
-     aria-label="Site Navigation">
-    Site Navigation
-  </p>
+        <div class="navbar-item">
+<nav class="navbar-nav">
   <ul class="bd-navbar-elements navbar-nav">
     
                     <li class="nav-item">
@@ -175,10 +171,10 @@
                     </li>
                 
             <li class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-header-nav-more-links">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
                     More
                 </button>
-                <ul id="pst-header-nav-more-links" class="dropdown-menu">
+                <ul id="pst-nav-more-links" class="dropdown-menu">
                     
                     <li class="nav-item">
                       <a class="nav-link dropdown-item nav-internal" href="../authors.html">
@@ -227,6 +223,7 @@
       
         <div class="navbar-item navbar-persistent--container">
           
+
  <script>
  document.write(`
    <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -240,6 +237,7 @@
       
       
         <div class="navbar-item">
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -284,6 +282,7 @@ document.write(`
   
   
     <div class="navbar-persistent--mobile">
+
  <script>
  document.write(`
    <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -303,10 +302,13 @@ document.write(`
   
 </div>
 
-    </nav>
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -317,13 +319,8 @@ document.write(`
     
       <div class="sidebar-header-items__center">
         
-          <div class="navbar-item"><nav class="navbar-nav">
-  <p class="sidebar-header-items__title"
-     role="heading"
-     aria-level="1"
-     aria-label="Site Navigation">
-    Site Navigation
-  </p>
+          <div class="navbar-item">
+<nav class="navbar-nav">
   <ul class="bd-navbar-elements navbar-nav">
     
                     <li class="nav-item">
@@ -354,10 +351,10 @@ document.write(`
                     </li>
                 
             <li class="nav-item dropdown">
-                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-header-nav-more-links">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links-2">
                     More
                 </button>
-                <ul id="pst-header-nav-more-links" class="dropdown-menu">
+                <ul id="pst-nav-more-links-2" class="dropdown-menu">
                     
                     <li class="nav-item">
                       <a class="nav-link dropdown-item nav-internal" href="../authors.html">
@@ -406,6 +403,7 @@ document.write(`
       <div class="sidebar-header-items__end">
         
           <div class="navbar-item">
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
@@ -449,7 +447,8 @@ document.write(`
   </div>
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
@@ -515,7 +514,7 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section id="fhi-aims-step-package">
 <h1>fhi_aims_step package<a class="headerlink" href="#fhi-aims-step-package" title="Link to this heading">#</a></h1>
@@ -581,7 +580,7 @@ list of remaining argument strings.</p>
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="fhi_aims_step.energy.Energy.analyze">
-<span class="sig-name descname"><span class="pre">analyze</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">configuration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhi_aims_step/energy.html#Energy.analyze"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhi_aims_step.energy.Energy.analyze" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">analyze</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">P</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">configuration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhi_aims_step/energy.html#Energy.analyze"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhi_aims_step.energy.Energy.analyze" title="Link to this definition">#</a></dt>
 <dd><p>Do any analysis of the output from this step.</p>
 <p>Also print important results to the local step.out file using
 “printer”.</p>
@@ -594,7 +593,7 @@ list of remaining argument strings.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="fhi_aims_step.energy.Energy.description_text">
-<span class="sig-name descname"><span class="pre">description_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">P</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhi_aims_step/energy.html#Energy.description_text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhi_aims_step.energy.Energy.description_text" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">description_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">P</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">configuration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhi_aims_step/energy.html#Energy.description_text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhi_aims_step.energy.Energy.description_text" title="Link to this definition">#</a></dt>
 <dd><p>Create the text description of what this step will do.
 The dictionary of control values is passed in as P so that
 the code can test values, etc.</p>
@@ -734,7 +733,7 @@ field. For example, $OPTIMIZER_CONV.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="fhi_aims_step.energy_parameters.EnergyParameters.parameters">
-<span class="sig-name descname"><span class="pre">parameters</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'calculate_gradients':</span> <span class="pre">{'default':</span> <span class="pre">'no',</span> <span class="pre">'default_units':</span> <span class="pre">'',</span> <span class="pre">'description':</span> <span class="pre">'Calculate</span> <span class="pre">gradients:',</span> <span class="pre">'enumeration':</span> <span class="pre">('yes',</span> <span class="pre">'no'),</span> <span class="pre">'format_string':</span> <span class="pre">'',</span> <span class="pre">'help_text':</span> <span class="pre">'Whether</span> <span class="pre">to</span> <span class="pre">calculate</span> <span class="pre">the</span> <span class="pre">gradients</span> <span class="pre">in</span> <span class="pre">a</span> <span class="pre">single-point</span> <span class="pre">calculation.',</span> <span class="pre">'kind':</span> <span class="pre">'boolean'},</span> <span class="pre">'gui':</span> <span class="pre">{'default':</span> <span class="pre">'with</span> <span class="pre">recommended</span> <span class="pre">features</span> <span class="pre">for</span> <span class="pre">energy</span> <span class="pre">or</span> <span class="pre">structure</span> <span class="pre">of</span> <span class="pre">molecules</span> <span class="pre">or</span> <span class="pre">nonmetallic</span> <span class="pre">solids',</span> <span class="pre">'default_units':</span> <span class="pre">'',</span> <span class="pre">'description':</span> <span class="pre">'Configure</span> <span class="pre">GUI',</span> <span class="pre">'enumeration':</span> <span class="pre">('with</span> <span class="pre">recommended</span> <span class="pre">features</span> <span class="pre">for</span> <span class="pre">energy</span> <span class="pre">or</span> <span class="pre">structure</span> <span class="pre">involving</span> <span class="pre">metallic</span> <span class="pre">solids',</span> <span class="pre">'with</span> <span class="pre">recommended</span> <span class="pre">features</span> <span class="pre">for</span> <span class="pre">energy</span> <span class="pre">or</span> <span class="pre">structure</span> <span class="pre">of</span> <span class="pre">molecules</span> <span class="pre">or</span> <span class="pre">nonmetallic</span> <span class="pre">solids',</span> <span class="pre">'with</span> <span class="pre">recommended</span> <span class="pre">features</span> <span class="pre">for</span> <span class="pre">band</span> <span class="pre">structures</span> <span class="pre">of</span> <span class="pre">metallic</span> <span class="pre">solids',</span> <span class="pre">'with</span> <span class="pre">recommended</span> <span class="pre">features</span> <span class="pre">for</span> <span class="pre">orbital</span> <span class="pre">energies</span> <span class="pre">of</span> <span class="pre">molecules</span> <span class="pre">or</span> <span class="pre">band</span> <span class="pre">structures</span> <span class="pre">for</span> <span class="pre">nonmetallic</span> <span class="pre">solids',</span> <span class="pre">'with</span> <span class="pre">all</span> <span class="pre">standard</span> <span class="pre">features',</span> <span class="pre">'including</span> <span class="pre">experimental</span> <span class="pre">features'),</span> <span class="pre">'format_string':</span> <span class="pre">'',</span> <span class="pre">'help_text':</span> <span class="pre">'How</span> <span class="pre">to</span> <span class="pre">configure</span> <span class="pre">the</span> <span class="pre">GUI',</span> <span class="pre">'kind':</span> <span class="pre">'enumeration'},</span> <span class="pre">'results':</span> <span class="pre">{'default':</span> <span class="pre">{},</span> <span class="pre">'default_units':</span> <span class="pre">'',</span> <span class="pre">'description':</span> <span class="pre">'results',</span> <span class="pre">'enumeration':</span> <span class="pre">(),</span> <span class="pre">'format_string':</span> <span class="pre">'',</span> <span class="pre">'help_text':</span> <span class="pre">'The</span> <span class="pre">results</span> <span class="pre">to</span> <span class="pre">save</span> <span class="pre">to</span> <span class="pre">variables</span> <span class="pre">or</span> <span class="pre">in</span> <span class="pre">tables.',</span> <span class="pre">'kind':</span> <span class="pre">'dictionary'}}</span></em><a class="headerlink" href="#fhi_aims_step.energy_parameters.EnergyParameters.parameters" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">parameters</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'calculate_gradients':</span> <span class="pre">{'default':</span> <span class="pre">'no',</span> <span class="pre">'default_units':</span> <span class="pre">'',</span> <span class="pre">'description':</span> <span class="pre">'Calculate</span> <span class="pre">gradients:',</span> <span class="pre">'enumeration':</span> <span class="pre">('yes',</span> <span class="pre">'no'),</span> <span class="pre">'format_string':</span> <span class="pre">'',</span> <span class="pre">'help_text':</span> <span class="pre">'Whether</span> <span class="pre">to</span> <span class="pre">calculate</span> <span class="pre">the</span> <span class="pre">gradients</span> <span class="pre">in</span> <span class="pre">a</span> <span class="pre">single-point</span> <span class="pre">calculation.',</span> <span class="pre">'kind':</span> <span class="pre">'boolean'},</span> <span class="pre">'gui':</span> <span class="pre">{'default':</span> <span class="pre">'with</span> <span class="pre">recommended</span> <span class="pre">features</span> <span class="pre">for</span> <span class="pre">energy</span> <span class="pre">or</span> <span class="pre">structure</span> <span class="pre">of</span> <span class="pre">molecules</span> <span class="pre">or</span> <span class="pre">nonmetallic</span> <span class="pre">solids',</span> <span class="pre">'default_units':</span> <span class="pre">'',</span> <span class="pre">'description':</span> <span class="pre">'Configure</span> <span class="pre">GUI',</span> <span class="pre">'enumeration':</span> <span class="pre">('with</span> <span class="pre">recommended</span> <span class="pre">features</span> <span class="pre">for</span> <span class="pre">energy</span> <span class="pre">or</span> <span class="pre">structure</span> <span class="pre">involving</span> <span class="pre">metallic</span> <span class="pre">solids',</span> <span class="pre">'with</span> <span class="pre">recommended</span> <span class="pre">features</span> <span class="pre">for</span> <span class="pre">energy</span> <span class="pre">or</span> <span class="pre">structure</span> <span class="pre">of</span> <span class="pre">molecules</span> <span class="pre">or</span> <span class="pre">nonmetallic</span> <span class="pre">solids',</span> <span class="pre">'with</span> <span class="pre">recommended</span> <span class="pre">features</span> <span class="pre">for</span> <span class="pre">band</span> <span class="pre">structures</span> <span class="pre">of</span> <span class="pre">metallic</span> <span class="pre">solids',</span> <span class="pre">'with</span> <span class="pre">recommended</span> <span class="pre">features</span> <span class="pre">for</span> <span class="pre">orbital</span> <span class="pre">energies</span> <span class="pre">of</span> <span class="pre">molecules</span> <span class="pre">or</span> <span class="pre">band</span> <span class="pre">structures</span> <span class="pre">for</span> <span class="pre">nonmetallic</span> <span class="pre">solids',</span> <span class="pre">'with</span> <span class="pre">all</span> <span class="pre">standard</span> <span class="pre">features',</span> <span class="pre">'including</span> <span class="pre">experimental</span> <span class="pre">features'),</span> <span class="pre">'format_string':</span> <span class="pre">'',</span> <span class="pre">'help_text':</span> <span class="pre">'How</span> <span class="pre">to</span> <span class="pre">configure</span> <span class="pre">the</span> <span class="pre">GUI',</span> <span class="pre">'kind':</span> <span class="pre">'enumeration'},</span> <span class="pre">'input</span> <span class="pre">only':</span> <span class="pre">{'default':</span> <span class="pre">'no',</span> <span class="pre">'default_units':</span> <span class="pre">'',</span> <span class="pre">'description':</span> <span class="pre">'Write</span> <span class="pre">the</span> <span class="pre">input</span> <span class="pre">files</span> <span class="pre">and</span> <span class="pre">stop:',</span> <span class="pre">'enumeration':</span> <span class="pre">('yes',</span> <span class="pre">'no'),</span> <span class="pre">'format_string':</span> <span class="pre">'s',</span> <span class="pre">'help_text':</span> <span class="pre">&quot;Don't</span> <span class="pre">run</span> <span class="pre">MOPAC.</span> <span class="pre">Just</span> <span class="pre">write</span> <span class="pre">the</span> <span class="pre">input</span> <span class="pre">files.&quot;,</span> <span class="pre">'kind':</span> <span class="pre">'boolean'},</span> <span class="pre">'results':</span> <span class="pre">{'default':</span> <span class="pre">{},</span> <span class="pre">'default_units':</span> <span class="pre">'',</span> <span class="pre">'description':</span> <span class="pre">'results',</span> <span class="pre">'enumeration':</span> <span class="pre">(),</span> <span class="pre">'format_string':</span> <span class="pre">'',</span> <span class="pre">'help_text':</span> <span class="pre">'The</span> <span class="pre">results</span> <span class="pre">to</span> <span class="pre">save</span> <span class="pre">to</span> <span class="pre">variables</span> <span class="pre">or</span> <span class="pre">in</span> <span class="pre">tables.',</span> <span class="pre">'kind':</span> <span class="pre">'dictionary'}}</span></em><a class="headerlink" href="#fhi_aims_step.energy_parameters.EnergyParameters.parameters" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -1215,7 +1214,7 @@ list of remaining argument strings.</p>
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="fhi_aims_step.optimization.Optimization.analyze">
-<span class="sig-name descname"><span class="pre">analyze</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">configuration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhi_aims_step/optimization.html#Optimization.analyze"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhi_aims_step.optimization.Optimization.analyze" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">analyze</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">P</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">configuration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhi_aims_step/optimization.html#Optimization.analyze"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhi_aims_step.optimization.Optimization.analyze" title="Link to this definition">#</a></dt>
 <dd><p>Do any analysis of the output from this step.</p>
 <p>Also print important results to the local step.out file using
 “printer”.</p>
@@ -1228,7 +1227,7 @@ list of remaining argument strings.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="fhi_aims_step.optimization.Optimization.description_text">
-<span class="sig-name descname"><span class="pre">description_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">P</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhi_aims_step/optimization.html#Optimization.description_text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhi_aims_step.optimization.Optimization.description_text" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">description_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">P</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">configuration</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhi_aims_step/optimization.html#Optimization.description_text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhi_aims_step.optimization.Optimization.description_text" title="Link to this definition">#</a></dt>
 <dd><p>Create the text description of what this step will do.
 The dictionary of control values is passed in as P so that
 the code can test values, etc.</p>
@@ -1446,6 +1445,18 @@ a step, and dimensions of the graphical node.</p></li>
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">fhi_aims_step.substep.</span></span><span class="sig-name descname"><span class="pre">Substep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flowchart=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title='no</span> <span class="pre">title'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extension=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger=&lt;Logger</span> <span class="pre">fhi_aims_step.substep</span> <span class="pre">(WARNING)&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module='fhi_aims_step.substep'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fhi_aims_step/substep.html#Substep"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fhi_aims_step.substep.Substep" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code></p>
 <p>A base class for substeps in the FHI-aims step.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="fhi_aims_step.substep.Substep.global_options">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">global_options</span></span><a class="headerlink" href="#fhi_aims_step.substep.Substep.global_options" title="Link to this definition">#</a></dt>
+<dd><p>Dictionary of global options</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="fhi_aims_step.substep.Substep.input_only">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">input_only</span></span><a class="headerlink" href="#fhi_aims_step.substep.Substep.input_only" title="Link to this definition">#</a></dt>
+<dd><p>Whether to write the input only, not run MOPAC.</p>
+</dd></dl>
+
 <dl class="py property">
 <dt class="sig sig-object py" id="fhi_aims_step.substep.Substep.is_runable">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_runable</span></span><a class="headerlink" href="#fhi_aims_step.substep.Substep.is_runable" title="Link to this definition">#</a></dt>
@@ -2062,7 +2073,7 @@ A SEAMM plug-in for FHI-aims</p>
               
               
                 <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="modules.html"
@@ -2091,11 +2102,14 @@ A SEAMM plug-in for FHI-aims</p>
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
   <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> On this page
   </div>
-  <nav class="bd-toc-nav page-toc">
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-fhi_aims_step.energy">fhi_aims_step.energy module</a><ul class="visible nav section-nav flex-column">
@@ -2208,6 +2222,8 @@ A SEAMM plug-in for FHI-aims</p>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-fhi_aims_step.substep">fhi_aims_step.substep module</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fhi_aims_step.substep.Substep"><code class="docutils literal notranslate"><span class="pre">Substep</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fhi_aims_step.substep.Substep.global_options"><code class="docutils literal notranslate"><span class="pre">Substep.global_options</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fhi_aims_step.substep.Substep.input_only"><code class="docutils literal notranslate"><span class="pre">Substep.input_only</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fhi_aims_step.substep.Substep.is_runable"><code class="docutils literal notranslate"><span class="pre">Substep.is_runable</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fhi_aims_step.substep.Substep.is_spin_polarized"><code class="docutils literal notranslate"><span class="pre">Substep.is_spin_polarized</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fhi_aims_step.substep.Substep.options"><code class="docutils literal notranslate"><span class="pre">Substep.options</span></code></a></li>
@@ -2279,6 +2295,7 @@ A SEAMM plug-in for FHI-aims</p>
   </nav></div>
 
   <div class="sidebar-secondary-item">
+
   <div class="tocsection sourcelink">
     <a href="../_sources/api/fhi_aims_step.rst.txt">
       <i class="fa-solid fa-file-lines"></i> Show Source
@@ -2299,8 +2316,8 @@ A SEAMM plug-in for FHI-aims</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -2352,8 +2369,9 @@ A SEAMM plug-in for FHI-aims</p>
   
     <div class="footer-items__end">
       
-        <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.14.1.
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.2.
 </p></div>
       
     </div>

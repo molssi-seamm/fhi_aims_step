@@ -4,16 +4,18 @@
 """
 
 import configparser
+import importlib
 import json
 import logging
 from pathlib import Path
 import pprint
 import re
+import shutil
 
 from molsystem.elements import to_symbols
 import seamm
 import seamm_exec
-from seamm_util import Q_
+from seamm_util import Q_, Configuration
 import seamm_util.printing as printing
 
 # In addition to the normal logger, two logger-like printing facilities are
@@ -151,15 +153,41 @@ class Substep(seamm.Node):
         executor = self.parent.flowchart.executor
 
         # Read configuration file for FHI-aims
-        ini_dir = Path(seamm_options["root"]).expanduser()
-        full_config = configparser.ConfigParser()
-        full_config.read(ini_dir / "fhi-aims.ini")
         executor_type = executor.name
+        full_config = configparser.ConfigParser()
+        ini_dir = Path(seamm_options["root"]).expanduser()
+        path = ini_dir / "fhi-aims.ini"
+
+        # If the config file doesn't exists, get the default
+        if not path.exists():
+            resources = importlib.resources.files("fhi-aims_step") / "data"
+            ini_text = (resources / "fhi-aims.ini").read_text()
+            txt_config = Configuration(path)
+            txt_config.from_string(ini_text)
+            txt_config.save()
+
+        full_config.read(ini_dir / "fhi-aims.ini")
+
+        # Getting desperate! Look for an executable in the path
         if executor_type not in full_config:
-            raise RuntimeError(
-                f"No section for '{executor_type}' in the FHI-aims ini file "
-                f"({ini_dir / 'fhi-aims.ini'})"
-            )
+            path = shutil.which("fhi-aims")
+            if path is None:
+                raise RuntimeError(
+                    f"No section for '{executor_type}' in FHI-aims ini file "
+                    f"({ini_dir / 'fhi-aims.ini'}), nor in the defaults, nor "
+                    "in the path!"
+                )
+            else:
+                txt_config = Configuration(path)
+                txt_config.add_section(executor_type)
+                txt_config.set_value(executor_type, "installation", "local")
+                txt_config.set_value(executor_type, "fhi-aims", str(path))
+                path = shutil.which("mpiexec")
+                if path is not None:
+                    txt_config.set_value(executor_type, "mpiexec", str(path))
+                txt_config.save()
+                full_config.read(ini_dir / "fhi-aims.ini")
+
         config = dict(full_config.items(executor_type))
 
         result = executor.run(

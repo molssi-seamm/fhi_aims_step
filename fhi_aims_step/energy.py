@@ -240,7 +240,6 @@ class Energy(Substep):
 
         system, configuration = self.get_system_configuration(None)
         symbols = configuration.atoms.asymmetric_symbols
-        print(f"{symbols=}")
         atoms = configuration.atoms
         symmetry = configuration.symmetry
         # Charge and spin, if available
@@ -251,7 +250,6 @@ class Energy(Substep):
                     "charge", coltype="float", configuration_dependent=True
                 )
             chgs = data["atoms_proj_charge"][0]
-            print(f"{chgs=}")
             if symmetry.n_symops > 1:
                 if P["primitive cell"]:
                     chgs = [chgs[i] for i in self._mapping_to_primitive]

@@ -2,8 +2,8 @@
 History
 =======
 2024.7.30 -- Fixed issue with initialization of fhi-aims.ini
-   * Fixed issue with the initialization of the fhi-aims.ini fileif it did not exist.
-   * Cleaned up the section for seamm.ini now that it no longers handles the
+   * Fixed issue with the initialization of the fhi-aims.ini file if it did not exist.
+   * Cleaned up the section for seamm.ini now that it no longer handles the
      executable.
 
 2024.1.19 -- Enhancements, but still debugging symmetry

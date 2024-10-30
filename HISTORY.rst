@@ -1,6 +1,11 @@
 =======
 History
 =======
+2024.10.30 -- Enhancements for energy/gradient drivers
+   * Added the standard properties for energy and gradient drivers so that aims can be
+     used with the ThermoChemistry, Structure, and Reaction plug-ins.
+   * Changed defaults to make normal runs easier to set up.
+     
 2024.7.30 -- Fixed issue with initialization of fhi-aims.ini
    * Fixed issue with the initialization of the fhi-aims.ini file if it did not exist.
    * Cleaned up the section for seamm.ini now that it no longer handles the

@@ -135,12 +135,15 @@ class Substep(seamm.Node):
             max_cores = int(max_cores)
 
         # Get the current configuration because it might change between steps
-        _, configuration = self.get_system_configuration()
-        n_atoms = configuration.n_atoms
-        np = n_atoms // atoms_per_core
-        if np <= 0:
-            np = 1
-        elif np > max_cores:
+        if atoms_per_core > 0:
+            _, configuration = self.get_system_configuration()
+            n_atoms = configuration.n_atoms
+            np = n_atoms // atoms_per_core
+            if np <= 0:
+                np = 1
+            elif np > max_cores:
+                np = max_cores
+        else:
             np = max_cores
 
         ce["NTASKS"] = np

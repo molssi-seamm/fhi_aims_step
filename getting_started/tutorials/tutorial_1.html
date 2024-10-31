@@ -1,0 +1,809 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1: A First Calculation &#8212; SEAMM FHI-aims Plug-in 2024.10.31 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=c224919a" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../_static/documentation_options.js?v=783251a9"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'getting_started/tutorials/tutorial_1';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="User Guide" href="../../user_guide/index.html" />
+    <link rel="prev" title="Tutorials" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="2024.10.31" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/SEAMM logo.png" class="logo__image only-light" alt=""/>
+    <img src="../../_static/SEAMM Inverted 288x181.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">FHI-aims</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../developer_guide/index.html">
+    Developer Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api/index.html">
+    API Documentation
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../authors.html">
+    Development Team
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../history.html">
+    History
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://molssi-seamm.github.io">
+    Main SEAMM documentation
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://molssi-seamm.github.io">
+    SEAMM Documentation
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-external" href="https://molssi.org">
+    MolSSI
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/molssi-seamm/geometry_analysis_step" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../user_guide/index.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../developer_guide/index.html">
+    Developer Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../api/index.html">
+    API Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../authors.html">
+    Development Team
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../history.html">
+    History
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://molssi-seamm.github.io">
+    Main SEAMM documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://molssi-seamm.github.io">
+    SEAMM Documentation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://molssi.org">
+    MolSSI
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/molssi-seamm/geometry_analysis_step" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Tutorials</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1: A First Calculation</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Getting Started</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Tutorials</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">1: A First Calculation</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="a-first-calculation">
+<span id="tutorial-1"></span><h1>1: A First Calculation<a class="headerlink" href="#a-first-calculation" title="Link to this heading">#</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The flowchart for this tutorial is available at <a href="https://doi.org/10.5281/zenodo.14020321" target="_blank">Zenodo</a> and also can be
+directly loaded into SEAMM by opening from Zenodo. The job for this tutorial is
+available on MolSSI’s public server, <a href="http://molssi10.molssi.org:55055/#/jobs/423" target="_blank">Job 423</a>.</p>
+</div>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>This tutorial mirrors the first tutorial in the <a class="reference external" href="https://fhi-aims-club.gitlab.io/tutorials/basics-of-running-fhi-aims/">FHI-aims tutorial series</a>, doing a
+similar calculation in SEAMM. We’ll create a water molecule and optimize the structure
+using FHI-aims.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This tutorial is almost identical to the <a class="reference external" href="https://molssi-seamm.github.io/getting_started/tutorials/tutorial_1.html">first SEAMM tutorial</a> but uses FHI-aims
+instead of DFTB+, and uses a different molecule – water rather than ethanethiol. The
+steps are the same, but the some of the details are different. Since this is the
+first tutorial, we’ll go through the steps in detail.</p>
+</div>
+<p>To get started, either double-click on the SEAMM app if you installed it, or open a
+terminal and activate the <cite>seamm</cite> conda environment and start SEAMM:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">seamm</span>
+<span class="n">seamm</span>
+</pre></div>
+</div>
+<p>This will bring up a window like the one shown below:</p>
+<figure class="align-center" id="id1">
+<img alt="An empty SEAMM window" src="../../_images/EmptySEAMMWindow.png" />
+<figcaption>
+<p><span class="caption-text">SEAMM initial window</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The window consists of two panes separated by a sash – the grey line. If you hover over
+the sash the cursor will change to a horizontal double-pointed arrow enabling the adjustment
+of the pane sizes. The left pane contains the list of available plug-in categories. Clicking
+on each category expands its content and represents it as a list of available plug-ins.
+Clicking on the same point on the screen will hide the expanded list:</p>
+<figure class="align-center" id="id2">
+<img alt="Building category of plug-ins expanded" src="../../_images/SEAMMWindow_BuildingExpanded.png" />
+<figcaption>
+<p><span class="caption-text">The SEAMM window with the Building category of plug-ins expanded</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The right-hand pane contains the initial step of a flowchart, <code class="docutils literal notranslate"><span class="pre">Start</span></code>. There must be one
+and only one start step in a flowchart because this is where execution starts. Users
+cannot delete or add a <code class="docutils literal notranslate"><span class="pre">Start</span></code> step.</p>
+</section>
+<section id="creating-the-flowchart">
+<h2>Creating the Flowchart<a class="headerlink" href="#creating-the-flowchart" title="Link to this heading">#</a></h2>
+<p>Let us create a simple flowchart and add a molecule to it using <span class="xref std std-term">SMILES</span>. SMILES
+is a specific representation of a chemical structures in the string format. Then, we add
+a new step, in which we optimize the geometry of the molecule, imported in the previous
+step, with FHI-aims.</p>
+<p>By clicking on the <code class="docutils literal notranslate"><span class="pre">FromSmilesStep</span></code> from the <code class="docutils literal notranslate"><span class="pre">Building</span></code> section, a rectangular box
+for the new step labeled as <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">SMILES</span></code> appears in the right pane. This box is also
+connected to the <code class="docutils literal notranslate"><span class="pre">Start</span></code> step:</p>
+<figure class="align-center" id="id3">
+<img alt="FLowchart with FromSMILESStep" src="../../_images/SEAMMWindow_FromSMILES.png" />
+<figcaption>
+<p><span class="caption-text">The flowchart after adding the FromSMILESStep</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If you have accidentally clicked twice on the <code class="docutils literal notranslate"><span class="pre">FromSmilesStep</span></code> or any other menu item
+that you did not want, just right-click on the unwanted step and select <code class="docutils literal notranslate"><span class="pre">delete</span></code> from
+the pop-up menu:</p>
+<figure class="align-center" id="id4">
+<img alt="Deleting a step" src="../../_images/SEAMMWindow_DeleteStep.png" />
+<figcaption>
+<p><span class="caption-text">Deleting a step from a flowchart</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>In the next stage, we need to set the SMILES string variable for the added
+molecule. Almost every step has a dialog window that allows the users to set parameters
+and control the details of the task in each step of the workflow. In order to access the
+dialog, one can either right-click on the step box and select <code class="docutils literal notranslate"><span class="pre">Edit...</span></code> from the menu
+or just double-click on the step box to open it:</p>
+<figure class="align-center" id="id5">
+<img alt="The dialog for the FromSMILES step" src="../../_images/SEAMMWindow_FromSMILESDialog.png" />
+<figcaption>
+<p><span class="caption-text">The dialog for the FromSMILES step</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Click in the field labeled <code class="docutils literal notranslate"><span class="pre">Input:</span></code> and type <cite>O</cite>, which is the SMILES representation
+for water. Leave everything else as is and click on the <code class="docutils literal notranslate"><span class="pre">OK</span></code> button:</p>
+<figure class="align-center" id="id6">
+<img alt="The dialog for the FromSMILES step" src="../../_images/SEAMMWindow_FromSMILESDialog2.png" />
+<figcaption>
+<p><span class="caption-text">The completed dialog for the FromSMILES step</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>While the name FromSMILES suggests that you need to enter SMILES, it has been
+enhanced over time to also handle chemical names, InChI, and InChIKeys. The first
+pulldown allows you to specifiy which you are entering; however, <code class="docutils literal notranslate"><span class="pre">perceive</span></code> will
+typically correctly understand the text that you typed in.</p>
+<p>You can also change how to store the new structure and the name of the system and
+configuration it is stored in, but for now just use the defaults.</p>
+</div>
+<p>Now, open the <code class="docutils literal notranslate"><span class="pre">Simulations</span></code> section in the left panel and add a <code class="docutils literal notranslate"><span class="pre">FHI-aims</span></code> step:</p>
+<figure class="align-center" id="id7">
+<img alt="The flowchart with the FHI-aims step added" src="../../_images/FHIaimsFlowchart.png" />
+<figcaption>
+<p><span class="caption-text">The flowchart with the FHI-aims step added</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Then, open the dialog for the FHI-aims step:</p>
+<figure class="align-center" id="id8">
+<img alt="The dialog for the FHI-aims step" src="../../_images/FHIaimsDialog.png" />
+<figcaption>
+<p><span class="caption-text">The dialog for the FHI-aims step</span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Note that this dialog looks like the main SEAMM window. Some steps, like the <code class="docutils literal notranslate"><span class="pre">FromSMILES</span></code>
+step, perform one task and thus, can be handled by a single dialog. However, many
+simulation codes such as FHI-aims are capable of performing multiple tasks and often have
+their own syntax.</p>
+<p>Open the <code class="docutils literal notranslate"><span class="pre">Simulation</span></code> section on the left panel and add the <code class="docutils literal notranslate"><span class="pre">Optimization</span></code> step to
+the subflowchart:</p>
+<figure class="align-center" id="id9">
+<img alt="The subflowchart for the FHI-aims step" src="../../_images/FHIaimsSubflowchart.png" />
+<figcaption>
+<p><span class="caption-text">The subflowchart for the FHI-aims step</span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Open the <code class="docutils literal notranslate"><span class="pre">Optimization</span></code> dialog:</p>
+<figure class="align-center" id="id10">
+<img alt="The FHI-aims Optimization dialog" src="../../_images/FHIaimsOptimizationDialog.png" />
+<figcaption>
+<p><span class="caption-text">The FHI-aims Optimization dialog</span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>There are a number of control paramters available. On the left side of the dialog, there
+are options for controlling the Hamiltonian and the physical approximations being
+made. The right hand panel shows the options for the numerical integration over the
+Brillouin zone for periodic systems. These options are ignored for molecular
+systems. The bottom part of the dialog consists of parameters for controlling the
+geometry optimization procedure.</p>
+<p>SEAMM strives to have reasonable default values, so can start with the defaults, which
+actually correspond almost exactly to the input specified in the FHI-aims tutorial for
+water. The only difference is that by default the FHI-aims plug-in adds long-range van
+der Waals terms. They will not affect the optimization of water, but you can turn them
+off if you want to have an identical calculation to the generic FHI-aims tutorial.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>FHI-aims and several other codes in SEAMM can handle both molecular and periodic
+systems, which is why you see options for using the primitive cell, the k-space
+integration grid, and whether to optimize the cell. These are ignored for molecular
+systems – there is no cell – but allow you to create flowcharts that can work with
+both molecular and periodic systems.</p>
+</div>
+<p>Before leaving the dialog, click on the <code class="docutils literal notranslate"><span class="pre">Output</span></code> tab at the top of the dialog:</p>
+<figure class="align-center" id="id11">
+<img alt="The FHI-aims Optimization dialog, output tab" src="../../_images/FHIaims_output.png" />
+<figcaption>
+<p><span class="caption-text">The FHI-aims Optimization dialog, output tab</span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>This is where you control plotting the total charge density, spin-density (for
+spin-polarized calculations), and orbitals. By default it does not plot any densities or
+orbitals. Change the items to <code class="docutils literal notranslate"><span class="pre">yes</span></code>, leaving the selected orbitals <code class="docutils literal notranslate"><span class="pre">-1,</span> <span class="pre">HOMO,</span> <span class="pre">LUMO,</span>
+<span class="pre">+1</span></code> which asks the code to plot the HOMO and LUMO orbitals as well as the next orbital
+below the HOMO (-1) and the next orbital above the LUMO (+1). Again you see some
+controls for periodic systems, which you can ignore. The defaults are fine, so click
+<code class="docutils literal notranslate"><span class="pre">Cancel</span></code> to close the dialog with no changes.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you do not intend to make any changes in a dialog, it is a good idea to close it with
+the <code class="docutils literal notranslate"><span class="pre">Cancel</span></code> button. It is a common habit to click <code class="docutils literal notranslate"><span class="pre">OK</span></code>, but pressing <code class="docutils literal notranslate"><span class="pre">OK</span></code>
+saves any changes including ones you made accidentally by e.g. looking at the options
+in a pulldown. Such a mistake can lead to a calculation that you didn’t intend, with
+puzzling results. We recommend using the <code class="docutils literal notranslate"><span class="pre">Cancel</span></code> button in any dialog in SEAMM or
+any other program unless you actually want to make changes. It is a good habit to get
+into.</p>
+</div>
+<p>Click <code class="docutils literal notranslate"><span class="pre">OK</span></code> to close the dialog to save your changes.</p>
+</section>
+<section id="running-the-job">
+<h2>Running the Job<a class="headerlink" href="#running-the-job" title="Link to this heading">#</a></h2>
+<p>To submit the flowchart as a Job, click on the <code class="docutils literal notranslate"><span class="pre">File</span></code> menu and select <code class="docutils literal notranslate"><span class="pre">Run</span></code> or use
+the accelerator (⌘R on a Mac, ^R on Windows or Linux) to get the following dialog:</p>
+<figure class="align-center" id="id12">
+<img alt="The Run Dialog" src="../../_images/SEAMMWindow_RunDialog.png" />
+<figcaption>
+<p><span class="caption-text">The Run dialog in SEAMM</span><a class="headerlink" href="#id12" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The very first time you run, you will need to provide a username and password for the
+Dashboard. If so, this dialog will appear first:</p>
+<figure class="align-center" id="id13">
+<img alt="The login information for the Dashboard" src="../../_images/dashboard_login.png" />
+<figcaption>
+<p><span class="caption-text">The login information for the Dashboard</span><a class="headerlink" href="#id13" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If you don’t know your username and password go to <a class="reference external" href="https://molssi-seamm.github.io/getting_started/installation/dashboard_management.html#dashboard-management">Managing the Dashboard</a> and
+then come back here.</p>
+</div>
+<p>Add a useful title in the <code class="docutils literal notranslate"><span class="pre">Title</span></code> field. Briefly describe your goal and the details of
+your simulation workflow within the large text area at the bottom of the
+dialog. Finally, click <code class="docutils literal notranslate"><span class="pre">OK</span></code> to execute the calculation.</p>
+<p>As noted at the beginning this tutorial you can download the flowchart from
+<a href="https://doi.org/10.5281/zenodo.14020321" target="_blank">Zenodo</a> and view the results of the calculation in the public MolSSI Dashboard
+at <a href="http://molssi10.molssi.org:55055/#/jobs/423" target="_blank">Job 423</a>.</p>
+<p>The <a class="reference external" href="https://molssi-seamm.github.io/getting_started/tutorials/tutorial_2.html">second SEAMM tutorial</a> will show you how to look at your job and its results in
+the Dashboard.</p>
+</section>
+<section id="topics-covered">
+<h2>Topics Covered<a class="headerlink" href="#topics-covered" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Adding steps to a flowchart.</p></li>
+<li><p>Editing the parameters for the steps.</p></li>
+<li><p>Submitting a job.</p></li>
+</ol>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Tutorials</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../user_guide/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">User Guide</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-the-flowchart">Creating the Flowchart</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-job">Running the Job</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topics-covered">Topics Covered</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../../_sources/getting_started/tutorials/tutorial_1.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

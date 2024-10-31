@@ -1,6 +1,9 @@
 =======
 History
 =======
+2024.10.31 -- Added a first tutorial
+   * Added a first tutorial to the documentation.
+     
 2024.10.30 -- Enhancements for energy/gradient drivers
    * Added the standard properties for energy and gradient drivers so that aims can be
      used with the ThermoChemistry, Structure, and Reaction plug-ins.

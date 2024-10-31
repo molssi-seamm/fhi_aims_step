@@ -178,7 +178,7 @@ class FHIaims(seamm.Node):
             parser_name,
             "--atoms-per-core",
             type=int,
-            default="5",
+            default="1",
             help="the optimal number of atoms per core for FHI-aims",
         )
         parser.add_argument(

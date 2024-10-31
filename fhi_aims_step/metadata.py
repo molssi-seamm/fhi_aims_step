@@ -447,6 +447,23 @@ units : str
     Optional units for the result. If present, the value should be in these units.
 """
 metadata["results"] = {
+    "energy": {
+        "description": "energy",
+        "dimensionality": "scalar",
+        "type": "float",
+        "units": "eV",
+    },
+    "gradients": {
+        "description": "gradients",
+        "dimensionality": [3, "n_atoms"],
+        "type": "float",
+        "units": "eV/Å",
+    },
+    "model": {
+        "description": "The model string",
+        "dimensionality": "scalar",
+        "type": "string",
+    },
     "total_energy": {
         "calculation": [
             "energy",

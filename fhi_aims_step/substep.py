@@ -135,12 +135,15 @@ class Substep(seamm.Node):
             max_cores = int(max_cores)
 
         # Get the current configuration because it might change between steps
-        _, configuration = self.get_system_configuration()
-        n_atoms = configuration.n_atoms
-        np = n_atoms // atoms_per_core
-        if np <= 0:
-            np = 1
-        elif np > max_cores:
+        if atoms_per_core > 0:
+            _, configuration = self.get_system_configuration()
+            n_atoms = configuration.n_atoms
+            np = n_atoms // atoms_per_core
+            if np <= 0:
+                np = 1
+            elif np > max_cores:
+                np = max_cores
+        else:
             np = max_cores
 
         ce["NTASKS"] = np
@@ -385,11 +388,15 @@ class Substep(seamm.Node):
         if "is_a_nice_day" in section:
             data["is_a_nice_day"] = section["is_a_nice_day"]
 
+        if "total_energy" in data:
+            data["energy"] = data["total_energy"]
+        data["model"] = "FHI-aims/" + self.model
+
         # Parsing values from the output
         path = Path(self.directory) / "aims.out"
         output = path.read_text()
 
-        # Find the citations
+        # Find the citations and other data
         lines = output.splitlines()
 
         # Check that the job ended successfully
@@ -415,6 +422,25 @@ class Substep(seamm.Node):
                 level=1,
                 note="The principle citation for numerical integration grids.",
             )
+
+        # Forces. The output looks like this
+        #
+        # Total atomic forces (unitary forces cleaned) [eV/Ang]:
+        # |    1   0.116396923435835E+00   0.380404354092886E-01  -0.486778273969592E-27
+        # |    2   0.177234658278163E+00  -0.618817461451795E-01  -0.649037698626122E-27
+        # |    3  -0.293631581713999E+00   0.238413107358909E-01  -0.649037698626122E-27
+
+        it = iter(lines)
+        for line in it:
+            if "Total atomic forces" in line:
+                forces = []
+                for line in it:
+                    line = line.strip()
+                    if len(line) == 0:
+                        break
+                    parts = line.split()
+                    forces.append([-float(p) for p in parts[2:]])
+                data["gradients"] = forces
 
         for key, mdata in self._metadata["results"].items():
             self.logger.debug(f"results {key=}")

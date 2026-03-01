@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""Base class for substeps in the FHI-aims step
-"""
+"""Base class for substeps in the FHI-aims step"""
 
 import configparser
 import importlib

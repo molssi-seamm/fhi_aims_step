@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
 
-"""Non-graphical part of the Optimization step in a FHI aims flowchart
-"""
+"""Non-graphical part of the Optimization step in a FHI aims flowchart"""
 
+import importlib
 import logging
 from pathlib import Path
-import pkg_resources
 import pprint  # noqa: F401
 import traceback
 
@@ -29,7 +28,7 @@ job = printing.getPrinter()
 printer = printing.getPrinter("FHI aims")
 
 # Add this module's properties to the standard properties
-path = Path(pkg_resources.resource_filename(__name__, "data/"))
+path = importlib.resources.files("fhi_aims_step") / "data"
 csv_file = path / "properties.csv"
 if path.exists():
     molsystem.add_properties_from_file(csv_file)

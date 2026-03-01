@@ -1,6 +1,8 @@
 =======
 History
 =======
+2026.3.1 -- Internal: switching from deprecated library pkg_resources to importlib
+
 2024.10.31 -- Added a first tutorial
    * Added a first tutorial to the documentation.
      

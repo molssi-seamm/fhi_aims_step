@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
 
-"""Non-graphical part of the Energy step in a FHI-aims flowchart
-"""
+"""Non-graphical part of the Energy step in a FHI-aims flowchart"""
 
 import csv
+import importlib
 import logging
 from pathlib import Path
-import pkg_resources
 import pprint  # noqa: F401
 import textwrap
 
@@ -34,7 +33,7 @@ job = printing.getPrinter()
 printer = printing.getPrinter("FHI-aims")
 
 # Add this module's properties to the standard properties
-path = Path(pkg_resources.resource_filename(__name__, "data/"))
+path = importlib.resources.files("fhi_aims_step") / "data"
 csv_file = path / "properties.csv"
 if path.exists():
     molsystem.add_properties_from_file(csv_file)
@@ -672,8 +671,8 @@ class Energy(Substep):
                 lengths = configuration.cell.reciprocal_lengths()
                 spacing = P["k-spacing"].to("1/Å").magnitude
                 na = round(lengths[0] / spacing)
-                nb = round(lengths[0] / spacing)
-                nc = round(lengths[0] / spacing)
+                nb = round(lengths[1] / spacing)
+                nc = round(lengths[2] / spacing)
                 na = na if na > 0 else 1
                 nb = nb if nb > 0 else 1
                 nc = nc if nc > 0 else 1

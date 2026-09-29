@@ -1,6 +1,16 @@
 =======
 History
 =======
+2026.9.29 -- Bugfix: a missing fhi-aims.ini no longer stops the step
+    * Creating ``~/SEAMM/fhi-aims.ini`` from the template failed with "No module named
+      'fhi-aims_step'", so the step could not run without the file. It is now created.
+    * When looking for FHI-aims on the PATH for an executor with no section in the file,
+      the new section was written over the FHI-aims executable instead of into
+      ``fhi-aims.ini``. It is now written to the file.
+    * Added ``fhi-aims-step-installer``, which the SEAMM Manager runs when the step is
+      installed, to write the template for you to edit.
+    * The documentation describes installing with the SEAMM Manager.
+
 2026.3.1 -- Internal: switching from deprecated library pkg_resources to importlib
 
 2024.10.31 -- Added a first tutorial

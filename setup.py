@@ -91,5 +91,8 @@ setup(
             'Optimization = fhi_aims_step:OptimizationStep',
             'Energy = fhi_aims_step:EnergyStep',
         ],
+        'console_scripts': [
+            'fhi-aims-step-installer=fhi_aims_step.__main__:run',
+        ],
     },
 )

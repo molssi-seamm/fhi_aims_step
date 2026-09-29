@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 
@@ -8,7 +7,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>fhi_aims_step package &#8212; SEAMM FHI-aims Plug-in 2026.3.1 documentation</title>
+    <title>fhi_aims_step package &#8212; SEAMM FHI-aims Plug-in 2026.9.29 documentation</title>
   
   
   
@@ -27,8 +26,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -36,39 +35,46 @@
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=c224919a" />
   
   <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <script defer src="../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
 
-    <script src="../_static/documentation_options.js?v=fec480e4"></script>
+    <script src="../_static/documentation_options.js?v=45a1f582"></script>
     <script src="../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'api/fhi_aims_step';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Development Team" href="../authors.html" />
     <link rel="prev" title="fhi_aims_step" href="modules.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="2026.3.1" />
+  <meta name="docsearch:version" content="2026.9.29" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
-
+  <body data-default-mode="">
   
   
   <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
+  
+  
+  
   
   <dialog id="pst-search-dialog">
     
@@ -94,9 +100,9 @@
 </div>
 
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
 <div class="bd-header__inner bd-page-width">
-  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
     <span class="fa-solid fa-bars"></span>
   </button>
   
@@ -221,7 +227,7 @@
         <div class="navbar-item navbar-persistent--container">
           
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
  <i class="fa-solid fa-magnifying-glass"></i>
  <span class="search-button__default-text">Search</span>
  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
@@ -231,11 +237,18 @@
       
         <div class="navbar-item">
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links"
     aria-label="Icon Links">
@@ -248,8 +261,7 @@
           
           
           
-          <a href="https://github.com/molssi-seamm/geometry_analysis_step" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
-            <span class="sr-only">GitHub</span></a>
+          <a href="https://github.com/molssi-seamm/geometry_analysis_step" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
         </li>
         <li class="nav-item">
           
@@ -260,8 +272,7 @@
           
           
           
-          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i>
-            <span class="sr-only">Twitter</span></a>
+          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i><span class="visually-hidden">Twitter</span></a>
         </li>
 </ul></div>
       
@@ -272,7 +283,7 @@
   
     <div class="navbar-persistent--mobile">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
  <i class="fa-solid fa-magnifying-glass"></i>
  <span class="search-button__default-text">Search</span>
  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
@@ -281,7 +292,7 @@
   
 
   
-    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
       <span class="fa-solid fa-outdent"></span>
     </button>
   
@@ -385,11 +396,18 @@
         
           <div class="navbar-item">
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links"
     aria-label="Icon Links">
@@ -402,8 +420,7 @@
           
           
           
-          <a href="https://github.com/molssi-seamm/geometry_analysis_step" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
-            <span class="sr-only">GitHub</span></a>
+          <a href="https://github.com/molssi-seamm/geometry_analysis_step" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
         </li>
         <li class="nav-item">
           
@@ -414,8 +431,7 @@
           
           
           
-          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i>
-            <span class="sr-only">Twitter</span></a>
+          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i><span class="visually-hidden">Twitter</span></a>
         </li>
 </ul></div>
         
@@ -424,13 +440,21 @@
   </div>
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button type="button" id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
         <div class="sidebar-primary-item">
+
 <nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="modules.html">fhi_aims_step</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">fhi_aims_step package</a></li>
+<li class="toctree-l2 current active"><a aria-current="page" class="current reference internal" href="#">fhi_aims_step package</a></li>
 </ul>
 </details></li>
 </ul>
@@ -653,14 +677,14 @@ definitions of parameters to control this step. The keys are parameters for the
 current plugin,the values are dictionaries as outlined below.</p>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;time&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="mf">100.0</span><span class="p">,</span>
-        <span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;float&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;default_units&quot;</span><span class="p">:</span> <span class="s2">&quot;ps&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;enumeration&quot;</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">(),</span>
-        <span class="s2">&quot;format_string&quot;</span><span class="p">:</span> <span class="s2">&quot;.1f&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Simulation time:&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;help_text&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;The time to simulate in the dynamics run.&quot;</span><span class="p">)</span>
+    <span class="s2">"time"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"default"</span><span class="p">:</span> <span class="mf">100.0</span><span class="p">,</span>
+        <span class="s2">"kind"</span><span class="p">:</span> <span class="s2">"float"</span><span class="p">,</span>
+        <span class="s2">"default_units"</span><span class="p">:</span> <span class="s2">"ps"</span><span class="p">,</span>
+        <span class="s2">"enumeration"</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">(),</span>
+        <span class="s2">"format_string"</span><span class="p">:</span> <span class="s2">".1f"</span><span class="p">,</span>
+        <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Simulation time:"</span><span class="p">,</span>
+        <span class="s2">"help_text"</span><span class="p">:</span> <span class="p">(</span><span class="s2">"The time to simulate in the dynamics run."</span><span class="p">)</span>
     <span class="p">},</span>
 <span class="p">}</span>
 </pre></div>
@@ -956,14 +980,14 @@ definitions of parameters to control this step. The keys are parameters for the
 current plugin,the values are dictionaries as outlined below.</p>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;time&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="mf">100.0</span><span class="p">,</span>
-        <span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;float&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;default_units&quot;</span><span class="p">:</span> <span class="s2">&quot;ps&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;enumeration&quot;</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">(),</span>
-        <span class="s2">&quot;format_string&quot;</span><span class="p">:</span> <span class="s2">&quot;.1f&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Simulation time:&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;help_text&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;The time to simulate in the dynamics run.&quot;</span><span class="p">)</span>
+    <span class="s2">"time"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"default"</span><span class="p">:</span> <span class="mf">100.0</span><span class="p">,</span>
+        <span class="s2">"kind"</span><span class="p">:</span> <span class="s2">"float"</span><span class="p">,</span>
+        <span class="s2">"default_units"</span><span class="p">:</span> <span class="s2">"ps"</span><span class="p">,</span>
+        <span class="s2">"enumeration"</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">(),</span>
+        <span class="s2">"format_string"</span><span class="p">:</span> <span class="s2">".1f"</span><span class="p">,</span>
+        <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Simulation time:"</span><span class="p">,</span>
+        <span class="s2">"help_text"</span><span class="p">:</span> <span class="p">(</span><span class="s2">"The time to simulate in the dynamics run."</span><span class="p">)</span>
     <span class="p">},</span>
 <span class="p">}</span>
 </pre></div>
@@ -1097,6 +1121,9 @@ a step, and dimensions of the graphical node.</p></li>
 </dd></dl>
 
 </section>
+<section id="fhi-aims-step-installer-module">
+<h2>fhi_aims_step.installer module<a class="headerlink" href="#fhi-aims-step-installer-module" title="Link to this heading">#</a></h2>
+</section>
 <section id="module-fhi_aims_step.metadata">
 <span id="fhi-aims-step-metadata-module"></span><h2>fhi_aims_step.metadata module<a class="headerlink" href="#module-fhi_aims_step.metadata" title="Link to this heading">#</a></h2>
 <p>This file contains metadata describing the results from FHIaims</p>
@@ -1106,24 +1133,24 @@ a step, and dimensions of the graphical node.</p></li>
 <dd><p>Description of the computational models for FHIaims.</p>
 <p>Hamiltonians, approximations, and basis set or parameterizations,
 only if appropriate for this code. For example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">metadata</span><span class="p">[</span><span class="s2">&quot;computational models&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;Hartree-Fock&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;models&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">&quot;PM7&quot;</span><span class="p">:</span> <span class="p">{</span>
-                <span class="s2">&quot;parameterizations&quot;</span><span class="p">:</span> <span class="p">{</span>
-                    <span class="s2">&quot;PM7&quot;</span><span class="p">:</span> <span class="p">{</span>
-                        <span class="s2">&quot;elements&quot;</span><span class="p">:</span> <span class="s2">&quot;1-60,62-83&quot;</span><span class="p">,</span>
-                        <span class="s2">&quot;periodic&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-                        <span class="s2">&quot;reactions&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-                        <span class="s2">&quot;optimization&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-                        <span class="s2">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;mopac&quot;</span><span class="p">,</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">metadata</span><span class="p">[</span><span class="s2">"computational models"</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"Hartree-Fock"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"models"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"PM7"</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">"parameterizations"</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">"PM7"</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="s2">"elements"</span><span class="p">:</span> <span class="s2">"1-60,62-83"</span><span class="p">,</span>
+                        <span class="s2">"periodic"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                        <span class="s2">"reactions"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                        <span class="s2">"optimization"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                        <span class="s2">"code"</span><span class="p">:</span> <span class="s2">"mopac"</span><span class="p">,</span>
                     <span class="p">},</span>
-                    <span class="s2">&quot;PM7-TS&quot;</span><span class="p">:</span> <span class="p">{</span>
-                        <span class="s2">&quot;elements&quot;</span><span class="p">:</span> <span class="s2">&quot;1-60,62-83&quot;</span><span class="p">,</span>
-                        <span class="s2">&quot;periodic&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-                        <span class="s2">&quot;reactions&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-                        <span class="s2">&quot;optimization&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
-                        <span class="s2">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;mopac&quot;</span><span class="p">,</span>
+                    <span class="s2">"PM7-TS"</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="s2">"elements"</span><span class="p">:</span> <span class="s2">"1-60,62-83"</span><span class="p">,</span>
+                        <span class="s2">"periodic"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                        <span class="s2">"reactions"</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                        <span class="s2">"optimization"</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+                        <span class="s2">"code"</span><span class="p">:</span> <span class="s2">"mopac"</span><span class="p">,</span>
                     <span class="p">},</span>
                 <span class="p">},</span>
             <span class="p">},</span>
@@ -1276,14 +1303,14 @@ definitions of parameters to control this step. The keys are parameters for the
 current plugin,the values are dictionaries as outlined below.</p>
 <p class="rubric">Examples</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;time&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="mf">100.0</span><span class="p">,</span>
-        <span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;float&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;default_units&quot;</span><span class="p">:</span> <span class="s2">&quot;ps&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;enumeration&quot;</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">(),</span>
-        <span class="s2">&quot;format_string&quot;</span><span class="p">:</span> <span class="s2">&quot;.1f&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Simulation time:&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;help_text&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;The time to simulate in the dynamics run.&quot;</span><span class="p">)</span>
+    <span class="s2">"time"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"default"</span><span class="p">:</span> <span class="mf">100.0</span><span class="p">,</span>
+        <span class="s2">"kind"</span><span class="p">:</span> <span class="s2">"float"</span><span class="p">,</span>
+        <span class="s2">"default_units"</span><span class="p">:</span> <span class="s2">"ps"</span><span class="p">,</span>
+        <span class="s2">"enumeration"</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">(),</span>
+        <span class="s2">"format_string"</span><span class="p">:</span> <span class="s2">".1f"</span><span class="p">,</span>
+        <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Simulation time:"</span><span class="p">,</span>
+        <span class="s2">"help_text"</span><span class="p">:</span> <span class="p">(</span><span class="s2">"The time to simulate in the dynamics run."</span><span class="p">)</span>
     <span class="p">},</span>
 <span class="p">}</span>
 </pre></div>
@@ -2090,10 +2117,10 @@ A SEAMM plug-in for FHI-aims</p>
     class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> On this page
   </div>
-  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="visible nav section-nav flex-column">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-fhi_aims_step.energy">fhi_aims_step.energy module</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-fhi_aims_step.energy">fhi_aims_step.energy module</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fhi_aims_step.energy.Energy"><code class="docutils literal notranslate"><span class="pre">Energy</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fhi_aims_step.energy.Energy.parser"><code class="docutils literal notranslate"><span class="pre">Energy.parser</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fhi_aims_step.energy.Energy.options"><code class="docutils literal notranslate"><span class="pre">Energy.options</span></code></a></li>
@@ -2110,7 +2137,7 @@ A SEAMM plug-in for FHI-aims</p>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-fhi_aims_step.energy_parameters">fhi_aims_step.energy_parameters module</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-fhi_aims_step.energy_parameters">fhi_aims_step.energy_parameters module</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fhi_aims_step.energy_parameters.EnergyParameters"><code class="docutils literal notranslate"><span class="pre">EnergyParameters</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fhi_aims_step.energy_parameters.EnergyParameters.energy_parameters"><code class="docutils literal notranslate"><span class="pre">EnergyParameters.energy_parameters</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fhi_aims_step.energy_parameters.EnergyParameters.kspace_parameters"><code class="docutils literal notranslate"><span class="pre">EnergyParameters.kspace_parameters</span></code></a></li>
@@ -2120,7 +2147,7 @@ A SEAMM plug-in for FHI-aims</p>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-fhi_aims_step.energy_step">fhi_aims_step.energy_step module</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-fhi_aims_step.energy_step">fhi_aims_step.energy_step module</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fhi_aims_step.energy_step.EnergyStep"><code class="docutils literal notranslate"><span class="pre">EnergyStep</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fhi_aims_step.energy_step.EnergyStep.create_node"><code class="docutils literal notranslate"><span class="pre">EnergyStep.create_node()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fhi_aims_step.energy_step.EnergyStep.create_tk_node"><code class="docutils literal notranslate"><span class="pre">EnergyStep.create_tk_node()</span></code></a></li>
@@ -2130,7 +2157,7 @@ A SEAMM plug-in for FHI-aims</p>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-fhi_aims_step.fhi_aims">fhi_aims_step.fhi_aims module</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-fhi_aims_step.fhi_aims">fhi_aims_step.fhi_aims module</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fhi_aims_step.fhi_aims.FHIaims"><code class="docutils literal notranslate"><span class="pre">FHIaims</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fhi_aims_step.fhi_aims.FHIaims.parser"><code class="docutils literal notranslate"><span class="pre">FHIaims.parser</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fhi_aims_step.fhi_aims.FHIaims.options"><code class="docutils literal notranslate"><span class="pre">FHIaims.options</span></code></a></li>
@@ -2147,14 +2174,14 @@ A SEAMM plug-in for FHI-aims</p>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-fhi_aims_step.fhi_aims_parameters">fhi_aims_step.fhi_aims_parameters module</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-fhi_aims_step.fhi_aims_parameters">fhi_aims_step.fhi_aims_parameters module</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fhi_aims_step.fhi_aims_parameters.FHIaimsParameters"><code class="docutils literal notranslate"><span class="pre">FHIaimsParameters</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fhi_aims_step.fhi_aims_parameters.FHIaimsParameters.parameters"><code class="docutils literal notranslate"><span class="pre">FHIaimsParameters.parameters</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-fhi_aims_step.fhi_aims_step">fhi_aims_step.fhi_aims_step module</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-fhi_aims_step.fhi_aims_step">fhi_aims_step.fhi_aims_step module</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fhi_aims_step.fhi_aims_step.FHIaimsStep"><code class="docutils literal notranslate"><span class="pre">FHIaimsStep</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fhi_aims_step.fhi_aims_step.FHIaimsStep.create_node"><code class="docutils literal notranslate"><span class="pre">FHIaimsStep.create_node()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fhi_aims_step.fhi_aims_step.FHIaimsStep.create_tk_node"><code class="docutils literal notranslate"><span class="pre">FHIaimsStep.create_tk_node()</span></code></a></li>
@@ -2164,11 +2191,12 @@ A SEAMM plug-in for FHI-aims</p>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-fhi_aims_step.metadata">fhi_aims_step.metadata module</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fhi-aims-step-installer-module">fhi_aims_step.installer module</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-fhi_aims_step.metadata">fhi_aims_step.metadata module</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fhi_aims_step.metadata.metadata"><code class="docutils literal notranslate"><span class="pre">metadata</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-fhi_aims_step.optimization">fhi_aims_step.optimization module</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-fhi_aims_step.optimization">fhi_aims_step.optimization module</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fhi_aims_step.optimization.Optimization"><code class="docutils literal notranslate"><span class="pre">Optimization</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fhi_aims_step.optimization.Optimization.parser"><code class="docutils literal notranslate"><span class="pre">Optimization.parser</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fhi_aims_step.optimization.Optimization.options"><code class="docutils literal notranslate"><span class="pre">Optimization.options</span></code></a></li>
@@ -2184,14 +2212,14 @@ A SEAMM plug-in for FHI-aims</p>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-fhi_aims_step.optimization_parameters">fhi_aims_step.optimization_parameters module</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-fhi_aims_step.optimization_parameters">fhi_aims_step.optimization_parameters module</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fhi_aims_step.optimization_parameters.OptimizationParameters"><code class="docutils literal notranslate"><span class="pre">OptimizationParameters</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fhi_aims_step.optimization_parameters.OptimizationParameters.parameters"><code class="docutils literal notranslate"><span class="pre">OptimizationParameters.parameters</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-fhi_aims_step.optimization_step">fhi_aims_step.optimization_step module</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-fhi_aims_step.optimization_step">fhi_aims_step.optimization_step module</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fhi_aims_step.optimization_step.OptimizationStep"><code class="docutils literal notranslate"><span class="pre">OptimizationStep</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fhi_aims_step.optimization_step.OptimizationStep.create_node"><code class="docutils literal notranslate"><span class="pre">OptimizationStep.create_node()</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fhi_aims_step.optimization_step.OptimizationStep.create_tk_node"><code class="docutils literal notranslate"><span class="pre">OptimizationStep.create_tk_node()</span></code></a></li>
@@ -2201,7 +2229,7 @@ A SEAMM plug-in for FHI-aims</p>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-fhi_aims_step.substep">fhi_aims_step.substep module</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-fhi_aims_step.substep">fhi_aims_step.substep module</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fhi_aims_step.substep.Substep"><code class="docutils literal notranslate"><span class="pre">Substep</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fhi_aims_step.substep.Substep.global_options"><code class="docutils literal notranslate"><span class="pre">Substep.global_options</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fhi_aims_step.substep.Substep.input_only"><code class="docutils literal notranslate"><span class="pre">Substep.input_only</span></code></a></li>
@@ -2214,7 +2242,7 @@ A SEAMM plug-in for FHI-aims</p>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-fhi_aims_step.tk_energy">fhi_aims_step.tk_energy module</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-fhi_aims_step.tk_energy">fhi_aims_step.tk_energy module</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fhi_aims_step.tk_energy.TkEnergy"><code class="docutils literal notranslate"><span class="pre">TkEnergy</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fhi_aims_step.tk_energy.TkEnergy.tk_flowchart"><code class="docutils literal notranslate"><span class="pre">TkEnergy.tk_flowchart</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fhi_aims_step.tk_energy.TkEnergy.node"><code class="docutils literal notranslate"><span class="pre">TkEnergy.node</span></code></a></li>
@@ -2236,7 +2264,7 @@ A SEAMM plug-in for FHI-aims</p>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-fhi_aims_step.tk_fhi_aims">fhi_aims_step.tk_fhi_aims module</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-fhi_aims_step.tk_fhi_aims">fhi_aims_step.tk_fhi_aims module</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fhi_aims_step.tk_fhi_aims.TkFHIaims"><code class="docutils literal notranslate"><span class="pre">TkFHIaims</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fhi_aims_step.tk_fhi_aims.TkFHIaims.tk_flowchart"><code class="docutils literal notranslate"><span class="pre">TkFHIaims.tk_flowchart</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fhi_aims_step.tk_fhi_aims.TkFHIaims.node"><code class="docutils literal notranslate"><span class="pre">TkFHIaims.node</span></code></a></li>
@@ -2253,7 +2281,7 @@ A SEAMM plug-in for FHI-aims</p>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-fhi_aims_step.tk_optimization">fhi_aims_step.tk_optimization module</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-fhi_aims_step.tk_optimization">fhi_aims_step.tk_optimization module</a><ul class="pst-show_toc_level nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fhi_aims_step.tk_optimization.TkOptimization"><code class="docutils literal notranslate"><span class="pre">TkOptimization</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fhi_aims_step.tk_optimization.TkOptimization.tk_flowchart"><code class="docutils literal notranslate"><span class="pre">TkOptimization.tk_flowchart</span></code></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fhi_aims_step.tk_optimization.TkOptimization.node"><code class="docutils literal notranslate"><span class="pre">TkOptimization.node</span></code></a></li>
@@ -2276,13 +2304,13 @@ A SEAMM plug-in for FHI-aims</p>
   </nav></div>
 
   <div class="sidebar-secondary-item">
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="../_sources/api/fhi_aims_step.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div></div>
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/api/fhi_aims_step.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
 
 </div></div>
               
@@ -2297,8 +2325,8 @@ A SEAMM plug-in for FHI-aims</p>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -2310,7 +2338,7 @@ A SEAMM plug-in for FHI-aims</p>
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.22.0.
 </p></div>
       
     </div>

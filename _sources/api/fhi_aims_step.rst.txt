@@ -52,6 +52,14 @@ fhi\_aims\_step.fhi\_aims\_step module
    :show-inheritance:
    :undoc-members:
 
+fhi\_aims\_step.installer module
+--------------------------------
+
+.. automodule:: fhi_aims_step.installer
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 fhi\_aims\_step.metadata module
 -------------------------------
 

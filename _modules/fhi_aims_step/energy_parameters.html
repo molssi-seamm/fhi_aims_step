@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 
@@ -7,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>fhi_aims_step.energy_parameters &#8212; SEAMM FHI-aims Plug-in 2026.3.1 documentation</title>
+    <title>fhi_aims_step.energy_parameters &#8212; SEAMM FHI-aims Plug-in 2026.9.29 documentation</title>
   
   
   
@@ -26,8 +25,8 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=64cc4de3f052d77215f0" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
@@ -35,37 +34,44 @@
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=c224919a" />
   
   <!-- So that users can add custom icons -->
-  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <script defer src="../../_static/scripts/fontawesome.js?digest=64cc4de3f052d77215f0"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0" />
 
-    <script src="../../_static/documentation_options.js?v=fec480e4"></script>
+    <script src="../../_static/documentation_options.js?v=45a1f582"></script>
     <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '_modules/fhi_aims_step/energy_parameters';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="2026.3.1" />
+  <meta name="docsearch:version" content="2026.9.29" />
+  
+    
+    <script src="../../_static/searchtools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../searchindex.js"></script>
+  
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
-
+  <body data-default-mode="">
   
   
   <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
-
+  
+  
+  
   
   <dialog id="pst-search-dialog">
     
@@ -91,9 +97,9 @@
 </div>
 
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
 <div class="bd-header__inner bd-page-width">
-  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
     <span class="fa-solid fa-bars"></span>
   </button>
   
@@ -218,7 +224,7 @@
         <div class="navbar-item navbar-persistent--container">
           
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
  <i class="fa-solid fa-magnifying-glass"></i>
  <span class="search-button__default-text">Search</span>
  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
@@ -228,11 +234,18 @@
       
         <div class="navbar-item">
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
       
         <div class="navbar-item"><ul class="navbar-icon-links"
     aria-label="Icon Links">
@@ -245,8 +258,7 @@
           
           
           
-          <a href="https://github.com/molssi-seamm/geometry_analysis_step" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
-            <span class="sr-only">GitHub</span></a>
+          <a href="https://github.com/molssi-seamm/geometry_analysis_step" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
         </li>
         <li class="nav-item">
           
@@ -257,8 +269,7 @@
           
           
           
-          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i>
-            <span class="sr-only">Twitter</span></a>
+          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i><span class="visually-hidden">Twitter</span></a>
         </li>
 </ul></div>
       
@@ -269,7 +280,7 @@
   
     <div class="navbar-persistent--mobile">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
  <i class="fa-solid fa-magnifying-glass"></i>
  <span class="search-button__default-text">Search</span>
  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
@@ -380,11 +391,18 @@
         
           <div class="navbar-item">
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button></div>
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
         
           <div class="navbar-item"><ul class="navbar-icon-links"
     aria-label="Icon Links">
@@ -397,8 +415,7 @@
           
           
           
-          <a href="https://github.com/molssi-seamm/geometry_analysis_step" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
-            <span class="sr-only">GitHub</span></a>
+          <a href="https://github.com/molssi-seamm/geometry_analysis_step" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
         </li>
         <li class="nav-item">
           
@@ -409,8 +426,7 @@
           
           
           
-          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i>
-            <span class="sr-only">Twitter</span></a>
+          <a href="https://twitter.com/MolSSI_NSF" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-twitter fa-lg" aria-hidden="true"></i><span class="visually-hidden">Twitter</span></a>
         </li>
 </ul></div>
         
@@ -475,9 +491,9 @@
                   
   <h1>Source code for fhi_aims_step.energy_parameters</h1><div class="highlight"><pre>
 <span></span><span class="c1"># -*- coding: utf-8 -*-</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 <span class="sd">Control parameters for the Energy step in a SEAMM flowchart</span>
-<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">"""</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">seamm</span>
@@ -489,10 +505,10 @@
 <div class="viewcode-block" id="EnergyParameters">
 <a class="viewcode-back" href="../../api/fhi_aims_step.html#fhi_aims_step.energy_parameters.EnergyParameters">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">EnergyParameters</span><span class="p">(</span><span class="n">seamm</span><span class="o">.</span><span class="n">Parameters</span><span class="p">):</span>  <span class="c1"># noqa: E999</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">"""</span>
 <span class="sd">    The control parameters for Energy.</span>
 
-<span class="sd">    You need to replace the &quot;time&quot; entry in dictionary below these comments with the</span>
+<span class="sd">    You need to replace the "time" entry in dictionary below these comments with the</span>
 <span class="sd">    definitions of parameters to control this step. The keys are parameters for the</span>
 <span class="sd">    current plugin,the values are dictionaries as outlined below.</span>
 
@@ -501,14 +517,14 @@
 <span class="sd">    ::</span>
 
 <span class="sd">        parameters = {</span>
-<span class="sd">            &quot;time&quot;: {</span>
-<span class="sd">                &quot;default&quot;: 100.0,</span>
-<span class="sd">                &quot;kind&quot;: &quot;float&quot;,</span>
-<span class="sd">                &quot;default_units&quot;: &quot;ps&quot;,</span>
-<span class="sd">                &quot;enumeration&quot;: tuple(),</span>
-<span class="sd">                &quot;format_string&quot;: &quot;.1f&quot;,</span>
-<span class="sd">                &quot;description&quot;: &quot;Simulation time:&quot;,</span>
-<span class="sd">                &quot;help_text&quot;: (&quot;The time to simulate in the dynamics run.&quot;)</span>
+<span class="sd">            "time": {</span>
+<span class="sd">                "default": 100.0,</span>
+<span class="sd">                "kind": "float",</span>
+<span class="sd">                "default_units": "ps",</span>
+<span class="sd">                "enumeration": tuple(),</span>
+<span class="sd">                "format_string": ".1f",</span>
+<span class="sd">                "description": "Simulation time:",</span>
+<span class="sd">                "help_text": ("The time to simulate in the dynamics run.")</span>
 <span class="sd">            },</span>
 <span class="sd">        }</span>
 
@@ -517,473 +533,473 @@
 <span class="sd">        Each key of the dictionary is a dictionary that contains the</span>
 <span class="sd">        the following keys:</span>
 
-<span class="sd">    parameters[&quot;default&quot;] :</span>
+<span class="sd">    parameters["default"] :</span>
 <span class="sd">        The default value of the parameter, used to reset it.</span>
 
-<span class="sd">    parameters[&quot;kind&quot;] : enum()</span>
-<span class="sd">        Specifies the kind of a variable. One of  &quot;integer&quot;, &quot;float&quot;, &quot;string&quot;,</span>
-<span class="sd">        &quot;boolean&quot;, or &quot;enum&quot;</span>
+<span class="sd">    parameters["kind"] : enum()</span>
+<span class="sd">        Specifies the kind of a variable. One of  "integer", "float", "string",</span>
+<span class="sd">        "boolean", or "enum"</span>
 
-<span class="sd">        While the &quot;kind&quot; of a variable might be a numeric value, it may still have</span>
+<span class="sd">        While the "kind" of a variable might be a numeric value, it may still have</span>
 <span class="sd">        enumerated custom values meaningful to the user. For instance, if the parameter</span>
-<span class="sd">        is a convergence criterion for an optimizer, custom values like &quot;normal&quot;,</span>
-<span class="sd">        &quot;precise&quot;, etc, might be adequate. In addition, any parameter can be set to a</span>
-<span class="sd">        variable of expression, indicated by having &quot;$&quot; as the first character in the</span>
+<span class="sd">        is a convergence criterion for an optimizer, custom values like "normal",</span>
+<span class="sd">        "precise", etc, might be adequate. In addition, any parameter can be set to a</span>
+<span class="sd">        variable of expression, indicated by having "$" as the first character in the</span>
 <span class="sd">        field. For example, $OPTIMIZER_CONV.</span>
 
-<span class="sd">    parameters[&quot;default_units&quot;] : str</span>
+<span class="sd">    parameters["default_units"] : str</span>
 <span class="sd">        The default units, used for resetting the value.</span>
 
-<span class="sd">    parameters[&quot;enumeration&quot;]: tuple</span>
+<span class="sd">    parameters["enumeration"]: tuple</span>
 <span class="sd">        A tuple of enumerated values.</span>
 
-<span class="sd">    parameters[&quot;format_string&quot;]: str</span>
-<span class="sd">        A format string for &quot;pretty&quot; output.</span>
+<span class="sd">    parameters["format_string"]: str</span>
+<span class="sd">        A format string for "pretty" output.</span>
 
-<span class="sd">    parameters[&quot;description&quot;]: str</span>
+<span class="sd">    parameters["description"]: str</span>
 <span class="sd">        A short string used as a prompt in the GUI.</span>
 
-<span class="sd">    parameters[&quot;help_text&quot;]: str</span>
+<span class="sd">    parameters["help_text"]: str</span>
 <span class="sd">        A longer string to display as help for the user.</span>
 
 <span class="sd">    See Also</span>
 <span class="sd">    --------</span>
 <span class="sd">    Energy, TkEnergy, Energy EnergyParameters, EnergyStep</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
     <span class="n">parameters</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s2">&quot;input only&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;no&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;boolean&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;default_units&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;enumeration&quot;</span><span class="p">:</span> <span class="p">(</span>
-                <span class="s2">&quot;yes&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;no&quot;</span><span class="p">,</span>
+        <span class="s2">"input only"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"default"</span><span class="p">:</span> <span class="s2">"no"</span><span class="p">,</span>
+            <span class="s2">"kind"</span><span class="p">:</span> <span class="s2">"boolean"</span><span class="p">,</span>
+            <span class="s2">"default_units"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"enumeration"</span><span class="p">:</span> <span class="p">(</span>
+                <span class="s2">"yes"</span><span class="p">,</span>
+                <span class="s2">"no"</span><span class="p">,</span>
             <span class="p">),</span>
-            <span class="s2">&quot;format_string&quot;</span><span class="p">:</span> <span class="s2">&quot;s&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Write the input files and stop:&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;help_text&quot;</span><span class="p">:</span> <span class="s2">&quot;Don&#39;t run MOPAC. Just write the input files.&quot;</span><span class="p">,</span>
+            <span class="s2">"format_string"</span><span class="p">:</span> <span class="s2">"s"</span><span class="p">,</span>
+            <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Write the input files and stop:"</span><span class="p">,</span>
+            <span class="s2">"help_text"</span><span class="p">:</span> <span class="s2">"Don't run MOPAC. Just write the input files."</span><span class="p">,</span>
         <span class="p">},</span>
-        <span class="s2">&quot;gui&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="p">(</span>
-                <span class="s2">&quot;with recommended features for energy or structure of molecules &quot;</span>
-                <span class="s2">&quot;or nonmetallic solids&quot;</span>
+        <span class="s2">"gui"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"default"</span><span class="p">:</span> <span class="p">(</span>
+                <span class="s2">"with recommended features for energy or structure of molecules "</span>
+                <span class="s2">"or nonmetallic solids"</span>
             <span class="p">),</span>
-            <span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;enumeration&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;default_units&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;enumeration&quot;</span><span class="p">:</span> <span class="p">(</span>
+            <span class="s2">"kind"</span><span class="p">:</span> <span class="s2">"enumeration"</span><span class="p">,</span>
+            <span class="s2">"default_units"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"enumeration"</span><span class="p">:</span> <span class="p">(</span>
                 <span class="p">(</span>
-                    <span class="s2">&quot;with recommended features for energy or structure involving &quot;</span>
-                    <span class="s2">&quot;metallic solids&quot;</span>
+                    <span class="s2">"with recommended features for energy or structure involving "</span>
+                    <span class="s2">"metallic solids"</span>
                 <span class="p">),</span>
                 <span class="p">(</span>
-                    <span class="s2">&quot;with recommended features for energy or structure of molecules &quot;</span>
-                    <span class="s2">&quot;or nonmetallic solids&quot;</span>
+                    <span class="s2">"with recommended features for energy or structure of molecules "</span>
+                    <span class="s2">"or nonmetallic solids"</span>
                 <span class="p">),</span>
-                <span class="s2">&quot;with recommended features for band structures of metallic solids&quot;</span><span class="p">,</span>
+                <span class="s2">"with recommended features for band structures of metallic solids"</span><span class="p">,</span>
                 <span class="p">(</span>
-                    <span class="s2">&quot;with recommended features for orbital energies of molecules or &quot;</span>
-                    <span class="s2">&quot;band structures for nonmetallic solids&quot;</span>
+                    <span class="s2">"with recommended features for orbital energies of molecules or "</span>
+                    <span class="s2">"band structures for nonmetallic solids"</span>
                 <span class="p">),</span>
-                <span class="s2">&quot;with all standard features&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;including experimental features&quot;</span><span class="p">,</span>
+                <span class="s2">"with all standard features"</span><span class="p">,</span>
+                <span class="s2">"including experimental features"</span><span class="p">,</span>
             <span class="p">),</span>
-            <span class="s2">&quot;format_string&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Configure GUI&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;help_text&quot;</span><span class="p">:</span> <span class="s2">&quot;How to configure the GUI&quot;</span><span class="p">,</span>
+            <span class="s2">"format_string"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Configure GUI"</span><span class="p">,</span>
+            <span class="s2">"help_text"</span><span class="p">:</span> <span class="s2">"How to configure the GUI"</span><span class="p">,</span>
         <span class="p">},</span>
-        <span class="s2">&quot;calculate_gradients&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;yes&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;boolean&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;default_units&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;enumeration&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;yes&quot;</span><span class="p">,</span> <span class="s2">&quot;no&quot;</span><span class="p">),</span>
-            <span class="s2">&quot;format_string&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Calculate gradients:&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;help_text&quot;</span><span class="p">:</span> <span class="p">(</span>
-                <span class="s2">&quot;Whether to calculate the gradients in a single-point calculation.&quot;</span>
+        <span class="s2">"calculate_gradients"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"default"</span><span class="p">:</span> <span class="s2">"yes"</span><span class="p">,</span>
+            <span class="s2">"kind"</span><span class="p">:</span> <span class="s2">"boolean"</span><span class="p">,</span>
+            <span class="s2">"default_units"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"enumeration"</span><span class="p">:</span> <span class="p">(</span><span class="s2">"yes"</span><span class="p">,</span> <span class="s2">"no"</span><span class="p">),</span>
+            <span class="s2">"format_string"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Calculate gradients:"</span><span class="p">,</span>
+            <span class="s2">"help_text"</span><span class="p">:</span> <span class="p">(</span>
+                <span class="s2">"Whether to calculate the gradients in a single-point calculation."</span>
             <span class="p">),</span>
         <span class="p">},</span>
-        <span class="s2">&quot;results&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="p">{},</span>
-            <span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;dictionary&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;default_units&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;enumeration&quot;</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">(),</span>
-            <span class="s2">&quot;format_string&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;results&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;help_text&quot;</span><span class="p">:</span> <span class="s2">&quot;The results to save to variables or in tables.&quot;</span><span class="p">,</span>
+        <span class="s2">"results"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"default"</span><span class="p">:</span> <span class="p">{},</span>
+            <span class="s2">"kind"</span><span class="p">:</span> <span class="s2">"dictionary"</span><span class="p">,</span>
+            <span class="s2">"default_units"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"enumeration"</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">(),</span>
+            <span class="s2">"format_string"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"results"</span><span class="p">,</span>
+            <span class="s2">"help_text"</span><span class="p">:</span> <span class="s2">"The results to save to variables or in tables."</span><span class="p">,</span>
         <span class="p">},</span>
     <span class="p">}</span>
 
     <span class="n">energy_parameters</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s2">&quot;basis_version&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;defaults_2020&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;enumeration&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;default_units&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;enumeration&quot;</span><span class="p">:</span> <span class="p">(</span>
-                <span class="s2">&quot;defaults_2010&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;defaults_2020&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;NAO-VCC-nZ&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;NAO-J-n&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;non-standard/gaussian_tight_770&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;non-standard/Tier2_aug2&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;custom&quot;</span><span class="p">,</span>
+        <span class="s2">"basis_version"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"default"</span><span class="p">:</span> <span class="s2">"defaults_2020"</span><span class="p">,</span>
+            <span class="s2">"kind"</span><span class="p">:</span> <span class="s2">"enumeration"</span><span class="p">,</span>
+            <span class="s2">"default_units"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"enumeration"</span><span class="p">:</span> <span class="p">(</span>
+                <span class="s2">"defaults_2010"</span><span class="p">,</span>
+                <span class="s2">"defaults_2020"</span><span class="p">,</span>
+                <span class="s2">"NAO-VCC-nZ"</span><span class="p">,</span>
+                <span class="s2">"NAO-J-n"</span><span class="p">,</span>
+                <span class="s2">"non-standard/gaussian_tight_770"</span><span class="p">,</span>
+                <span class="s2">"non-standard/Tier2_aug2"</span><span class="p">,</span>
+                <span class="s2">"custom"</span><span class="p">,</span>
             <span class="p">),</span>
-            <span class="s2">&quot;format_string&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Basis set version:&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;help_text&quot;</span><span class="p">:</span> <span class="s2">&quot;The version of basis sets used.&quot;</span><span class="p">,</span>
+            <span class="s2">"format_string"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Basis set version:"</span><span class="p">,</span>
+            <span class="s2">"help_text"</span><span class="p">:</span> <span class="s2">"The version of basis sets used."</span><span class="p">,</span>
         <span class="p">},</span>
-        <span class="s2">&quot;defaults_2010_level&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;light&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;enumeration&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;default_units&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;enumeration&quot;</span><span class="p">:</span> <span class="p">(</span>
-                <span class="s2">&quot;light&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;intermediate&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;tight&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;really_tight&quot;</span><span class="p">,</span>
+        <span class="s2">"defaults_2010_level"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"default"</span><span class="p">:</span> <span class="s2">"light"</span><span class="p">,</span>
+            <span class="s2">"kind"</span><span class="p">:</span> <span class="s2">"enumeration"</span><span class="p">,</span>
+            <span class="s2">"default_units"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"enumeration"</span><span class="p">:</span> <span class="p">(</span>
+                <span class="s2">"light"</span><span class="p">,</span>
+                <span class="s2">"intermediate"</span><span class="p">,</span>
+                <span class="s2">"tight"</span><span class="p">,</span>
+                <span class="s2">"really_tight"</span><span class="p">,</span>
             <span class="p">),</span>
-            <span class="s2">&quot;format_string&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Basis set level:&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;help_text&quot;</span><span class="p">:</span> <span class="s2">&quot;The level of 2010 basis sets used.&quot;</span><span class="p">,</span>
+            <span class="s2">"format_string"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Basis set level:"</span><span class="p">,</span>
+            <span class="s2">"help_text"</span><span class="p">:</span> <span class="s2">"The level of 2010 basis sets used."</span><span class="p">,</span>
         <span class="p">},</span>
-        <span class="s2">&quot;defaults_2020_level&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;light&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;enumeration&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;default_units&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;enumeration&quot;</span><span class="p">:</span> <span class="p">(</span>
-                <span class="s2">&quot;light_spd/light&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;light&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;intermediate&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;tight&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;really_tight&quot;</span><span class="p">,</span>
+        <span class="s2">"defaults_2020_level"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"default"</span><span class="p">:</span> <span class="s2">"light"</span><span class="p">,</span>
+            <span class="s2">"kind"</span><span class="p">:</span> <span class="s2">"enumeration"</span><span class="p">,</span>
+            <span class="s2">"default_units"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"enumeration"</span><span class="p">:</span> <span class="p">(</span>
+                <span class="s2">"light_spd/light"</span><span class="p">,</span>
+                <span class="s2">"light"</span><span class="p">,</span>
+                <span class="s2">"intermediate"</span><span class="p">,</span>
+                <span class="s2">"tight"</span><span class="p">,</span>
+                <span class="s2">"really_tight"</span><span class="p">,</span>
             <span class="p">),</span>
-            <span class="s2">&quot;format_string&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Basis set level:&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;help_text&quot;</span><span class="p">:</span> <span class="s2">&quot;The level of 2010 basis sets used.&quot;</span><span class="p">,</span>
+            <span class="s2">"format_string"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Basis set level:"</span><span class="p">,</span>
+            <span class="s2">"help_text"</span><span class="p">:</span> <span class="s2">"The level of 2010 basis sets used."</span><span class="p">,</span>
         <span class="p">},</span>
-        <span class="s2">&quot;NAO-VCC-nZ_level&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;NAO-VCC-2Z&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;enumeration&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;default_units&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;enumeration&quot;</span><span class="p">:</span> <span class="p">(</span>
-                <span class="s2">&quot;NAO-VCC-2Z&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;NAO-VCC-3Z&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;NAO-VCC-4Z&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;NAO-VCC-5Z&quot;</span><span class="p">,</span>
+        <span class="s2">"NAO-VCC-nZ_level"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"default"</span><span class="p">:</span> <span class="s2">"NAO-VCC-2Z"</span><span class="p">,</span>
+            <span class="s2">"kind"</span><span class="p">:</span> <span class="s2">"enumeration"</span><span class="p">,</span>
+            <span class="s2">"default_units"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"enumeration"</span><span class="p">:</span> <span class="p">(</span>
+                <span class="s2">"NAO-VCC-2Z"</span><span class="p">,</span>
+                <span class="s2">"NAO-VCC-3Z"</span><span class="p">,</span>
+                <span class="s2">"NAO-VCC-4Z"</span><span class="p">,</span>
+                <span class="s2">"NAO-VCC-5Z"</span><span class="p">,</span>
             <span class="p">),</span>
-            <span class="s2">&quot;format_string&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Basis set level:&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;help_text&quot;</span><span class="p">:</span> <span class="s2">&quot;The level of NAO-VCC (valence correlation) basis sets used.&quot;</span><span class="p">,</span>
+            <span class="s2">"format_string"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Basis set level:"</span><span class="p">,</span>
+            <span class="s2">"help_text"</span><span class="p">:</span> <span class="s2">"The level of NAO-VCC (valence correlation) basis sets used."</span><span class="p">,</span>
         <span class="p">},</span>
-        <span class="s2">&quot;NAO-J-n_level&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;NAO-J-2&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;enumeration&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;default_units&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;enumeration&quot;</span><span class="p">:</span> <span class="p">(</span>
-                <span class="s2">&quot;NAO-J-2&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;NAO-J-3&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;NAO-J-4&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;NAO-J-5&quot;</span><span class="p">,</span>
+        <span class="s2">"NAO-J-n_level"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"default"</span><span class="p">:</span> <span class="s2">"NAO-J-2"</span><span class="p">,</span>
+            <span class="s2">"kind"</span><span class="p">:</span> <span class="s2">"enumeration"</span><span class="p">,</span>
+            <span class="s2">"default_units"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"enumeration"</span><span class="p">:</span> <span class="p">(</span>
+                <span class="s2">"NAO-J-2"</span><span class="p">,</span>
+                <span class="s2">"NAO-J-3"</span><span class="p">,</span>
+                <span class="s2">"NAO-J-4"</span><span class="p">,</span>
+                <span class="s2">"NAO-J-5"</span><span class="p">,</span>
             <span class="p">),</span>
-            <span class="s2">&quot;format_string&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Basis set level:&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;help_text&quot;</span><span class="p">:</span> <span class="s2">&quot;The level of NAO-j (spin-coupling) basis sets used.&quot;</span><span class="p">,</span>
+            <span class="s2">"format_string"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Basis set level:"</span><span class="p">,</span>
+            <span class="s2">"help_text"</span><span class="p">:</span> <span class="s2">"The level of NAO-j (spin-coupling) basis sets used."</span><span class="p">,</span>
         <span class="p">},</span>
-        <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;Generalized-gradient approximations (GGA)&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;enumeration&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;default_units&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;enumeration&quot;</span><span class="p">:</span> <span class="p">(</span>
-                <span class="s2">&quot;Local-density approximation (LDA)&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;Generalized-gradient approximations (GGA)&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;Meta-generalized gradient approximations (meta-GGA)&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;Hartree-Fock and hybrid functionals&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;Hybrid meta generalized gradient approximation (Hybrid meta-GGA)&quot;</span><span class="p">,</span>
+        <span class="s2">"model"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"default"</span><span class="p">:</span> <span class="s2">"Generalized-gradient approximations (GGA)"</span><span class="p">,</span>
+            <span class="s2">"kind"</span><span class="p">:</span> <span class="s2">"enumeration"</span><span class="p">,</span>
+            <span class="s2">"default_units"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"enumeration"</span><span class="p">:</span> <span class="p">(</span>
+                <span class="s2">"Local-density approximation (LDA)"</span><span class="p">,</span>
+                <span class="s2">"Generalized-gradient approximations (GGA)"</span><span class="p">,</span>
+                <span class="s2">"Meta-generalized gradient approximations (meta-GGA)"</span><span class="p">,</span>
+                <span class="s2">"Hartree-Fock and hybrid functionals"</span><span class="p">,</span>
+                <span class="s2">"Hybrid meta generalized gradient approximation (Hybrid meta-GGA)"</span><span class="p">,</span>
             <span class="p">),</span>
-            <span class="s2">&quot;format_string&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Computational model:&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;help_text&quot;</span><span class="p">:</span> <span class="s2">&quot;The high-level computational model employed.&quot;</span><span class="p">,</span>
+            <span class="s2">"format_string"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Computational model:"</span><span class="p">,</span>
+            <span class="s2">"help_text"</span><span class="p">:</span> <span class="s2">"The high-level computational model employed."</span><span class="p">,</span>
         <span class="p">},</span>
-        <span class="s2">&quot;submodel&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;pbe : Perdew, Burke and Ernzerhof&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;enumeration&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;default_units&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;enumeration&quot;</span><span class="p">:</span> <span class="p">(</span>
-                <span class="s2">&quot;pbe : Perdew, Burke and Ernzerhof&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;am05 : Armiento and Mattsson&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;blyp : Becke and Lee-Yang-Parr&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;pbeint&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;pbesol : modified PBE GGA&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;rpbe : the RPBE modified PBE functional&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;revpbe : the revPBE modified PBE GGA&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;r48pbe : 0.52*pbe and 0.48*rpbe&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;pw91_gga : Perdew-Wang 1991 GGA&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;b86bbpe : Becke’s B86b + PBE&quot;</span><span class="p">,</span>
+        <span class="s2">"submodel"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"default"</span><span class="p">:</span> <span class="s2">"pbe : Perdew, Burke and Ernzerhof"</span><span class="p">,</span>
+            <span class="s2">"kind"</span><span class="p">:</span> <span class="s2">"enumeration"</span><span class="p">,</span>
+            <span class="s2">"default_units"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"enumeration"</span><span class="p">:</span> <span class="p">(</span>
+                <span class="s2">"pbe : Perdew, Burke and Ernzerhof"</span><span class="p">,</span>
+                <span class="s2">"am05 : Armiento and Mattsson"</span><span class="p">,</span>
+                <span class="s2">"blyp : Becke and Lee-Yang-Parr"</span><span class="p">,</span>
+                <span class="s2">"pbeint"</span><span class="p">,</span>
+                <span class="s2">"pbesol : modified PBE GGA"</span><span class="p">,</span>
+                <span class="s2">"rpbe : the RPBE modified PBE functional"</span><span class="p">,</span>
+                <span class="s2">"revpbe : the revPBE modified PBE GGA"</span><span class="p">,</span>
+                <span class="s2">"r48pbe : 0.52*pbe and 0.48*rpbe"</span><span class="p">,</span>
+                <span class="s2">"pw91_gga : Perdew-Wang 1991 GGA"</span><span class="p">,</span>
+                <span class="s2">"b86bbpe : Becke’s B86b + PBE"</span><span class="p">,</span>
             <span class="p">),</span>
-            <span class="s2">&quot;format_string&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Model version:&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;help_text&quot;</span><span class="p">:</span> <span class="s2">&quot;The version of the model employed.&quot;</span><span class="p">,</span>
+            <span class="s2">"format_string"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Model version:"</span><span class="p">,</span>
+            <span class="s2">"help_text"</span><span class="p">:</span> <span class="s2">"The version of the model employed."</span><span class="p">,</span>
         <span class="p">},</span>
-        <span class="s2">&quot;spin_polarization&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;default&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;enumeration&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;default_units&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;enumeration&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;default&quot;</span><span class="p">,</span> <span class="s2">&quot;none&quot;</span><span class="p">),</span>
-            <span class="s2">&quot;format_string&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Spin polarized?:&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;help_text&quot;</span><span class="p">:</span> <span class="p">(</span>
-                <span class="s2">&quot;Whether to do a spin polarized calculation. The default is to do so &quot;</span>
-                <span class="s2">&quot;if there are spins on any atoms. You can also turn this off, but &quot;</span>
-                <span class="s2">&quot;cannot force a spin-polarized calculation without setting spins on &quot;</span>
-                <span class="s2">&quot;one or more atoms in the structure.&quot;</span>
-            <span class="p">),</span>
-        <span class="p">},</span>
-        <span class="s2">&quot;fixed_spin_moment&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;no&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;integer&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;default_units&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;enumeration&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;no&quot;</span><span class="p">,</span> <span class="s2">&quot;yes&quot;</span><span class="p">),</span>
-            <span class="s2">&quot;format_string&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Fix the spin moment:&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;help_text&quot;</span><span class="p">:</span> <span class="p">(</span>
-                <span class="s2">&quot;Whether to fix the spin moment, by default to the configuration&#39;s &quot;</span>
-                <span class="s2">&quot;multiplicity. You may also specifiy and integer multiplicity here.&quot;</span>
+        <span class="s2">"spin_polarization"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"default"</span><span class="p">:</span> <span class="s2">"default"</span><span class="p">,</span>
+            <span class="s2">"kind"</span><span class="p">:</span> <span class="s2">"enumeration"</span><span class="p">,</span>
+            <span class="s2">"default_units"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"enumeration"</span><span class="p">:</span> <span class="p">(</span><span class="s2">"default"</span><span class="p">,</span> <span class="s2">"none"</span><span class="p">),</span>
+            <span class="s2">"format_string"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Spin polarized?:"</span><span class="p">,</span>
+            <span class="s2">"help_text"</span><span class="p">:</span> <span class="p">(</span>
+                <span class="s2">"Whether to do a spin polarized calculation. The default is to do so "</span>
+                <span class="s2">"if there are spins on any atoms. You can also turn this off, but "</span>
+                <span class="s2">"cannot force a spin-polarized calculation without setting spins on "</span>
+                <span class="s2">"one or more atoms in the structure."</span>
             <span class="p">),</span>
         <span class="p">},</span>
-        <span class="s2">&quot;relativity&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;atomic ZORA approximation&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;enumeration&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;default_units&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;enumeration&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;none&quot;</span><span class="p">,</span> <span class="s2">&quot;atomic ZORA approximation&quot;</span><span class="p">),</span>
-            <span class="s2">&quot;format_string&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Relativity:&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;help_text&quot;</span><span class="p">:</span> <span class="s2">&quot;Whether and how to calculate relatavistic effects.&quot;</span><span class="p">,</span>
-        <span class="p">},</span>
-        <span class="s2">&quot;dispersion&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;nonlocal many-body dispersion (MBD-NL)&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;enumeration&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;default_units&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;enumeration&quot;</span><span class="p">:</span> <span class="p">(</span>
-                <span class="s2">&quot;none&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;nonlocal many-body dispersion (MBD-NL)&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;range-separated self-consistently screened (MBD@rsSCS)&quot;</span><span class="p">,</span>
-            <span class="p">),</span>
-            <span class="s2">&quot;format_string&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Long-range vdW term:&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;help_text&quot;</span><span class="p">:</span> <span class="p">(</span>
-                <span class="s2">&quot;Whether and how to calculate the many-body dispersions effects.&quot;</span>
+        <span class="s2">"fixed_spin_moment"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"default"</span><span class="p">:</span> <span class="s2">"no"</span><span class="p">,</span>
+            <span class="s2">"kind"</span><span class="p">:</span> <span class="s2">"integer"</span><span class="p">,</span>
+            <span class="s2">"default_units"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"enumeration"</span><span class="p">:</span> <span class="p">(</span><span class="s2">"no"</span><span class="p">,</span> <span class="s2">"yes"</span><span class="p">),</span>
+            <span class="s2">"format_string"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Fix the spin moment:"</span><span class="p">,</span>
+            <span class="s2">"help_text"</span><span class="p">:</span> <span class="p">(</span>
+                <span class="s2">"Whether to fix the spin moment, by default to the configuration's "</span>
+                <span class="s2">"multiplicity. You may also specifiy and integer multiplicity here."</span>
             <span class="p">),</span>
         <span class="p">},</span>
-        <span class="s2">&quot;primitive cell&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;yes&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;boolean&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;default_units&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;enumeration&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;yes&quot;</span><span class="p">,</span> <span class="s2">&quot;no&quot;</span><span class="p">),</span>
-            <span class="s2">&quot;format_string&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;If possible, use primitive cell:&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;help_text&quot;</span><span class="p">:</span> <span class="s2">&quot;Whether to use the primitive cell for the calculation.&quot;</span><span class="p">,</span>
+        <span class="s2">"relativity"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"default"</span><span class="p">:</span> <span class="s2">"atomic ZORA approximation"</span><span class="p">,</span>
+            <span class="s2">"kind"</span><span class="p">:</span> <span class="s2">"enumeration"</span><span class="p">,</span>
+            <span class="s2">"default_units"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"enumeration"</span><span class="p">:</span> <span class="p">(</span><span class="s2">"none"</span><span class="p">,</span> <span class="s2">"atomic ZORA approximation"</span><span class="p">),</span>
+            <span class="s2">"format_string"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Relativity:"</span><span class="p">,</span>
+            <span class="s2">"help_text"</span><span class="p">:</span> <span class="s2">"Whether and how to calculate relatavistic effects."</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s2">"dispersion"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"default"</span><span class="p">:</span> <span class="s2">"nonlocal many-body dispersion (MBD-NL)"</span><span class="p">,</span>
+            <span class="s2">"kind"</span><span class="p">:</span> <span class="s2">"enumeration"</span><span class="p">,</span>
+            <span class="s2">"default_units"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"enumeration"</span><span class="p">:</span> <span class="p">(</span>
+                <span class="s2">"none"</span><span class="p">,</span>
+                <span class="s2">"nonlocal many-body dispersion (MBD-NL)"</span><span class="p">,</span>
+                <span class="s2">"range-separated self-consistently screened (MBD@rsSCS)"</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="s2">"format_string"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Long-range vdW term:"</span><span class="p">,</span>
+            <span class="s2">"help_text"</span><span class="p">:</span> <span class="p">(</span>
+                <span class="s2">"Whether and how to calculate the many-body dispersions effects."</span>
+            <span class="p">),</span>
+        <span class="p">},</span>
+        <span class="s2">"primitive cell"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"default"</span><span class="p">:</span> <span class="s2">"yes"</span><span class="p">,</span>
+            <span class="s2">"kind"</span><span class="p">:</span> <span class="s2">"boolean"</span><span class="p">,</span>
+            <span class="s2">"default_units"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"enumeration"</span><span class="p">:</span> <span class="p">(</span><span class="s2">"yes"</span><span class="p">,</span> <span class="s2">"no"</span><span class="p">),</span>
+            <span class="s2">"format_string"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"If possible, use primitive cell:"</span><span class="p">,</span>
+            <span class="s2">"help_text"</span><span class="p">:</span> <span class="s2">"Whether to use the primitive cell for the calculation."</span><span class="p">,</span>
         <span class="p">},</span>
     <span class="p">}</span>
 
     <span class="n">kspace_parameters</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s2">&quot;k-grid method&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;grid spacing&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;default_units&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;enumeration&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;grid spacing&quot;</span><span class="p">,</span> <span class="s2">&quot;explicit grid dimensions&quot;</span><span class="p">),</span>
-            <span class="s2">&quot;format_string&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Specify k-space grid using:&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;help_text&quot;</span><span class="p">:</span> <span class="s2">&quot;How to specify the k-space integration grid.&quot;</span><span class="p">,</span>
+        <span class="s2">"k-grid method"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"default"</span><span class="p">:</span> <span class="s2">"grid spacing"</span><span class="p">,</span>
+            <span class="s2">"kind"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+            <span class="s2">"default_units"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"enumeration"</span><span class="p">:</span> <span class="p">(</span><span class="s2">"grid spacing"</span><span class="p">,</span> <span class="s2">"explicit grid dimensions"</span><span class="p">),</span>
+            <span class="s2">"format_string"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Specify k-space grid using:"</span><span class="p">,</span>
+            <span class="s2">"help_text"</span><span class="p">:</span> <span class="s2">"How to specify the k-space integration grid."</span><span class="p">,</span>
         <span class="p">},</span>
-        <span class="s2">&quot;k-spacing&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span>
-            <span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;float&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;default_units&quot;</span><span class="p">:</span> <span class="s2">&quot;1/Å&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;enumeration&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
-            <span class="s2">&quot;format_string&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;K-spacing:&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;help_text&quot;</span><span class="p">:</span> <span class="s2">&quot;The spacing of the grid in reciprocal space.&quot;</span><span class="p">,</span>
+        <span class="s2">"k-spacing"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"default"</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span>
+            <span class="s2">"kind"</span><span class="p">:</span> <span class="s2">"float"</span><span class="p">,</span>
+            <span class="s2">"default_units"</span><span class="p">:</span> <span class="s2">"1/Å"</span><span class="p">,</span>
+            <span class="s2">"enumeration"</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="s2">"format_string"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"K-spacing:"</span><span class="p">,</span>
+            <span class="s2">"help_text"</span><span class="p">:</span> <span class="s2">"The spacing of the grid in reciprocal space."</span><span class="p">,</span>
         <span class="p">},</span>
-        <span class="s2">&quot;odd grid&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;yes&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;boolean&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;default_units&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;enumeration&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;yes&quot;</span><span class="p">,</span> <span class="s2">&quot;no&quot;</span><span class="p">),</span>
-            <span class="s2">&quot;format_string&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Force to odd numbers:&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;help_text&quot;</span><span class="p">:</span> <span class="s2">&quot;Whether to force the grid sizes to odd numbers.&quot;</span><span class="p">,</span>
+        <span class="s2">"odd grid"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"default"</span><span class="p">:</span> <span class="s2">"yes"</span><span class="p">,</span>
+            <span class="s2">"kind"</span><span class="p">:</span> <span class="s2">"boolean"</span><span class="p">,</span>
+            <span class="s2">"default_units"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"enumeration"</span><span class="p">:</span> <span class="p">(</span><span class="s2">"yes"</span><span class="p">,</span> <span class="s2">"no"</span><span class="p">),</span>
+            <span class="s2">"format_string"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Force to odd numbers:"</span><span class="p">,</span>
+            <span class="s2">"help_text"</span><span class="p">:</span> <span class="s2">"Whether to force the grid sizes to odd numbers."</span><span class="p">,</span>
         <span class="p">},</span>
-        <span class="s2">&quot;centering&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;𝚪-centered&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;enumeration&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;default_units&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;enumeration&quot;</span><span class="p">:</span> <span class="p">(</span>
-                <span class="s2">&quot;𝚪-centered&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;off-center&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;Monkhorst-Pack&quot;</span><span class="p">,</span>
+        <span class="s2">"centering"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"default"</span><span class="p">:</span> <span class="s2">"𝚪-centered"</span><span class="p">,</span>
+            <span class="s2">"kind"</span><span class="p">:</span> <span class="s2">"enumeration"</span><span class="p">,</span>
+            <span class="s2">"default_units"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"enumeration"</span><span class="p">:</span> <span class="p">(</span>
+                <span class="s2">"𝚪-centered"</span><span class="p">,</span>
+                <span class="s2">"off-center"</span><span class="p">,</span>
+                <span class="s2">"Monkhorst-Pack"</span><span class="p">,</span>
             <span class="p">),</span>
-            <span class="s2">&quot;format_string&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Centering of grid:&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;help_text&quot;</span><span class="p">:</span> <span class="s2">&quot;How to center the grid in reciprocal space.&quot;</span><span class="p">,</span>
+            <span class="s2">"format_string"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Centering of grid:"</span><span class="p">,</span>
+            <span class="s2">"help_text"</span><span class="p">:</span> <span class="s2">"How to center the grid in reciprocal space."</span><span class="p">,</span>
         <span class="p">},</span>
-        <span class="s2">&quot;occupation type&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;Gaussian&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;enumeration&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;default_units&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;enumeration&quot;</span><span class="p">:</span> <span class="p">(</span>
-                <span class="s2">&quot;Gaussian&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;Methfessel-Paxton&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;Fermi&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;integer&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;cubic&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;cold&quot;</span><span class="p">,</span>
+        <span class="s2">"occupation type"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"default"</span><span class="p">:</span> <span class="s2">"Gaussian"</span><span class="p">,</span>
+            <span class="s2">"kind"</span><span class="p">:</span> <span class="s2">"enumeration"</span><span class="p">,</span>
+            <span class="s2">"default_units"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"enumeration"</span><span class="p">:</span> <span class="p">(</span>
+                <span class="s2">"Gaussian"</span><span class="p">,</span>
+                <span class="s2">"Methfessel-Paxton"</span><span class="p">,</span>
+                <span class="s2">"Fermi"</span><span class="p">,</span>
+                <span class="s2">"integer"</span><span class="p">,</span>
+                <span class="s2">"cubic"</span><span class="p">,</span>
+                <span class="s2">"cold"</span><span class="p">,</span>
             <span class="p">),</span>
-            <span class="s2">&quot;format_string&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Smearing:&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;help_text&quot;</span><span class="p">:</span> <span class="p">(</span>
-                <span class="s2">&quot;How occupy the orbitals, typically smearing the electrons as they &quot;</span>
-                <span class="s2">&quot;would be at finite temperature.&quot;</span>
-            <span class="p">),</span>
-        <span class="p">},</span>
-        <span class="s2">&quot;smearing width&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="mf">0.01</span><span class="p">,</span>
-            <span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;float&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;default_units&quot;</span><span class="p">:</span> <span class="s2">&quot;eV&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;enumeration&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
-            <span class="s2">&quot;format_string&quot;</span><span class="p">:</span> <span class="s2">&quot;.3f&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Width:&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;help_text&quot;</span><span class="p">:</span> <span class="s2">&quot;The smearing or broadening width.&quot;</span><span class="p">,</span>
-        <span class="p">},</span>
-        <span class="s2">&quot;na&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
-            <span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;integer&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;default_units&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;enumeration&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
-            <span class="s2">&quot;format_string&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;NPoints in a:&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;help_text&quot;</span><span class="p">:</span> <span class="p">(</span>
-                <span class="s2">&quot;Number of points in the first direction of the Brillouin zone.&quot;</span>
+            <span class="s2">"format_string"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Smearing:"</span><span class="p">,</span>
+            <span class="s2">"help_text"</span><span class="p">:</span> <span class="p">(</span>
+                <span class="s2">"How occupy the orbitals, typically smearing the electrons as they "</span>
+                <span class="s2">"would be at finite temperature."</span>
             <span class="p">),</span>
         <span class="p">},</span>
-        <span class="s2">&quot;nb&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
-            <span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;integer&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;default_units&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;enumeration&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
-            <span class="s2">&quot;format_string&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;b:&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;help_text&quot;</span><span class="p">:</span> <span class="p">(</span>
-                <span class="s2">&quot;Number of points in the second direction of the Brillouin zone.&quot;</span>
+        <span class="s2">"smearing width"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"default"</span><span class="p">:</span> <span class="mf">0.01</span><span class="p">,</span>
+            <span class="s2">"kind"</span><span class="p">:</span> <span class="s2">"float"</span><span class="p">,</span>
+            <span class="s2">"default_units"</span><span class="p">:</span> <span class="s2">"eV"</span><span class="p">,</span>
+            <span class="s2">"enumeration"</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="s2">"format_string"</span><span class="p">:</span> <span class="s2">".3f"</span><span class="p">,</span>
+            <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Width:"</span><span class="p">,</span>
+            <span class="s2">"help_text"</span><span class="p">:</span> <span class="s2">"The smearing or broadening width."</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s2">"na"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"default"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+            <span class="s2">"kind"</span><span class="p">:</span> <span class="s2">"integer"</span><span class="p">,</span>
+            <span class="s2">"default_units"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"enumeration"</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="s2">"format_string"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"NPoints in a:"</span><span class="p">,</span>
+            <span class="s2">"help_text"</span><span class="p">:</span> <span class="p">(</span>
+                <span class="s2">"Number of points in the first direction of the Brillouin zone."</span>
             <span class="p">),</span>
         <span class="p">},</span>
-        <span class="s2">&quot;nc&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
-            <span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;integer&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;default_units&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;enumeration&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
-            <span class="s2">&quot;format_string&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;c:&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;help_text&quot;</span><span class="p">:</span> <span class="p">(</span>
-                <span class="s2">&quot;Number of points in the third direction of the Brillouin zone.&quot;</span>
+        <span class="s2">"nb"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"default"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+            <span class="s2">"kind"</span><span class="p">:</span> <span class="s2">"integer"</span><span class="p">,</span>
+            <span class="s2">"default_units"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"enumeration"</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="s2">"format_string"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"b:"</span><span class="p">,</span>
+            <span class="s2">"help_text"</span><span class="p">:</span> <span class="p">(</span>
+                <span class="s2">"Number of points in the second direction of the Brillouin zone."</span>
+            <span class="p">),</span>
+        <span class="p">},</span>
+        <span class="s2">"nc"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"default"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+            <span class="s2">"kind"</span><span class="p">:</span> <span class="s2">"integer"</span><span class="p">,</span>
+            <span class="s2">"default_units"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"enumeration"</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="s2">"format_string"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"c:"</span><span class="p">,</span>
+            <span class="s2">"help_text"</span><span class="p">:</span> <span class="p">(</span>
+                <span class="s2">"Number of points in the third direction of the Brillouin zone."</span>
             <span class="p">),</span>
         <span class="p">},</span>
     <span class="p">}</span>
 
     <span class="n">output_parameters</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s2">&quot;total density&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;no&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;boolean&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;default_units&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;enumeration&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;yes&quot;</span><span class="p">,</span> <span class="s2">&quot;no&quot;</span><span class="p">),</span>
-            <span class="s2">&quot;format_string&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Plot total density:&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;help_text&quot;</span><span class="p">:</span> <span class="s2">&quot;Whether to plot the total charge density.&quot;</span><span class="p">,</span>
+        <span class="s2">"total density"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"default"</span><span class="p">:</span> <span class="s2">"no"</span><span class="p">,</span>
+            <span class="s2">"kind"</span><span class="p">:</span> <span class="s2">"boolean"</span><span class="p">,</span>
+            <span class="s2">"default_units"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"enumeration"</span><span class="p">:</span> <span class="p">(</span><span class="s2">"yes"</span><span class="p">,</span> <span class="s2">"no"</span><span class="p">),</span>
+            <span class="s2">"format_string"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Plot total density:"</span><span class="p">,</span>
+            <span class="s2">"help_text"</span><span class="p">:</span> <span class="s2">"Whether to plot the total charge density."</span><span class="p">,</span>
         <span class="p">},</span>
-        <span class="s2">&quot;total spin density&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;no&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;boolean&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;default_units&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;enumeration&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;yes&quot;</span><span class="p">,</span> <span class="s2">&quot;no&quot;</span><span class="p">),</span>
-            <span class="s2">&quot;format_string&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Plot total spin density:&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;help_text&quot;</span><span class="p">:</span> <span class="s2">&quot;Whether to plot the total spin density.&quot;</span><span class="p">,</span>
+        <span class="s2">"total spin density"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"default"</span><span class="p">:</span> <span class="s2">"no"</span><span class="p">,</span>
+            <span class="s2">"kind"</span><span class="p">:</span> <span class="s2">"boolean"</span><span class="p">,</span>
+            <span class="s2">"default_units"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"enumeration"</span><span class="p">:</span> <span class="p">(</span><span class="s2">"yes"</span><span class="p">,</span> <span class="s2">"no"</span><span class="p">),</span>
+            <span class="s2">"format_string"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Plot total spin density:"</span><span class="p">,</span>
+            <span class="s2">"help_text"</span><span class="p">:</span> <span class="s2">"Whether to plot the total spin density."</span><span class="p">,</span>
         <span class="p">},</span>
-        <span class="s2">&quot;difference density&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;no&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;boolean&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;default_units&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;enumeration&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;yes&quot;</span><span class="p">,</span> <span class="s2">&quot;no&quot;</span><span class="p">),</span>
-            <span class="s2">&quot;format_string&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Plot difference density:&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;help_text&quot;</span><span class="p">:</span> <span class="s2">&quot;Whether to plot the difference density.&quot;</span><span class="p">,</span>
+        <span class="s2">"difference density"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"default"</span><span class="p">:</span> <span class="s2">"no"</span><span class="p">,</span>
+            <span class="s2">"kind"</span><span class="p">:</span> <span class="s2">"boolean"</span><span class="p">,</span>
+            <span class="s2">"default_units"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"enumeration"</span><span class="p">:</span> <span class="p">(</span><span class="s2">"yes"</span><span class="p">,</span> <span class="s2">"no"</span><span class="p">),</span>
+            <span class="s2">"format_string"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Plot difference density:"</span><span class="p">,</span>
+            <span class="s2">"help_text"</span><span class="p">:</span> <span class="s2">"Whether to plot the difference density."</span><span class="p">,</span>
         <span class="p">},</span>
-        <span class="s2">&quot;orbitals&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;no&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;boolean&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;default_units&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;enumeration&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;yes&quot;</span><span class="p">,</span> <span class="s2">&quot;no&quot;</span><span class="p">),</span>
-            <span class="s2">&quot;format_string&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Plot orbitals:&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;help_text&quot;</span><span class="p">:</span> <span class="s2">&quot;Whether to plot orbitals.&quot;</span><span class="p">,</span>
+        <span class="s2">"orbitals"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"default"</span><span class="p">:</span> <span class="s2">"no"</span><span class="p">,</span>
+            <span class="s2">"kind"</span><span class="p">:</span> <span class="s2">"boolean"</span><span class="p">,</span>
+            <span class="s2">"default_units"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"enumeration"</span><span class="p">:</span> <span class="p">(</span><span class="s2">"yes"</span><span class="p">,</span> <span class="s2">"no"</span><span class="p">),</span>
+            <span class="s2">"format_string"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Plot orbitals:"</span><span class="p">,</span>
+            <span class="s2">"help_text"</span><span class="p">:</span> <span class="s2">"Whether to plot orbitals."</span><span class="p">,</span>
         <span class="p">},</span>
-        <span class="s2">&quot;selected orbitals&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;-1, HOMO, LUMO, +1&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;default_units&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;enumeration&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;all&quot;</span><span class="p">,</span> <span class="s2">&quot;-1, HOMO, LUMO, +1&quot;</span><span class="p">),</span>
-            <span class="s2">&quot;format_string&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Selected orbitals:&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;help_text&quot;</span><span class="p">:</span> <span class="s2">&quot;Which orbitals to plot.&quot;</span><span class="p">,</span>
+        <span class="s2">"selected orbitals"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"default"</span><span class="p">:</span> <span class="s2">"-1, HOMO, LUMO, +1"</span><span class="p">,</span>
+            <span class="s2">"kind"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+            <span class="s2">"default_units"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"enumeration"</span><span class="p">:</span> <span class="p">(</span><span class="s2">"all"</span><span class="p">,</span> <span class="s2">"-1, HOMO, LUMO, +1"</span><span class="p">),</span>
+            <span class="s2">"format_string"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Selected orbitals:"</span><span class="p">,</span>
+            <span class="s2">"help_text"</span><span class="p">:</span> <span class="s2">"Which orbitals to plot."</span><span class="p">,</span>
         <span class="p">},</span>
-        <span class="s2">&quot;selected k-points&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;default_units&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;enumeration&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;none&quot;</span><span class="p">,</span> <span class="s2">&quot;all&quot;</span><span class="p">),</span>
-            <span class="s2">&quot;format_string&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;For crystals, k-points:&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;help_text&quot;</span><span class="p">:</span> <span class="s2">&quot;Plots the orbitals at these k-points.&quot;</span><span class="p">,</span>
+        <span class="s2">"selected k-points"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"default"</span><span class="p">:</span> <span class="s2">"none"</span><span class="p">,</span>
+            <span class="s2">"kind"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+            <span class="s2">"default_units"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"enumeration"</span><span class="p">:</span> <span class="p">(</span><span class="s2">"none"</span><span class="p">,</span> <span class="s2">"all"</span><span class="p">),</span>
+            <span class="s2">"format_string"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"For crystals, k-points:"</span><span class="p">,</span>
+            <span class="s2">"help_text"</span><span class="p">:</span> <span class="s2">"Plots the orbitals at these k-points."</span><span class="p">,</span>
         <span class="p">},</span>
-        <span class="s2">&quot;region&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="s2">&quot;default&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;default_units&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;enumeration&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;default&quot;</span><span class="p">,</span> <span class="s2">&quot;explicit&quot;</span><span class="p">),</span>
-            <span class="s2">&quot;format_string&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Region:&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;help_text&quot;</span><span class="p">:</span> <span class="s2">&quot;The region for the plots&quot;</span><span class="p">,</span>
+        <span class="s2">"region"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"default"</span><span class="p">:</span> <span class="s2">"default"</span><span class="p">,</span>
+            <span class="s2">"kind"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+            <span class="s2">"default_units"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"enumeration"</span><span class="p">:</span> <span class="p">(</span><span class="s2">"default"</span><span class="p">,</span> <span class="s2">"explicit"</span><span class="p">),</span>
+            <span class="s2">"format_string"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Region:"</span><span class="p">,</span>
+            <span class="s2">"help_text"</span><span class="p">:</span> <span class="s2">"The region for the plots"</span><span class="p">,</span>
         <span class="p">},</span>
-        <span class="s2">&quot;nx&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
-            <span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;integer&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;default_units&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;enumeration&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
-            <span class="s2">&quot;format_string&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Grid:&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;help_text&quot;</span><span class="p">:</span> <span class="s2">&quot;Number of grid points in first direction&quot;</span><span class="p">,</span>
+        <span class="s2">"nx"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"default"</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+            <span class="s2">"kind"</span><span class="p">:</span> <span class="s2">"integer"</span><span class="p">,</span>
+            <span class="s2">"default_units"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"enumeration"</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="s2">"format_string"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"Grid:"</span><span class="p">,</span>
+            <span class="s2">"help_text"</span><span class="p">:</span> <span class="s2">"Number of grid points in first direction"</span><span class="p">,</span>
         <span class="p">},</span>
-        <span class="s2">&quot;ny&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
-            <span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;integer&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;default_units&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;enumeration&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
-            <span class="s2">&quot;format_string&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;help_text&quot;</span><span class="p">:</span> <span class="s2">&quot;Number of grid points in second direction&quot;</span><span class="p">,</span>
+        <span class="s2">"ny"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"default"</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+            <span class="s2">"kind"</span><span class="p">:</span> <span class="s2">"integer"</span><span class="p">,</span>
+            <span class="s2">"default_units"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"enumeration"</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="s2">"format_string"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"x"</span><span class="p">,</span>
+            <span class="s2">"help_text"</span><span class="p">:</span> <span class="s2">"Number of grid points in second direction"</span><span class="p">,</span>
         <span class="p">},</span>
-        <span class="s2">&quot;nz&quot;</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">&quot;default&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
-            <span class="s2">&quot;kind&quot;</span><span class="p">:</span> <span class="s2">&quot;integer&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;default_units&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;enumeration&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
-            <span class="s2">&quot;format_string&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;help_text&quot;</span><span class="p">:</span> <span class="s2">&quot;Number of grid points in first direction&quot;</span><span class="p">,</span>
+        <span class="s2">"nz"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"default"</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+            <span class="s2">"kind"</span><span class="p">:</span> <span class="s2">"integer"</span><span class="p">,</span>
+            <span class="s2">"default_units"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"enumeration"</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="s2">"format_string"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+            <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"x"</span><span class="p">,</span>
+            <span class="s2">"help_text"</span><span class="p">:</span> <span class="s2">"Number of grid points in first direction"</span><span class="p">,</span>
         <span class="p">},</span>
     <span class="p">}</span>
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">defaults</span><span class="o">=</span><span class="p">{},</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Initialize the parameters, by default with the parameters defined above</span>
 
 <span class="sd">        Parameters</span>
@@ -998,9 +1014,9 @@
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
 <span class="sd">        None</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
-        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;EnergyParameters.__init__&quot;</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">"EnergyParameters.__init__"</span><span class="p">)</span>
 
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
             <span class="n">defaults</span><span class="o">=</span><span class="p">{</span>
@@ -1042,8 +1058,8 @@
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=64cc4de3f052d77215f0"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=64cc4de3f052d77215f0"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -1055,7 +1071,7 @@
         <div class="footer-item">
 <p class="theme-version">
   <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.22.0.
 </p></div>
       
     </div>

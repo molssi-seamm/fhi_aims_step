@@ -4,36 +4,29 @@ Getting Started
 
 Installation
 ============
-The FHI-aims step is probably already installed in your SEAMM
-environment, but if not or if you wish to check, follow the directions for the `SEAMM
-Installer`_. The graphical installer is the easiest to use. In the SEAMM conda
-environment, simply type:: 
+The FHI-aims step is installed with the `SEAMM Manager`_, and is probably already part of
+your SEAMM installation. To add it, or bring it up to date::
 
-  seamm-installer
+  seamm-manager install fhi-aims-step
+  seamm-manager update fhi-aims-step
 
-or use the shortcut if you installed one. Switch to the second tab, `Components`, and
-check for `fhi-aims-step`. If it is not installed, or
-can be updated, check the box next to it and click `Install selected` or `Update
-selected` as appropriate.
+or use the Manager's window. FHI-aims itself is licensed software that you install
+yourself, so installing the step does not install FHI-aims. Instead it creates
+``~/SEAMM/fhi-aims.ini`` -- or ``fhi-aims.ini`` in whichever SEAMM installation you are
+working on -- which tells SEAMM where FHI-aims is and how to run it. An existing file
+is never changed.
 
-The non-graphical installer is also straightforward::
-
-  seamm-installer install --update fhi-aims-step
-
-will ensure both that it is installed and up-to-date.
-
-.. _SEAMM Installer: https://molssi-seamm.github.io/installation/index.html
+.. _SEAMM Manager: https://molssi-seamm.github.io/getting_started/installation/seamm-manager.html
 
 Configuring FHI-aims
 ====================
 The FHI-aims step requires that FHI-aims be installed on your system. Since FHI-aims is
 licensed software, the SEAMM installer cannot install it for you. You will need to
 obtain it from the `FHI-aims website`_ and install it, following the documentation
-there. The FHI-aims step find where FHI-aims is installed by looking in the file
-``~/SEAMM/fhi-aims.ini``. This file should be created the first time that you run the
-FHI-aims step so that you can edit. Alternatively you can copy the example below into a
-file named ``fhi-aims.ini`` in the ``~/SEAMM`` directory and edit it to point to the
-correct location of FHI-aims on your system.
+there. The FHI-aims step finds where FHI-aims is installed by looking in the file
+``~/SEAMM/fhi-aims.ini``, which installing the step creates from the example below.
+(If it is missing, the first run of the FHI-aims step creates it.) Edit it to point to
+the correct location of FHI-aims on your system.
 
 .. code-block:: ini
 

@@ -37,7 +37,6 @@ the correct location of FHI-aims on your system.
     #     conda: Use a conda environment
     #   modules: Use the modules system
     #     local: Use a local installation
-    #    docker: Use a Docker container
     # By default SEAMM installs FHI-aims using conda.
 
     installation = local

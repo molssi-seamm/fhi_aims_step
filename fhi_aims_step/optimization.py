@@ -173,7 +173,9 @@ class Optimization(fhi_aims_step.Energy):
             elif confname == "use configuration number":
                 text += "using the index of the configuration (1, 2, ...) as its name."
             else:
-                confname = confname.replace("{model}", "<model>")
+                confname = confname.replace("{model}", "<model>").replace(
+                    "{current name}", "<current name>"
+                )
                 text += f"with '{confname}' as its name."
 
         return (

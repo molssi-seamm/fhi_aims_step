@@ -1,6 +1,18 @@
 =======
 History
 =======
+2026.10.24 -- The optimized structure keeps its name
+    * The structures that optimizations write are now named '{current name} optimized
+      with {model}' by default, keeping the name the structure had, such as a title
+      read from an SDF file: 'DMC_cc optimized with PBE'. Before, every structure was
+      named 'optimized with <model>', so the titles of several molecules were lost.
+      Flowcharts already saved keep their setting, and the previous choice remains in
+      the list. Needs seamm 2026.10.24.
+    * Bugfix: the system's naming choices were applied to the configuration name,
+      so 'keep current name' was missing from its list and 'optimized with <model>'
+      was listed twice.
+    * The unused Docker option is removed from the template for fhi-aims.ini.
+
 2026.9.29 -- Bugfix: a missing fhi-aims.ini no longer stops the step
     * Creating ``~/SEAMM/fhi-aims.ini`` from the template failed with "No module named
       'fhi-aims_step'", so the step could not run without the file. It is now created.

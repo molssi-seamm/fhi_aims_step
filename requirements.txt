@@ -1,4 +1,4 @@
-seamm
+seamm>=2026.10.24
 seamm-exec
 seamm-util
 seamm-widgets

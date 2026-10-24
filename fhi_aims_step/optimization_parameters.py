@@ -134,10 +134,14 @@ class OptimizationParameters(fhi_aims_step.EnergyParameters):
         )
 
         # Do any local editing of defaults
-        tmp = self["configuration name"]
-        tmp._data["enumeration"] = ["optimized with {model}", *tmp.enumeration[1:]]
+        tmp = self["system name"]
+        tmp._data["enumeration"] = ["optimized with {model}", *tmp.enumeration]
         tmp.default = "keep current name"
 
         tmp = self["configuration name"]
-        tmp._data["enumeration"] = ["optimized with {model}", *tmp.enumeration]
-        tmp.default = "optimized with {model}"
+        tmp._data["enumeration"] = [
+            "{current name} optimized with {model}",
+            "optimized with {model}",
+            *tmp.enumeration,
+        ]
+        tmp.default = "{current name} optimized with {model}"
